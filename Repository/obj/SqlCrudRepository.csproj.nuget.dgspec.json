@@ -26,6 +26,8 @@
         ],
         "originalTargetFrameworks": [
           "net40",
+          "netcoreapp3.0",
+          "netcoreapp3.1",
           "netstandard2.0"
         ],
         "sources": {
@@ -35,6 +37,12 @@
           "https://package.behdasht.gov.ir/v3/index.json": {}
         },
         "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          },
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          },
           "net40": {
             "projectReferences": {}
           },
@@ -49,6 +57,56 @@
         }
       },
       "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        },
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        },
         "net40": {
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         },
@@ -97,6 +155,8 @@
         ],
         "originalTargetFrameworks": [
           "net40",
+          "netcoreapp3.0",
+          "netcoreapp3.1",
           "netstandard2.0"
         ],
         "sources": {
@@ -106,6 +166,20 @@
           "https://package.behdasht.gov.ir/v3/index.json": {}
         },
         "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              }
+            }
+          },
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              }
+            }
+          },
           "net40": {
             "projectReferences": {
               "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
@@ -128,6 +202,76 @@
         }
       },
       "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[1.50.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        },
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[1.50.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        },
         "net40": {
           "dependencies": {
             "Dapper": {

@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>2021</Copyright>
     <Authors>Bijan Ghasemi</Authors>
-    <Description>Utility for CRUD operation based on Dapper ORM.</Description>
+    <Description>Utility for CRUD operation based on Dapper ORM.
+Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
     <AssemblyVersion>1400.03.13.12</AssemblyVersion>
     <FileVersion>1400.03.13.12</FileVersion>

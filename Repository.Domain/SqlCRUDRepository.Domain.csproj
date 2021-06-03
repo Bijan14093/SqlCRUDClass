@@ -1,13 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+	  <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Bijan Ghasemi</Authors>
     <AssemblyVersion>1400.03.13.12</AssemblyVersion>
     <FileVersion>1400.03.13.13</FileVersion>
     <PackageId>SqlCRUDRepository.Domain</PackageId>
     <PackageIcon>images.jpg </PackageIcon>
+    <Description>This project used with SqlCRUDRepository.
+SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.</Description>
   </PropertyGroup>
 
   <ItemGroup>

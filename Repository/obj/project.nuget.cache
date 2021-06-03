@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "JGPXn+RlAiES+o7/JV+mC1hTwdR9i/CkKiypSeEBQtKK+mTiss7SxvTGvZfc8hybB+X1eZYM1mdtA+23BUqsnQ==",
+  "dgSpecHash": "uIbg1SXnUbRv3+5CGBOWl2ZRMT2K6cO8DjkP8lTi1e3+O21GqnxaDHOm9VP75ALfKG59xfMVhjz8Nk3JR/t8jA==",
   "success": true,
   "projectFilePath": "e:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bghasemi\\.nuget\\packages\\dapper\\1.50.1\\dapper.1.50.1.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
@@ -78,7 +79,11 @@
     "C:\\Users\\bghasemi\\.nuget\\packages\\system.threading.timer\\4.0.1\\system.threading.timer.4.0.1.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
-    "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\sqlcrudrepository.domain\\1.0.0\\sqlcrudrepository.domain.1.0.0.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

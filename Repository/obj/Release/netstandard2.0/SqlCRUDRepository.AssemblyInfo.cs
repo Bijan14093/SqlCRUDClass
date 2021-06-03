@@ -14,7 +14,8 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bijan Ghasemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("2021")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("Utility for CRUD operation based on Dapper ORM.")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Utility for CRUD operation based on Dapper ORM.\r\nSample Code On Github: https://g" +
+    "ithub.com/Bijan14093/SQLCRUDTest.git")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1400.03.13.12")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlCRUDRepository")]

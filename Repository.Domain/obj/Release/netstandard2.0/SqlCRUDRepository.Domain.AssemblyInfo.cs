@@ -13,6 +13,8 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bijan Ghasemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("This project used with SqlCRUDRepository.\r\nSqlCRUDRepository:Utility for CRUD ope" +
+    "ration based on Dapper ORM.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1400.03.13.13")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlCRUDRepository.Domain")]
