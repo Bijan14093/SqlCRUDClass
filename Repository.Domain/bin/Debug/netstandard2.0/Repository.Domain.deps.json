@@ -7,12 +7,12 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Repository.Attributes/1.0.0": {
+      "Repository.Domain/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
-          "Repository.Attributes.dll": {}
+          "Repository.Domain.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -24,7 +24,7 @@
     }
   },
   "libraries": {
-    "Repository.Attributes/1.0.0": {
+    "Repository.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

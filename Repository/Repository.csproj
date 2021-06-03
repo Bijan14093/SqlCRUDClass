@@ -12,7 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repository.Attributes\Repository.Attributes.csproj" />
+    <PackageReference Include="Dapper" Version="1.50.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Repository.Domain\Repository.Domain.csproj" />
   </ItemGroup>
 
 </Project>

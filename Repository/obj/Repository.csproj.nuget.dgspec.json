@@ -4,14 +4,14 @@
     "E:\\Git\\SqlCRUDClass\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "E:\\Git\\SqlCRUDClass\\Repository.Attributes\\Repository.Attributes.csproj": {
+    "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Git\\SqlCRUDClass\\Repository.Attributes\\Repository.Attributes.csproj",
-        "projectName": "Repository.Attributes",
-        "projectPath": "E:\\Git\\SqlCRUDClass\\Repository.Attributes\\Repository.Attributes.csproj",
+        "projectUniqueName": "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj",
+        "projectName": "Repository.Domain",
+        "projectPath": "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj",
         "packagesPath": "C:\\Users\\bghasemi\\.nuget\\packages\\",
-        "outputPath": "E:\\Git\\SqlCRUDClass\\Repository.Attributes\\obj\\",
+        "outputPath": "E:\\Git\\SqlCRUDClass\\Repository.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -98,8 +98,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "E:\\Git\\SqlCRUDClass\\Repository.Attributes\\Repository.Attributes.csproj": {
-                "projectPath": "E:\\Git\\SqlCRUDClass\\Repository.Attributes\\Repository.Attributes.csproj"
+              "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj": {
+                "projectPath": "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj"
               }
             }
           }
@@ -113,11 +113,19 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[1.50.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [

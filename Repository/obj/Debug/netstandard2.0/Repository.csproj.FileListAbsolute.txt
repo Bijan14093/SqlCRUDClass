@@ -1,12 +1,12 @@
 E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.deps.json
 E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.dll
 E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.pdb
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.Domain.dll
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.Domain.pdb
 E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.csprojAssemblyReference.cache
-E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.csproj.CoreCompileInputs.cache
 E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.AssemblyInfoInputs.cache
 E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.AssemblyInfo.cs
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.csproj.CopyComplete
 E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.dll
 E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.pdb
-E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.Attributes.dll
-E:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\Repository.Attributes.pdb
-E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.csproj.CopyComplete
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\Repository.csproj.CoreCompileInputs.cache

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Bijan Ghasemi</Authors>
+    <AssemblyVersion>1400.03.13.12</AssemblyVersion>
+    <FileVersion>1400.03.13.13</FileVersion>
+  </PropertyGroup>
+
+</Project>
