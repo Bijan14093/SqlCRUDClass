@@ -1,0 +1,8 @@
+E:\Git\SqlCRUDClass\Repository.Attributes\bin\Debug\netstandard2.0\Repository.Attributes.deps.json
+E:\Git\SqlCRUDClass\Repository.Attributes\bin\Debug\netstandard2.0\Repository.Attributes.dll
+E:\Git\SqlCRUDClass\Repository.Attributes\bin\Debug\netstandard2.0\Repository.Attributes.pdb
+E:\Git\SqlCRUDClass\Repository.Attributes\obj\Debug\netstandard2.0\Repository.Attributes.csproj.CoreCompileInputs.cache
+E:\Git\SqlCRUDClass\Repository.Attributes\obj\Debug\netstandard2.0\Repository.Attributes.AssemblyInfoInputs.cache
+E:\Git\SqlCRUDClass\Repository.Attributes\obj\Debug\netstandard2.0\Repository.Attributes.AssemblyInfo.cs
+E:\Git\SqlCRUDClass\Repository.Attributes\obj\Debug\netstandard2.0\Repository.Attributes.dll
+E:\Git\SqlCRUDClass\Repository.Attributes\obj\Debug\netstandard2.0\Repository.Attributes.pdb

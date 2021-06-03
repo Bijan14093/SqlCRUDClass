@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>2021</Copyright>
+    <Authors>Bijan Ghasemi</Authors>
+    <Description>This is utility for Insert and update and delete of sql server records.</Description>
+    <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
+    <AssemblyVersion>1400.03.13.12</AssemblyVersion>
+    <FileVersion>1400.03.13.12</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Repository.Attributes\Repository.Attributes.csproj" />
+  </ItemGroup>
+
+</Project>
