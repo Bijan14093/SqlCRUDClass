@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+    ".NETFramework,Version=v4.0": {},
     ".NETStandard,Version=v2.0": {
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
@@ -175,6 +176,7 @@
     }
   },
   "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.0": [],
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3"
     ]
@@ -193,6 +195,7 @@
       "packagesPath": "C:\\Users\\bghasemi\\.nuget\\packages\\",
       "outputPath": "E:\\Git\\SqlCRUDClass\\Repository.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -204,6 +207,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
+        "net40",
         "netstandard2.0"
       ],
       "sources": {
@@ -213,6 +217,9 @@
         "https://package.behdasht.gov.ir/v3/index.json": {}
       },
       "frameworks": {
+        "net40": {
+          "projectReferences": {}
+        },
         "netstandard2.0": {
           "projectReferences": {}
         }
@@ -224,6 +231,9 @@
       }
     },
     "frameworks": {
+      "net40": {
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+      },
       "netstandard2.0": {
         "dependencies": {
           "NETStandard.Library": {

@@ -1,6 +1,41 @@
 {
   "version": 3,
   "targets": {
+    ".NETFramework,Version=v4.0": {
+      "Dapper/1.50.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Data",
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net40/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Dapper.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Repository.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "compile": {
+          "bin/placeholder/Repository.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.Domain.dll": {}
+        }
+      }
+    },
     ".NETStandard,Version=v2.0": {
       "Dapper/1.50.1": {
         "type": "package",
@@ -4979,6 +5014,11 @@
     }
   },
   "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.0": [
+      "Dapper >= 1.50.1",
+      "Newtonsoft.Json >= 13.0.1",
+      "Repository.Domain >= 1.0.0"
+    ],
     ".NETStandard,Version=v2.0": [
       "Dapper >= 1.50.1",
       "NETStandard.Library >= 2.0.3",
@@ -5000,6 +5040,7 @@
       "packagesPath": "C:\\Users\\bghasemi\\.nuget\\packages\\",
       "outputPath": "E:\\Git\\SqlCRUDClass\\Repository\\obj\\",
       "projectStyle": "PackageReference",
+      "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5011,6 +5052,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
+        "net40",
         "netstandard2.0"
       ],
       "sources": {
@@ -5020,6 +5062,13 @@
         "https://package.behdasht.gov.ir/v3/index.json": {}
       },
       "frameworks": {
+        "net40": {
+          "projectReferences": {
+            "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj": {
+              "projectPath": "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj"
+            }
+          }
+        },
         "netstandard2.0": {
           "projectReferences": {
             "E:\\Git\\SqlCRUDClass\\Repository.Domain\\Repository.Domain.csproj": {
@@ -5035,6 +5084,19 @@
       }
     },
     "frameworks": {
+      "net40": {
+        "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[1.50.1, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+      },
       "netstandard2.0": {
         "dependencies": {
           "Dapper": {

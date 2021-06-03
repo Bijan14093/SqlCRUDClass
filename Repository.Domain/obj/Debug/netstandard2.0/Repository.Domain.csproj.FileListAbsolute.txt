@@ -6,3 +6,4 @@ E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\Repository.Domain
 E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\Repository.Domain.AssemblyInfo.cs
 E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\Repository.Domain.dll
 E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\Repository.Domain.pdb
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\Repository.Domain.csprojAssemblyReference.cache

@@ -122,7 +122,7 @@ namespace Repository
             return (GeneralFactory<T>)oGeneralFactory;
         }
 
-        public bool Save<T>(ref T o)
+        public bool Save<T>(T o)
         {
 
             if (_ConnectionString == "" || _ConnectionString == null)

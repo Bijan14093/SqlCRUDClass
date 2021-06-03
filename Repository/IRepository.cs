@@ -22,7 +22,7 @@ namespace Repository
         List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth>(string ProcedureName, Dictionary<string, string> Parameters);
         List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, TTenth>(string ProcedureName, Dictionary<string, string> Parameters);
         bool RollbackTransaction();
-        bool Save<T>(ref T o);
+        bool Save<T>(T o);
         bool Delete<T>(T o);
         T GetByID<T>(string ID,bool withLock);
         List<T> Find<T>(string Filter, string orderBy, bool withLock);
