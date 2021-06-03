@@ -6,6 +6,15 @@
     <Authors>Bijan Ghasemi</Authors>
     <AssemblyVersion>1400.03.13.12</AssemblyVersion>
     <FileVersion>1400.03.13.13</FileVersion>
+    <PackageId>SqlCRUDRepository.Domain</PackageId>
+    <PackageIcon>images.jpg </PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="e:\Git\SqlCRUDClass\images.jpg ">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

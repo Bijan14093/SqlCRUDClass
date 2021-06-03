@@ -5,10 +5,13 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>2021</Copyright>
     <Authors>Bijan Ghasemi</Authors>
-    <Description>This is utility for Insert and update and delete of sql server records.</Description>
+    <Description>Utility for CRUD operation based on Dapper ORM.</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
     <AssemblyVersion>1400.03.13.12</AssemblyVersion>
     <FileVersion>1400.03.13.12</FileVersion>
+    <PackageId>SqlCRUDRepository</PackageId>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageIcon>images.jpg </PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repository.Domain\Repository.Domain.csproj" />
+    <ProjectReference Include="..\Repository.Domain\SqlCRUDRepository.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="e:\Git\SqlCRUDClass\images.jpg ">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

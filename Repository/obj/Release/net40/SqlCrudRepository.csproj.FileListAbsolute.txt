@@ -1,0 +1,13 @@
+e:\Git\SqlCRUDClass\Repository\bin\Release\net40\SqlCrudRepository.dll
+e:\Git\SqlCRUDClass\Repository\bin\Release\net40\SqlCrudRepository.pdb
+e:\Git\SqlCRUDClass\Repository\bin\Release\net40\Dapper.dll
+e:\Git\SqlCRUDClass\Repository\bin\Release\net40\Newtonsoft.Json.dll
+e:\Git\SqlCRUDClass\Repository\bin\Release\net40\SqlCrudRepository.Domain.dll
+e:\Git\SqlCRUDClass\Repository\bin\Release\net40\SqlCrudRepository.Domain.pdb
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.csprojAssemblyReference.cache
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.csproj.CoreCompileInputs.cache
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.AssemblyInfoInputs.cache
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.AssemblyInfo.cs
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.csproj.CopyComplete
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.dll
+e:\Git\SqlCRUDClass\Repository\obj\Release\net40\SqlCrudRepository.pdb

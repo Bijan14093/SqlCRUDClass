@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{83628FD0-B9C0-42CF-A1B9-5B5F1754F012}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlCRUDRepository", "Repository\SqlCRUDRepository.csproj", "{83628FD0-B9C0-42CF-A1B9-5B5F1754F012}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Domain", "Repository.Domain\Repository.Domain.csproj", "{8ECD4A61-63A9-44BB-B8A7-0D315AF24950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlCRUDRepository.Domain", "Repository.Domain\SqlCRUDRepository.Domain.csproj", "{8ECD4A61-63A9-44BB-B8A7-0D315AF24950}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C811888-96C7-47F3-AF6F-52B192747B19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
