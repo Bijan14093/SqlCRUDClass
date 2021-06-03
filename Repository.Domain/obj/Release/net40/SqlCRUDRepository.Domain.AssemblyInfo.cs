@@ -14,9 +14,10 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bijan Ghasemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("This project used with SqlCRUDRepository.\r\nSqlCRUDRepository:Utility for CRUD ope" +
-    "ration based on Dapper ORM.")]
+    "ration based on Dapper ORM.\r\nSoruce Code is free on github: https://github.com/B" +
+    "ijan14093/SqlCRUDClass.git")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1400.03.13.13")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlCRUDRepository.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlCRUDRepository.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1400.03.13.12")]

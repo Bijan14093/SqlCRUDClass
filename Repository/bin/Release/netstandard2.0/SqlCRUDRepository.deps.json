@@ -7,12 +7,12 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "SqlCRUDRepository/1.0.0": {
+      "SqlCRUDRepository/1.0.1": {
         "dependencies": {
           "Dapper": "1.50.1",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.1",
-          "SqlCRUDRepository.Domain": "1.0.0"
+          "SqlCRUDRepository.Domain": "1.0.1"
         },
         "runtime": {
           "SqlCRUDRepository.dll": {}
@@ -973,7 +973,7 @@
           }
         }
       },
-      "SqlCRUDRepository.Domain/1.0.0": {
+      "SqlCRUDRepository.Domain/1.0.1": {
         "runtime": {
           "SqlCRUDRepository.Domain.dll": {}
         }
@@ -981,7 +981,7 @@
     }
   },
   "libraries": {
-    "SqlCRUDRepository/1.0.0": {
+    "SqlCRUDRepository/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1511,7 +1511,7 @@
       "path": "system.xml.xmldocument/4.0.1",
       "hashPath": "system.xml.xmldocument.4.0.1.nupkg.sha512"
     },
-    "SqlCRUDRepository.Domain/1.0.0": {
+    "SqlCRUDRepository.Domain/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

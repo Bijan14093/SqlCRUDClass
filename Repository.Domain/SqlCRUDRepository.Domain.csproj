@@ -9,9 +9,11 @@
     <PackageId>SqlCRUDRepository.Domain</PackageId>
     <PackageIcon>images.jpg </PackageIcon>
     <Description>This project used with SqlCRUDRepository.
-SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.</Description>
+SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
+Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,3 +1,4 @@
 ﻿this project is free for use.
 This project used with SqlCRUDRepository.
 SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
+Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git

@@ -6,7 +6,8 @@
     <Copyright>2021</Copyright>
     <Authors>Bijan Ghasemi</Authors>
     <Description>Utility for CRUD operation based on Dapper ORM.
-Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</Description>
+Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git
+Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
     <AssemblyVersion>1400.03.13.12</AssemblyVersion>
     <FileVersion>1400.03.13.12</FileVersion>
@@ -15,6 +16,7 @@ Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</Descriptio
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

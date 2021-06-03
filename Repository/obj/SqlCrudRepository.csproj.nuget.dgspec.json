@@ -5,7 +5,7 @@
   },
   "projects": {
     "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "restore": {
         "projectUniqueName": "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "projectName": "SqlCRUDRepository.Domain",
@@ -33,6 +33,7 @@
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\Git\\SqlCRUDClass\\Repository\\bin\\Release": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://package.behdasht.gov.ir/v3/index.json": {}
         },
@@ -134,7 +135,7 @@
       }
     },
     "e:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "restore": {
         "projectUniqueName": "e:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
         "projectName": "SqlCRUDRepository",
@@ -162,6 +163,7 @@
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\Git\\SqlCRUDClass\\Repository\\bin\\Release": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://package.behdasht.gov.ir/v3/index.json": {}
         },
