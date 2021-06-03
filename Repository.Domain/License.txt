@@ -1,0 +1,3 @@
+﻿this project is free for use.
+This project used with SqlCRUDRepository.
+SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.

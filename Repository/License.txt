@@ -1,0 +1,3 @@
+﻿this project is free for use.
+Utility for CRUD operation based on Dapper ORM.
+Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git

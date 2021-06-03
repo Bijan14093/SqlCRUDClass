@@ -13,6 +13,8 @@ Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</Descriptio
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg </PackageIcon>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +28,10 @@ Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</Descriptio
 
   <ItemGroup>
     <None Include="e:\Git\SqlCRUDClass\images.jpg ">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="License.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

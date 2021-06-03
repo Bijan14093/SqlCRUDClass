@@ -10,10 +10,16 @@
     <PackageIcon>images.jpg </PackageIcon>
     <Description>This project used with SqlCRUDRepository.
 SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.</Description>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="e:\Git\SqlCRUDClass\images.jpg ">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="License.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
