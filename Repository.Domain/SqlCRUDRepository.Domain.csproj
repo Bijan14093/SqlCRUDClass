@@ -13,8 +13,8 @@ SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.2</Version>
-    <PackageTags>SQL ORM Simple CRUD DataBase Save Repositor</PackageTags>
+    <Version>1.0.3</Version>
+    <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

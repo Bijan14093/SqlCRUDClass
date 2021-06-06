@@ -5,4 +5,3 @@ e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain
 e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs
 e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.dll
 e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.pdb
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.csprojAssemblyReference.cache

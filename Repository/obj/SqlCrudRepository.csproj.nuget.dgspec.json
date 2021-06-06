@@ -5,7 +5,7 @@
   },
   "projects": {
     "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-      "version": "1.0.2",
+      "version": "1.0.3",
       "restore": {
         "projectUniqueName": "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "projectName": "SqlCRUDRepository.Domain",
@@ -113,7 +113,7 @@
       }
     },
     "e:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {
-      "version": "1.0.2",
+      "version": "1.0.3",
       "restore": {
         "projectUniqueName": "e:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
         "projectName": "SqlCRUDRepository",

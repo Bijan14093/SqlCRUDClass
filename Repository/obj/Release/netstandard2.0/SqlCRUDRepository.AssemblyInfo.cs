@@ -18,7 +18,7 @@ using System.Reflection;
     "ithub.com/Bijan14093/SQLCRUDTest.git\r\nSoruce Code is free on github: https://git" +
     "hub.com/Bijan14093/SqlCRUDClass.git")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1400.03.16.09")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.3")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlCRUDRepository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlCRUDRepository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1400.03.16.09")]
