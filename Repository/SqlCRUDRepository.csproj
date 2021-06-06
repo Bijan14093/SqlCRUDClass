@@ -9,15 +9,21 @@
 Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1400.03.13.12</AssemblyVersion>
-    <FileVersion>1400.03.13.12</FileVersion>
+    <AssemblyVersion>1400.03.16.09</AssemblyVersion>
+    <FileVersion>1400.03.16.09</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg </PackageIcon>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <Version>1.0.1</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseFile></PackageLicenseFile>
+    <Version>1.0.2</Version>
+    <PackageTags>SQL ORM Simple CRUD DataBase Save Repositor</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="License.txt" />
+    <None Remove="License.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.1" />
@@ -30,10 +36,6 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</D
 
   <ItemGroup>
     <None Include="e:\Git\SqlCRUDClass\images.jpg ">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="License.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -1335,7 +1335,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "SqlCRUDRepository.Domain/1.0.1": {
+      "SqlCRUDRepository.Domain/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "compile": {
@@ -2680,9 +2680,9 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "SqlCRUDRepository.Domain/1.0.1": {
+      "SqlCRUDRepository.Domain/1.0.2": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETCoreApp,Version=v3.0",
         "compile": {
           "bin/placeholder/SqlCRUDRepository.Domain.dll": {}
         },
@@ -2715,7 +2715,7 @@
           "lib/net40/Newtonsoft.Json.dll": {}
         }
       },
-      "SqlCRUDRepository.Domain/1.0.1": {
+      "SqlCRUDRepository.Domain/1.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.0",
         "compile": {
@@ -4075,7 +4075,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "SqlCRUDRepository.Domain/1.0.1": {
+      "SqlCRUDRepository.Domain/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
@@ -7712,7 +7712,7 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "SqlCRUDRepository.Domain/1.0.1": {
+    "SqlCRUDRepository.Domain/1.0.2": {
       "type": "project",
       "path": "../Repository.Domain/SqlCRUDRepository.Domain.csproj",
       "msbuildProject": "../Repository.Domain/SqlCRUDRepository.Domain.csproj"
@@ -7722,23 +7722,23 @@
     ".NETCoreApp,Version=v3.0": [
       "Dapper >= 1.50.1",
       "Newtonsoft.Json >= 13.0.1",
-      "SqlCRUDRepository.Domain >= 1.0.1"
+      "SqlCRUDRepository.Domain >= 1.0.2"
     ],
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 1.50.1",
       "Newtonsoft.Json >= 13.0.1",
-      "SqlCRUDRepository.Domain >= 1.0.1"
+      "SqlCRUDRepository.Domain >= 1.0.2"
     ],
     ".NETFramework,Version=v4.0": [
       "Dapper >= 1.50.1",
       "Newtonsoft.Json >= 13.0.1",
-      "SqlCRUDRepository.Domain >= 1.0.1"
+      "SqlCRUDRepository.Domain >= 1.0.2"
     ],
     ".NETStandard,Version=v2.0": [
       "Dapper >= 1.50.1",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1",
-      "SqlCRUDRepository.Domain >= 1.0.1"
+      "SqlCRUDRepository.Domain >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -7747,7 +7747,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "e:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
       "projectName": "SqlCRUDRepository",

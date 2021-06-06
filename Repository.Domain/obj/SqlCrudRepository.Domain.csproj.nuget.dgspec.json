@@ -5,7 +5,7 @@
   },
   "projects": {
     "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.2",
       "restore": {
         "projectUniqueName": "e:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "projectName": "SqlCRUDRepository.Domain",
@@ -27,7 +27,6 @@
         "originalTargetFrameworks": [
           "net40",
           "netcoreapp3.0",
-          "netcoreapp3.1",
           "netstandard2.0"
         ],
         "sources": {
@@ -39,9 +38,6 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
-            "projectReferences": {}
-          },
-          "netcoreapp3.1": {
             "projectReferences": {}
           },
           "net40": {
@@ -83,24 +79,6 @@
               "version": "[3.0.0, 3.0.0]"
             }
           ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
-        },
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

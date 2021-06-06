@@ -1,27 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+	  <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Bijan Ghasemi</Authors>
-    <AssemblyVersion>1400.03.13.12</AssemblyVersion>
-    <FileVersion>1400.03.13.13</FileVersion>
+    <AssemblyVersion>1400.03.16.09</AssemblyVersion>
+    <FileVersion>1400.03.16.09</FileVersion>
     <PackageId>SqlCRUDRepository.Domain</PackageId>
     <PackageIcon>images.jpg </PackageIcon>
     <Description>This project used with SqlCRUDRepository.
 SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <Version>1.0.1</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseFile></PackageLicenseFile>
+    <Version>1.0.2</Version>
+    <PackageTags>SQL ORM Simple CRUD DataBase Save Repositor</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="License.txt" />
+    <None Remove="License.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="e:\Git\SqlCRUDClass\images.jpg ">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="License.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
