@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SqlCRUDRepository.Domain</id>
+    <version>1.0.3</version>
+    <authors>Bijan Ghasemi</authors>
+    <owners>Bijan Ghasemi</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>images.jpg</icon>
+    <description>This project used with SqlCRUDRepository.
+SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
+Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</description>
+    <tags>SQL ORM Simple CRUD DataBase Save Repository</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETCoreApp3.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.dll" target="lib\net40\SqlCRUDRepository.Domain.dll" />
+    <file src="E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.Domain.dll" />
+    <file src="E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll" target="lib\netstandard2.0\SqlCRUDRepository.Domain.dll" />
+    <file src="e:\Git\SqlCRUDClass\images.jpg" target="images.jpg" />
+  </files>
+</package>

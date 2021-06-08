@@ -1,0 +1,9 @@
+E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.deps.json
+E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll
+E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.pdb
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.csprojAssemblyReference.cache
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.AssemblyInfo.cs
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll
+E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.pdb

@@ -25,7 +25,7 @@ namespace Repository
         bool Save<T>(T o);
         bool Delete<T>(T o);
         T GetByID<T>(string ID,bool withLock);
-        List<T> Find<T>(string Filter, string orderBy, bool withLock);
-        T FindFirst<T>(string Filter, string orderBy, bool withLock);
+        List<T> Find<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters);
+        T FindFirst<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters);
     }
 }

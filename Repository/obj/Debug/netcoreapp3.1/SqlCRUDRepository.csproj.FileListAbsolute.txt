@@ -1,0 +1,12 @@
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csprojAssemblyReference.cache
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfoInputs.cache
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfo.cs
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.deps.json
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.dll
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.pdb
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.Domain.dll
+E:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.Domain.pdb
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CopyComplete
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.dll
+E:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.pdb

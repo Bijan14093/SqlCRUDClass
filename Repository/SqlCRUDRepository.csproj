@@ -9,15 +9,16 @@
 Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1400.03.16.09</AssemblyVersion>
-    <FileVersion>1400.03.16.09</FileVersion>
+    <AssemblyVersion>1400.03.18.18</AssemblyVersion>
+    <FileVersion>1400.03.18.18</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
+    <PackageReleaseNotes>This Version Add Parameter to Find And FindFirst Method for preventing From SqlInjection.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

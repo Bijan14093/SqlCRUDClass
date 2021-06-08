@@ -273,8 +273,13 @@ namespace Repository
             return result;
         }
 
-        public List<T> Find(string Filter, string orderBy,bool withLock)
+        public List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters)
         {
+            var dbArgs = new DynamicParameters();
+            if (Parameters != null)
+            {
+                foreach (var pair in Parameters) dbArgs.Add(pair.Key, pair.Value);
+            }
             bool InTransaction;
             InTransaction = false;
             if (_Repository.Transaction != null)
@@ -299,7 +304,7 @@ namespace Repository
             {
                 sql = sql + "Order by " + orderBy;
             }
-            var result = _Repository.Connection.Query<T>(sql, transaction: _Repository.Transaction).ToList();
+            var result = _Repository.Connection.Query<T>(sql, param: dbArgs, transaction: _Repository.Transaction).ToList();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -307,8 +312,13 @@ namespace Repository
             return result;
         }
 
-        public T FindFirst(string Filter, string orderBy, bool withLock)
+        public T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters)
         {
+            var dbArgs = new DynamicParameters();
+            if (Parameters != null)
+            {
+                foreach (var pair in Parameters) dbArgs.Add(pair.Key, pair.Value);
+            }
             bool InTransaction;
             InTransaction = false;
             if (_Repository.Transaction != null)
@@ -332,7 +342,7 @@ namespace Repository
                 sql = sql + "Order by " + orderBy;
             }
 
-            var result=_Repository.Connection.Query<T>(sql, transaction: _Repository.Transaction).FirstOrDefault();
+            var result=_Repository.Connection.Query<T>(sql,param: dbArgs, transaction: _Repository.Transaction).FirstOrDefault();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
