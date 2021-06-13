@@ -85,7 +85,7 @@ namespace Repository
             {
                 if (string.IsNullOrEmpty(_InsertStatment))
                 {
-                    _InsertStatment = "INSERT INTO [dbo].[" + _tableName + "]" + Environment.NewLine;
+                    _InsertStatment = "INSERT INTO " + _tableName + Environment.NewLine;
                     _InsertStatment = _InsertStatment + "(" + Get_ColumnName(CommandType._Insert, "") + ")" + Environment.NewLine;
                     _InsertStatment = _InsertStatment + "VALUES(" + Get_ColumnName(CommandType._Insert, "@") + ")" + Environment.NewLine;
                 }
@@ -125,7 +125,7 @@ namespace Repository
             }
 
             Result = Result.Substring(0, (Result.Length - 1));
-            _UpdateStatment = "Update [dbo].[" + _tableName + "]" + Environment.NewLine;
+            _UpdateStatment = "Update " + _tableName +  Environment.NewLine;
             _UpdateStatment = _UpdateStatment +"SET " + Result + "" + Environment.NewLine;
             _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname ;
 
@@ -139,7 +139,7 @@ namespace Repository
             {
                 if (string.IsNullOrEmpty(_DeleteStatment))
                 {
-                    _DeleteStatment = "DELETE FROM [dbo].[" + _tableName + "] Where " + _keycolumnname + "=@" + _keycolumnname + "";
+                    _DeleteStatment = "DELETE FROM " + _tableName + " Where " + _keycolumnname + "=@" + _keycolumnname + "";
                 }
 
                 return _DeleteStatment;
@@ -151,11 +151,11 @@ namespace Repository
             _SelectStatment = "Select " + Get_ColumnName(CommandType._Select, "") + Environment.NewLine;
             if (withLock)
             {
-                _SelectStatment = _SelectStatment + "From [dbo].[" + _tableName + "] WITH(XLOCK) " + Environment.NewLine;
+                _SelectStatment = _SelectStatment + "From " + _tableName + " WITH(XLOCK) " + Environment.NewLine;
             }
             else
             {
-                _SelectStatment = _SelectStatment + "From [dbo].[" + _tableName + "]" + Environment.NewLine;
+                _SelectStatment = _SelectStatment + "From " + _tableName +  Environment.NewLine;
             }
             return _SelectStatment;
         }

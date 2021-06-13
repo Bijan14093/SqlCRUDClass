@@ -6,4 +6,3 @@ e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepositor
 e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.AssemblyInfo.cs
 e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.dll
 e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.pdb
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.csprojAssemblyReference.cache
