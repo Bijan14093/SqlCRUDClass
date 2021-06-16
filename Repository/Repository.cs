@@ -244,24 +244,24 @@ namespace Repository
 
         }
 
-        public List<T> Find<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters)
+        public List<T> Find<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
             if (_ConnectionString == "" || _ConnectionString == null)
             {
                 throw new Exception("Connection string is empty.");
             }
             var oGeneralFactory = GetGeneralFactory<T>();
-            return oGeneralFactory.Find(Filter,orderBy,withLock,  Parameters);
+            return oGeneralFactory.Find(Filter,orderBy,withLock,  Parameters, FieldNames );
         }
 
-        public T FindFirst<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters)
+        public T FindFirst<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
             if (_ConnectionString == "" || _ConnectionString == null)
             {
                 throw new Exception("Connection string is empty.");
             }
             var oGeneralFactory = GetGeneralFactory<T>();
-            return oGeneralFactory.FindFirst(Filter, orderBy, withLock, Parameters);
+            return oGeneralFactory.FindFirst(Filter, orderBy, withLock, Parameters, FieldNames);
         }
     }
 }

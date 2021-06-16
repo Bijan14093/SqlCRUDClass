@@ -11,3 +11,16 @@ E:\Git\SqlCRUDClass\Repository\bin\Debug\net40\SqlCRUDRepository.Domain.pdb
 E:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CopyComplete
 E:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.dll
 E:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.pdb
+e:\Git\SQLCRUD2\Repository\bin\Debug\net40\SqlCRUDRepository.dll
+e:\Git\SQLCRUD2\Repository\bin\Debug\net40\SqlCRUDRepository.pdb
+e:\Git\SQLCRUD2\Repository\bin\Debug\net40\Dapper.dll
+e:\Git\SQLCRUD2\Repository\bin\Debug\net40\Newtonsoft.Json.dll
+e:\Git\SQLCRUD2\Repository\bin\Debug\net40\SqlCRUDRepository.Domain.dll
+e:\Git\SQLCRUD2\Repository\bin\Debug\net40\SqlCRUDRepository.Domain.pdb
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.csprojAssemblyReference.cache
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.AssemblyInfoInputs.cache
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.AssemblyInfo.cs
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CopyComplete
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.dll
+e:\Git\SQLCRUD2\Repository\obj\Debug\net40\SqlCRUDRepository.pdb

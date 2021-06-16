@@ -9,14 +9,14 @@
 Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1400.03.23.12</AssemblyVersion>
-    <FileVersion>1400.03.23.12</FileVersion>
+    <AssemblyVersion>1400.03.26.12</AssemblyVersion>
+    <FileVersion>1400.03.26.12</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
     <PackageReleaseNotes>In this version you can use with custom schema for your table name.
 please visit Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</PackageReleaseNotes>

@@ -20,9 +20,9 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</d
     </dependencies>
   </metadata>
   <files>
-    <file src="E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.dll" target="lib\net40\SqlCRUDRepository.Domain.dll" />
-    <file src="E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.Domain.dll" />
-    <file src="E:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll" target="lib\netstandard2.0\SqlCRUDRepository.Domain.dll" />
+    <file src="e:\Git\SQLCRUD2\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.dll" target="lib\net40\SqlCRUDRepository.Domain.dll" />
+    <file src="e:\Git\SQLCRUD2\Repository.Domain\bin\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.Domain.dll" />
+    <file src="e:\Git\SQLCRUD2\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll" target="lib\netstandard2.0\SqlCRUDRepository.Domain.dll" />
     <file src="e:\Git\SqlCRUDClass\images.jpg" target="images.jpg" />
   </files>
 </package>

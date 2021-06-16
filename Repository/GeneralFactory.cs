@@ -146,9 +146,9 @@ namespace Repository
             }
         }
 
-        private string get_SelectStatment(string NumberofRecords, bool withLock)
+        private string get_SelectStatment(string NumberofRecords, bool withLock, string FieldNames = "")
         {
-            _SelectStatment = "Select " + Get_ColumnName(CommandType._Select, "") + Environment.NewLine;
+            _SelectStatment = "Select " + Get_ColumnName(CommandType._Select, "", FieldNames) + Environment.NewLine;
             if (withLock)
             {
                 _SelectStatment = _SelectStatment + "From " + _tableName + " WITH(XLOCK) " + Environment.NewLine;
@@ -273,7 +273,7 @@ namespace Repository
             return result;
         }
 
-        public List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters)
+        public List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
             var dbArgs = new DynamicParameters();
             if (Parameters != null)
@@ -294,7 +294,7 @@ namespace Repository
 
             var oResult = new List<T>();
             string sql;
-            sql = get_SelectStatment("",withLock);
+            sql = get_SelectStatment("",withLock, FieldNames);
             if (!string.IsNullOrEmpty(Filter))
             {
                 sql = sql + "Where " + Filter + Environment.NewLine;
@@ -312,7 +312,7 @@ namespace Repository
             return result;
         }
 
-        public T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters)
+        public T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
             var dbArgs = new DynamicParameters();
             if (Parameters != null)
@@ -331,7 +331,7 @@ namespace Repository
                 InTransaction = false;
             }
             string sql;
-            sql = get_SelectStatment("1", withLock);
+            sql = get_SelectStatment("1", withLock, FieldNames);
             if (!string.IsNullOrEmpty(Filter))
             {
                 sql = sql + "Where " + Filter + Environment.NewLine;
@@ -350,17 +350,30 @@ namespace Repository
             return result;
         }
 
-        private string Get_ColumnName(CommandType oCommandType, string Prefix)
+        private string Get_ColumnName(CommandType oCommandType, string Prefix, string FieldNames = "")
         {
             string Columnname;
             string FieldName;
             string Result;
             Result = "";
             Columnname = "";
+            List<string> FilterFieldNames=null;
+            if (FieldNames!="")
+            {
+                FilterFieldNames=FieldNames.Split(',').ToList<string>();
+            }
             foreach (var currentColumnname in _columnNames)
             {
+
                 Columnname = currentColumnname.Value;
                 FieldName = currentColumnname.Key;
+                if (FilterFieldNames != null )
+                {
+                    if (FilterFieldNames.Contains(FieldName) ==false)
+                    {
+                        continue;
+                    }
+                }
                 switch (oCommandType)
                 {
                     case CommandType._Insert:

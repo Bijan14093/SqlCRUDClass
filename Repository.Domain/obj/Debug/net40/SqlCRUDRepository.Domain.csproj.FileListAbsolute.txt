@@ -5,3 +5,10 @@ E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.A
 E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs
 E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.dll
 E:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.pdb
+e:\Git\SQLCRUD2\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.dll
+e:\Git\SQLCRUD2\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.pdb
+e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
+e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
+e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs
+e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.dll
+e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.pdb
