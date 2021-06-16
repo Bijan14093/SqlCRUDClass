@@ -18,7 +18,7 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</D
     <PackageLicenseFile></PackageLicenseFile>
     <Version>1.0.6</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
-    <PackageReleaseNotes>Add FieldName parameters To Find And FindFirst method.</PackageReleaseNotes>
+    <PackageReleaseNotes>Add FieldNames parameter To Find And FindFirst method.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

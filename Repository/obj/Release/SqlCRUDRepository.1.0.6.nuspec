@@ -13,8 +13,7 @@
     <description>Utility for CRUD operation based on Dapper ORM.
 Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</description>
-    <releaseNotes>In this version you can use with custom schema for your table name.
-please visit Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</releaseNotes>
+    <releaseNotes>Add FieldNames parameter To Find And FindFirst method.</releaseNotes>
     <copyright>2021</copyright>
     <tags>SQL ORM Simple CRUD DataBase Save Repository</tags>
     <dependencies>
