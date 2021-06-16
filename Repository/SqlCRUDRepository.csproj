@@ -18,8 +18,7 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</D
     <PackageLicenseFile></PackageLicenseFile>
     <Version>1.0.6</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
-    <PackageReleaseNotes>In this version you can use with custom schema for your table name.
-please visit Sample Code On Github: https://github.com/Bijan14093/SQLCRUDTest.git</PackageReleaseNotes>
+    <PackageReleaseNotes>Add FieldName parameters To Find And FindFirst method.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
