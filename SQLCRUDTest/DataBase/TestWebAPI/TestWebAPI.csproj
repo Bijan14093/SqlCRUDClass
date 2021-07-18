@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyVersion>1400.01.18.09</AssemblyVersion>
+    <FileVersion>1400.01.18.09</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\Git\SourceCodes\TestWebAPI\TestWebAPI.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Database\Migrations\TestWebAPI\TestWebAPI-140001150.sql" />
+    <None Remove="Database\Migrations\TestWebAPI_Log\TestWebAPI_Log-140001150.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Database\Migrations\TestWebAPI\TestWebAPI-140001150.sql" />
+    <EmbeddedResource Include="Database\Migrations\TestWebAPI_Log\TestWebAPI_Log-140001150.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="JWT\" />
+    <Folder Include="Log\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.12" />
+	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="SQLMigrationByQuery" Version="1.0.0.13" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+	  <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Repository.Domain\SqlCRUDRepository.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Repository\SqlCRUDRepository.csproj" />
+  </ItemGroup>
+
+
+</Project>
