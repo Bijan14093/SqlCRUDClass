@@ -10,14 +10,12 @@ namespace Repository.Domain
         public string TableName;
         public string keyColumnName;
         public bool KeyIsIdentity;
-        public string TableShchema ;
 
-        public TableInfoAttribute(string TableName, string keyColumnName, bool KeyIsIdentity,string TableShchema="")
+        public TableInfoAttribute(string TableName, string keyColumnName, bool KeyIsIdentity)
         {
             this.TableName = TableName;
             this.keyColumnName = keyColumnName;
             this.KeyIsIdentity = KeyIsIdentity;
-            this.TableShchema = TableShchema;
         }
     }
 

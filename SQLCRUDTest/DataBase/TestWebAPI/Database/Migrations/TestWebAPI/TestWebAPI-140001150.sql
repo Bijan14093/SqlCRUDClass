@@ -1,7 +1,7 @@
 ﻿--@strMigrationDesc= Create Customer Table 
 GO
 Create Table tblCustomer(ID int Identity(1,1), FirstName nvarchar(max), LastName nvarchar(max))
-Go
+GO
 /*
 we are create __KeyGenerator Stored Procedure 
 Please overwrite your own key generation policy in this procedure in sql server.

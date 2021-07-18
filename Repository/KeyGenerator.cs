@@ -73,7 +73,7 @@ namespace Repository
             SqlCmd = SqlCmd + "		AND T.CONSTRAINT_TYPE=''PRIMARY KEY''" + Environment.NewLine;
             SqlCmd = SqlCmd + "	IF @PrimeryKey IS NULL" + Environment.NewLine;
             SqlCmd = SqlCmd + "		SET @PrimeryKey = ''ID''" + Environment.NewLine;
-            SqlCmd = SqlCmd + "	EXEC(''SELECT MAX('' + @PrimeryKey  + '') + 1 FirstID, MAX('' + @PrimeryKey  + '') + 1 LastID FROM dbo.'' + @TableName)" + Environment.NewLine;
+            SqlCmd = SqlCmd + "	EXEC(''SELECT MAX('' + @PrimeryKey  + '') + 1 FirstID, MAX('' + @PrimeryKey  + '') + 1 LastID FROM '' + @TableName)" + Environment.NewLine;
             SqlCmd = SqlCmd + "')" + Environment.NewLine;
             _Repository.Connection.Execute(SqlCmd, null, commandType: CommandType.Text, transaction: _Repository.Transaction);
         }
