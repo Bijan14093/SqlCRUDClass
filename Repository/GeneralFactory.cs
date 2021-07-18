@@ -30,7 +30,15 @@ namespace Repository
                 if (attr is TableInfoAttribute)
                 {
                     TableInfoAttribute tableInfo = (TableInfoAttribute)attr;
-                    _tableFullName = tableInfo.TableShchema + tableInfo.TableName;
+                    if (tableInfo.TableShchema!="")
+                    {
+                        _tableFullName = tableInfo.TableShchema + "." + tableInfo.TableName;
+                    }
+                    else
+                    {
+                        _tableFullName = tableInfo.TableName;
+                    }
+                    
                     _keycolumnname = tableInfo.keyColumnName;
                     _keyIsIdentity = tableInfo.KeyIsIdentity;
 

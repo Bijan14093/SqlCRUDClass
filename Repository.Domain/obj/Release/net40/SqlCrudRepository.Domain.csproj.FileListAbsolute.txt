@@ -14,7 +14,6 @@ e:\Git\SQLCRUD2\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.dll
 e:\Git\SQLCRUD2\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.pdb
 e:\Git\SqlCRUDClass2\Repository.Domain\bin\Release\net40\SqlCRUDRepository.Domain.dll
 e:\Git\SqlCRUDClass2\Repository.Domain\bin\Release\net40\SqlCRUDRepository.Domain.pdb
-e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.csprojAssemblyReference.cache
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs
