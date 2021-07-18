@@ -7747,7 +7747,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.6",
+    "version": "1.0.7",
     "restore": {
       "projectUniqueName": "e:\\Git\\SqlCRUDClass2\\Repository\\SqlCRUDRepository.csproj",
       "projectName": "SqlCRUDRepository",
