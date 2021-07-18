@@ -10,7 +10,7 @@ namespace Repository
     internal class GeneralFactory<T>
     {
         private IKeyGenerator _KeyGeneratory;
-        private string _tableName;
+        private string _tableFullName;
         private string _keycolumnname;
         private bool _keyIsIdentity;
         private Dictionary<string, string> _StaticValues;
@@ -23,28 +23,28 @@ namespace Repository
         {
             Dictionary<string,string> temp = new Dictionary<string, string>();
             System.Attribute[] tableAttribute = System.Attribute.GetCustomAttributes(typeof(T));
-            _tableName = "";
+            _tableFullName = "";
             _keycolumnname = "";
             foreach (System.Attribute attr in tableAttribute)
             {
                 if (attr is TableInfoAttribute)
                 {
                     TableInfoAttribute tableInfo = (TableInfoAttribute)attr;
-                    _tableName = tableInfo.TableName;
+                    _tableFullName = tableInfo.TableShchema + tableInfo.TableName;
                     _keycolumnname = tableInfo.keyColumnName;
                     _keyIsIdentity = tableInfo.KeyIsIdentity;
 
                 }
             }
-            if (_tableName == "")
+            if (_tableFullName == "")
             {
-                _tableName = typeof(T).Name.ToString();
+                _tableFullName = typeof(T).Name.ToString();
             }
             if (_keycolumnname == "")
             {
                 _keycolumnname = "ID";
             }
-            if (_tableName == "" || _keycolumnname == "")
+            if (_tableFullName == "" || _keycolumnname == "")
             {
                 throw new Exception("You must be set ClassAttribue");
             }
@@ -75,7 +75,7 @@ namespace Repository
             _columnNames = temp;
             _StaticValues = null;
             _Repository = repository;
-            _KeyGeneratory = new KeyGenerator(_tableName,_Repository);
+            _KeyGeneratory = new KeyGenerator(_tableFullName,_Repository);
 
         }
 
@@ -85,7 +85,7 @@ namespace Repository
             {
                 if (string.IsNullOrEmpty(_InsertStatment))
                 {
-                    _InsertStatment = "INSERT INTO " + _tableName + Environment.NewLine;
+                    _InsertStatment = "INSERT INTO " + _tableFullName + Environment.NewLine;
                     _InsertStatment = _InsertStatment + "(" + Get_ColumnName(CommandType._Insert, "") + ")" + Environment.NewLine;
                     _InsertStatment = _InsertStatment + "VALUES(" + Get_ColumnName(CommandType._Insert, "@") + ")" + Environment.NewLine;
                 }
@@ -125,7 +125,7 @@ namespace Repository
             }
 
             Result = Result.Substring(0, (Result.Length - 1));
-            _UpdateStatment = "Update " + _tableName +  Environment.NewLine;
+            _UpdateStatment = "Update " + _tableFullName +  Environment.NewLine;
             _UpdateStatment = _UpdateStatment +"SET " + Result + "" + Environment.NewLine;
             _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname ;
 
@@ -139,7 +139,7 @@ namespace Repository
             {
                 if (string.IsNullOrEmpty(_DeleteStatment))
                 {
-                    _DeleteStatment = "DELETE FROM " + _tableName + " Where " + _keycolumnname + "=@" + _keycolumnname + "";
+                    _DeleteStatment = "DELETE FROM " + _tableFullName + " Where " + _keycolumnname + "=@" + _keycolumnname + "";
                 }
 
                 return _DeleteStatment;
@@ -151,11 +151,11 @@ namespace Repository
             _SelectStatment = "Select " + Get_ColumnName(CommandType._Select, "", FieldNames) + Environment.NewLine;
             if (withLock)
             {
-                _SelectStatment = _SelectStatment + "From " + _tableName + " WITH(XLOCK) " + Environment.NewLine;
+                _SelectStatment = _SelectStatment + "From " + _tableFullName + " WITH(XLOCK) " + Environment.NewLine;
             }
             else
             {
-                _SelectStatment = _SelectStatment + "From " + _tableName +  Environment.NewLine;
+                _SelectStatment = _SelectStatment + "From " + _tableFullName +  Environment.NewLine;
             }
             return _SelectStatment;
         }
