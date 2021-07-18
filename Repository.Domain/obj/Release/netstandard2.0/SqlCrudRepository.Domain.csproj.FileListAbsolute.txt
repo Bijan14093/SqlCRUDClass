@@ -22,3 +22,4 @@ e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netstandard2.0\SqlCRUDReposit
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netstandard2.0\SqlCRUDRepository.Domain.AssemblyInfo.cs
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netstandard2.0\SqlCRUDRepository.Domain.dll
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netstandard2.0\SqlCRUDRepository.Domain.pdb
+e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netstandard2.0\SqlCRUDRepository.Domain.csprojAssemblyReference.cache
