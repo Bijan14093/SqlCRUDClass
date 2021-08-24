@@ -12,3 +12,11 @@ e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.Assem
 e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs
 e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.dll
 e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.pdb

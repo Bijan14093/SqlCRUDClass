@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Tx/k7wiZWn4zmVUg1BEqiElc5qyVjKNfykkGhH8DrbgOjsRVTcl+cFeEaYDGCL7YvK53C3hMkxSAy3jbpL8f+g==",
+  "dgSpecHash": "LQggbX+NjA8mceYUB/2vw425Rf2mgE49QDm+kwl7mgn6W1NBcQsxFHHWdE2RMBMr775bSSaBD94pAXQE2neWnw==",
   "success": true,
-  "projectFilePath": "e:\\Git\\SqlCRUDClass2\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
+  "projectFilePath": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

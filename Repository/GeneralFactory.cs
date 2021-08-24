@@ -13,6 +13,8 @@ namespace Repository
         private string _tableName;
         private string _keycolumnname;
         private bool _keyIsIdentity;
+        private enmTableType _tableType;
+
         private Dictionary<string, string> _StaticValues;
         private Dictionary<string, string> _columnNames;
         private string _SelectStatment;
@@ -22,32 +24,11 @@ namespace Repository
         public GeneralFactory(Repository repository)
         {
             Dictionary<string,string> temp = new Dictionary<string, string>();
-            System.Attribute[] tableAttribute = System.Attribute.GetCustomAttributes(typeof(T));
-            _tableName = "";
-            _keycolumnname = "";
-            foreach (System.Attribute attr in tableAttribute)
-            {
-                if (attr is TableInfoAttribute)
-                {
-                    TableInfoAttribute tableInfo = (TableInfoAttribute)attr;
-                    _tableName = tableInfo.TableName;
-                    _keycolumnname = tableInfo.keyColumnName;
-                    _keyIsIdentity = tableInfo.KeyIsIdentity;
-
-                }
-            }
-            if (_tableName == "")
-            {
-                _tableName = typeof(T).Name.ToString();
-            }
-            if (_keycolumnname == "")
-            {
-                _keycolumnname = "ID";
-            }
-            if (_tableName == "" || _keycolumnname == "")
-            {
-                throw new Exception("You must be set ClassAttribue");
-            }
+            TableInfoAttribute tableInfo = typeof(T).GetTableInfo();
+            _tableName = tableInfo.TableName;
+            _keycolumnname = tableInfo.keyColumnName;
+            _keyIsIdentity = tableInfo.KeyIsIdentity;
+            _tableType = tableInfo.TableType;
             var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (var item in properties)
             {
@@ -161,6 +142,10 @@ namespace Repository
         }
         public bool Save(ref T o)
         {
+            if (_tableType==enmTableType.Readonly)
+            {
+                throw new Exception("Object is Readonly.You can not perform (Save) in this Object.");
+            }
             bool InTransaction;
             InTransaction = false;
             if (_Repository.Transaction != null)
@@ -209,6 +194,10 @@ namespace Repository
         }
         public T GetByID(string ID, bool withLock)
         {
+            if (_tableType == enmTableType.Writeonly)
+            {
+                throw new Exception("Object is Writeonly.You can not perform (GetByID) in this Object.");
+            }
             var Parameters = new DynamicParameters();
             Parameters.Add(_keycolumnname, ID);
             bool InTransaction;
@@ -233,6 +222,10 @@ namespace Repository
 
         public bool Delete(T o)
         {
+            if (_tableType == enmTableType.Readonly)
+            {
+                throw new Exception("Object is Readonly.You can not perform (Delete) in this Object.");
+            }
             bool InTransaction;
             InTransaction = false;
             if (_Repository.Transaction != null)
@@ -254,6 +247,10 @@ namespace Repository
 
         internal List<T> GetAll()
         {
+            if (_tableType == enmTableType.Writeonly)
+            {
+                throw new Exception("Object is Writeonly.You can not perform (GetAll) in this Object.");
+            }
             bool InTransaction;
             InTransaction = false;
             if (_Repository.Transaction != null)
@@ -275,6 +272,10 @@ namespace Repository
 
         public List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
+            if (_tableType == enmTableType.Writeonly)
+            {
+                throw new Exception("Object is Writeonly.You can not perform (Find) in this Object.");
+            }
             var dbArgs = new DynamicParameters();
             if (Parameters != null)
             {
@@ -314,6 +315,11 @@ namespace Repository
 
         public T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
+            if (_tableType == enmTableType.Writeonly)
+            {
+                throw new Exception("Object is Writeonly.You can not perform (FindFirst) in this Object.");
+            }
+
             var dbArgs = new DynamicParameters();
             if (Parameters != null)
             {

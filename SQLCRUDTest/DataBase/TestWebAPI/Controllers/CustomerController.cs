@@ -12,15 +12,23 @@ using TestWebAPI.Log;
 
 namespace TestWebAPI.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
 
+    /// <summary>
+    /// This Table is identity 
+    /// </summary>
     public class CustomerController : ControllerBase
     {
-        [HttpPost("InsertInToCustomerTable_Secure_Identity_With_Log")]
+        [HttpPost("Insert")]
         [Log]
-        [Authorize]
+        /// <summary>
+        /// This Table is identity 
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
+
         public string InsertInToCustomerTable([FromBody] CustomerView body)
         {
             Customer o = new Customer();
@@ -29,7 +37,43 @@ namespace TestWebAPI.Controllers
             Database.TestWebAPI.Save(o);
             return o.ID.ToString();
         }
-        [HttpGet("GetFromCustomerTable")]
+
+        [HttpPost("Update")]
+        public string UpdateCustomer2Table(int key, [FromBody] CustomerView body)
+        {
+            Database.TestWebAPI.BeginTransaction();
+            Customer o = new Customer();
+            o.ID = key;
+            o.FirstName = body.FirstName;
+            o.LastName = body.LastName;
+            Database.TestWebAPI.Save(o);
+            Database.TestWebAPI.CommitTransaction();
+            return o.ID.ToString();
+        }
+
+        [HttpPost("Delete")]
+        public bool Delete(int key)
+        {
+            try
+            {
+                Database.TestWebAPI.BeginTransaction();
+                Customer o = new Customer();
+                o.ID = key;
+                Database.TestWebAPI.Delete(o);
+                Database.TestWebAPI.CommitTransaction();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                Database.TestWebAPI.RollbackTransaction();
+                return false;
+
+            }
+            
+        }
+
+        [HttpGet("GetByID")]
         public CustomerView GetFromCustomerTable(string ID)
         {
             var customer = Database.TestWebAPI.GetByID<Customer>(ID, false);
@@ -42,49 +86,9 @@ namespace TestWebAPI.Controllers
             result.LastName = customer.LastName;
             return result;
         }
-        /// <summary>
-        /// we are create __KeyGenerator Stored Procedure 
-        /// Please overwrite your own key generation policy in this procedure in sql server.
-        /// </summary>
-        /// <param name="body"></param>
-        /// <returns></returns>
-        [HttpPost("InsertInToCustomer2Table_NoSecure_NoIdentity_NoLog")]
-        public string InsertInToCustomer2Table([FromBody] CustomerView body)
-        {
-            Customer2 o = new Customer2();
-            o.FirstName = body.FirstName;
-            o.LastName = body.LastName;
-            Database.TestWebAPI.Save(o);
-            return o.ID;
-        }
-        [HttpPost("UpdateCustomer2Table_NoSecure_NoIdentity_NoLog")]
-        public string UpdateCustomer2Table(string key, [FromBody] CustomerView body)
-        {
-            Database.TestWebAPI.BeginTransaction();
-            Database.TestWebAPI.BeginTransaction();
-            Customer2 o = new Customer2();
-            o.ID = key;
-            o.FirstName = body.FirstName;
-            o.LastName = body.LastName;
-            o.Description = null;//null Cause not in Updated columns list.
-            Database.TestWebAPI.Save(o);
-            Database.TestWebAPI.CommitTransaction();
-            Database.TestWebAPI.CommitTransaction();
-            return o.ID;
-        }
-        [HttpGet("GetFromCustomer2Table")]
-        public CustomerView GetFromCustomer2Table(string ID)
-        {
-            var customer = Database.TestWebAPI.GetByID<Customer2>(ID, false);
-            if (customer==null)
-            {
-                return null;
-            }
-            CustomerView result = new CustomerView();
-            result.FirstName = customer.FirstName;
-            result.LastName = customer.LastName;
-            return result;
-        }
+
+
+
         [HttpGet("ParametericFind")]
         public List<Customer> ParametericFind(string FirstName) 
         {
@@ -94,6 +98,7 @@ namespace TestWebAPI.Controllers
             return customers;
                
         }
+
         [HttpGet("SimpleFind")]
         public List<Customer> SimpleFind(string FirstName)
         {
@@ -101,6 +106,7 @@ namespace TestWebAPI.Controllers
             return customers;
 
         }
+
         [HttpGet("FindWithCustomFields")]
         public List<Customer2> FindWithCustomFields(string FirstName)
         {
