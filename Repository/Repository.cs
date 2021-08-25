@@ -212,88 +212,58 @@ namespace Repository
 
         public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, TTenth>(string ProcedureName, Dictionary<string, string> Parameters)
         {
-            if (typeof(TFirst).Name != "object")
+            TableInfoAttribute TFirst_TableInfo = GetGeneralFactory<TFirst>().TableInfo;
+            if (TFirst_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TFirst_TableInfo = typeof(TFirst).GetTableInfo();
-                if (TFirst_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TFirst_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TFirst).Name);
             }
 
-            if (typeof(TSecond).Name != "object")
+            TableInfoAttribute TSecond_TableInfo = GetGeneralFactory<TSecond>().TableInfo;
+            if (TSecond_TableInfo.TableType == enmTableType.Writeonly )
             {
-                TableInfoAttribute TSecond_TableInfo = typeof(TSecond).GetTableInfo();
-                if (TSecond_TableInfo.TableType == enmTableType.Writeonly )
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TSecond_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TSecond).Name);
             }
 
-            if (typeof(TThird).Name != "object")
+            TableInfoAttribute TThird_TableInfo = GetGeneralFactory<TThird>().TableInfo; 
+            if (TThird_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TThird_TableInfo = typeof(TThird).GetTableInfo();
-                if (TThird_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TThird_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TThird).Name);
             }
 
-            if (typeof(TFourth).Name != "object")
+            TableInfoAttribute TFourth_TableInfo = GetGeneralFactory<TFourth>().TableInfo; 
+            if (TFourth_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TFourth_TableInfo = typeof(TFourth).GetTableInfo();
-                if (TFourth_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TFourth_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TFourth).Name);
             }
-            if (typeof(TFifth).Name != "object")
+            TableInfoAttribute TFifth_TableInfo = GetGeneralFactory<TFifth>().TableInfo; 
+            if (TFifth_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TFifth_TableInfo = typeof(TFifth).GetTableInfo();
-                if (TFifth_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TFifth_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TFifth).Name);
             }
-            if (typeof(TSixth).Name != "object")
+            TableInfoAttribute TSixth_TableInfo = GetGeneralFactory<TSixth>().TableInfo; 
+            if (TSixth_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TSixth_TableInfo = typeof(TSixth).GetTableInfo();
-                if (TSixth_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TSixth_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TSixth).Name);
             }
-            if (typeof(TSeventh).Name != "object")
+            TableInfoAttribute TSeventh_TableInfo = GetGeneralFactory<TSeventh>().TableInfo; 
+            if (TSeventh_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TSeventh_TableInfo = typeof(TSeventh).GetTableInfo();
-                if (TSeventh_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TSeventh_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TSeventh).Name);
             }
-            if (typeof(TEighth).Name != "object")
+            TableInfoAttribute TEighth_TableInfo = GetGeneralFactory<TEighth>().TableInfo; 
+            if (TEighth_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TEighth_TableInfo = typeof(TEighth).GetTableInfo();
-                if (TEighth_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TEighth_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TEighth).Name);
             }
-            if (typeof(TNinth).Name != "object")
+            TableInfoAttribute TNinth_TableInfo = GetGeneralFactory<TNinth>().TableInfo; 
+            if (TNinth_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TNinth_TableInfo = typeof(TNinth).GetTableInfo();
-                if (TNinth_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TNinth_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TNinth).Name);
             }
-            if (typeof(TTenth).Name != "object")
+            TableInfoAttribute TTenth_TableInfo = GetGeneralFactory<TTenth>().TableInfo; 
+            if (TTenth_TableInfo.TableType == enmTableType.Writeonly)
             {
-                TableInfoAttribute TTenth_TableInfo = typeof(TTenth).GetTableInfo();
-                if (TTenth_TableInfo.TableType == enmTableType.Writeonly)
-                {
-                    throw new Exception("Object is Writeonly.You can not perform (Execute_StoredProcedure) in this Object. objectName:" + TTenth_TableInfo.TableName);
-                }
+                throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TTenth).Name);
             }
 
             if (_ConnectionString == "" || _ConnectionString == null)

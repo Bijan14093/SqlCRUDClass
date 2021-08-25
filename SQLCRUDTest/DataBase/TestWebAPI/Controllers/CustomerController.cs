@@ -41,14 +41,27 @@ namespace TestWebAPI.Controllers
         [HttpPost("Update")]
         public string UpdateCustomer2Table(int key, [FromBody] CustomerView body)
         {
-            Database.TestWebAPI.BeginTransaction();
-            Customer o = new Customer();
-            o.ID = key;
-            o.FirstName = body.FirstName;
-            o.LastName = body.LastName;
-            Database.TestWebAPI.Save(o);
-            Database.TestWebAPI.CommitTransaction();
-            return o.ID.ToString();
+            if (key == 0)
+            {
+                throw new Exception("you must be used key that not equal zero on update. this cause insert new row.");
+            }
+            try
+            {
+                Database.TestWebAPI.BeginTransaction();
+                Customer o = new Customer();
+                o.ID = key;
+                o.FirstName = body.FirstName;
+                o.LastName = body.LastName;
+                Database.TestWebAPI.Save(o);
+                Database.TestWebAPI.CommitTransaction();
+                return o.ID.ToString();
+
+            }
+            catch (Exception)
+            {
+                Database.TestWebAPI.RollbackTransaction();
+                throw;
+            }
         }
 
         [HttpPost("Delete")]
@@ -108,12 +121,12 @@ namespace TestWebAPI.Controllers
         }
 
         [HttpGet("FindWithCustomFields")]
-        public List<Customer2> FindWithCustomFields(string FirstName)
+        public List<Customer> FindWithCustomFields(string FirstName)
         {
             //in this function we want to select only ID And LastName
             var param = new Dictionary<string, string>();
             param.Add("FirstName", FirstName);
-            List<Customer2> customers = Database.TestWebAPI.Find<Customer2>("FirstName=@FirstName", "", false, param, "ID,LastName").ToList();
+            List<Customer> customers = Database.TestWebAPI.Find<Customer>("FirstName=@FirstName", "", false, param, "ID,LastName").ToList();
             return customers;
 
         }

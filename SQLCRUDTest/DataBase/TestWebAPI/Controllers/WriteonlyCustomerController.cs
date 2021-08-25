@@ -15,14 +15,19 @@ namespace TestWebAPI.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class Customer2Controller : ControllerBase
+    public class WriteonlyCustomerController : ControllerBase
     {
         [HttpPost("Insert")]
         [Log]
-        public string Insert([FromBody] Customer2 body)
+        /// <summary>
+        /// we are create __KeyGenerator Stored Procedure 
+        /// Please overwrite your own key generation policy in this procedure in sql server.
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
+        public string Insert([FromBody] CustomerView body)
         {
-            //this code generate exception.
-            Customer2 o = new Customer2();
+            WriteonlyCustomer o = new WriteonlyCustomer();
             o.FirstName = body.FirstName;
             o.LastName = body.LastName;
             Database.TestWebAPI.Save(o);
@@ -30,17 +35,16 @@ namespace TestWebAPI.Controllers
         }
 
         [HttpPost("Update")]
-        public string Update(string key, [FromBody] Customer2 body)
+        public string Update(int key, [FromBody] CustomerView body)
         {
-            if (key=="0")
+            if (key == 0)
             {
                 throw new Exception("you must be used key that not equal zero on update. this cause insert new row.");
             }
-            //this code generate exception.
             try
             {
                 Database.TestWebAPI.BeginTransaction();
-                Customer2 o = new Customer2();
+                WriteonlyCustomer o = new WriteonlyCustomer();
                 o.ID = key;
                 o.FirstName = body.FirstName;
                 o.LastName = body.LastName;
@@ -49,21 +53,20 @@ namespace TestWebAPI.Controllers
                 return o.ID.ToString();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Database.TestWebAPI.RollbackTransaction();
-                throw ex;
+                throw;
             }
         }
 
         [HttpPost("Delete")]
-        public bool Delete(string key)
+        public bool Delete(int key)
         {
-            //this code generate exception.
             try
             {
                 Database.TestWebAPI.BeginTransaction();
-                Customer2 o = new Customer2();
+                WriteonlyCustomer o = new WriteonlyCustomer();
                 o.ID = key;
                 Database.TestWebAPI.Delete(o);
                 Database.TestWebAPI.CommitTransaction();
@@ -80,46 +83,46 @@ namespace TestWebAPI.Controllers
         }
 
         [HttpGet("GetByID")]
-        public Customer2 GetFromCustomer2Table(string ID)
+        public CustomerView GetFromWriteonlyCustomerTable(string ID)
         {
-            var Customer2 = Database.TestWebAPI.GetByID<Customer2>(ID, false);
-            Customer2 result = new Customer2();
-            if (Customer2 == null)
+            var WriteonlyCustomer = Database.TestWebAPI.GetByID<WriteonlyCustomer>(ID, false);
+            CustomerView result = new CustomerView();
+            if (WriteonlyCustomer == null)
             {
                 return null;
             }
-            result.FirstName = Customer2.FirstName;
-            result.LastName = Customer2.LastName;
+            result.FirstName = WriteonlyCustomer.FirstName;
+            result.LastName = WriteonlyCustomer.LastName;
             return result;
         }
 
 
 
         [HttpGet("ParametericFind")]
-        public List<Customer2> ParametericFind(string FirstName) 
+        public List<WriteonlyCustomer> ParametericFind(string FirstName) 
         {
             var param = new Dictionary<string, string>();
             param.Add("FirstName", FirstName);
-            List<Customer2> Customer2s = Database.TestWebAPI.Find<Customer2>("FirstName=@FirstName", "", false, param).ToList();
-            return Customer2s;
+            List<WriteonlyCustomer> WriteonlyCustomers = Database.TestWebAPI.Find<WriteonlyCustomer>("FirstName=@FirstName", "", false, param).ToList();
+            return WriteonlyCustomers;
                
         }
 
         [HttpGet("SimpleFind")]
-        public List<Customer2> SimpleFind(string FirstName)
+        public List<WriteonlyCustomer> SimpleFind(string FirstName)
         {
-            List<Customer2> Customer2s = Database.TestWebAPI.Find<Customer2>("FirstName='" + FirstName + "'", "", false, null).ToList();
-            return Customer2s;
+            List<WriteonlyCustomer> WriteonlyCustomers = Database.TestWebAPI.Find<WriteonlyCustomer>("FirstName='" + FirstName + "'", "", false, null).ToList();
+            return WriteonlyCustomers;
 
         }
 
         [HttpGet("FindWithCustomFields")]
-        public List<Customer2> FindWithCustomFields(string FirstName)
+        public List<WriteonlyCustomer> FindWithCustomFields(string FirstName)
         {
             //in this function we want to select only ID And LastName
             var param = new Dictionary<string, string>();
             param.Add("FirstName", FirstName);
-            List<Customer2> Customers = Database.TestWebAPI.Find<Customer2>("FirstName=@FirstName", "", false, param, "ID,LastName").ToList();
+            List<WriteonlyCustomer> Customers = Database.TestWebAPI.Find<WriteonlyCustomer>("FirstName=@FirstName", "", false, param, "ID,LastName").ToList();
             return Customers;
 
         }

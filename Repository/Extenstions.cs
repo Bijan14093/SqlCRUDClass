@@ -76,34 +76,5 @@ namespace Repository
                 return false;
             }
         }
-        public static TableInfoAttribute GetTableInfo(this Type T)
-        {
-            TableInfoAttribute tableInfo=null;
-            System.Attribute[] tableAttribute = System.Attribute.GetCustomAttributes(T);
-            foreach (System.Attribute attr in tableAttribute)
-            {
-                if (attr is TableInfoAttribute)
-                {
-                    tableInfo = (TableInfoAttribute)attr;
-                }
-            }
-            if (tableInfo==null)
-            {
-                tableInfo = new TableInfoAttribute("","",true);
-            }
-            if (tableInfo.TableName == "")
-            {
-                tableInfo.TableName = T.Name.ToString();
-            }
-            if (tableInfo.keyColumnName== "")
-            {
-                tableInfo.keyColumnName = "ID";
-            }
-            if (tableInfo.TableName == "" || tableInfo.keyColumnName == "")
-            {
-                throw new Exception("You must be set ClassAttribue");
-            }
-            return tableInfo;
-        }
     }
 }

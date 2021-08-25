@@ -21,14 +21,15 @@ namespace Repository
         private string _InsertStatment;
         private string _DeleteStatment;
         private Repository _Repository;
+        public TableInfoAttribute TableInfo{ get; set; }
         public GeneralFactory(Repository repository)
         {
             Dictionary<string,string> temp = new Dictionary<string, string>();
-            TableInfoAttribute tableInfo = typeof(T).GetTableInfo();
-            _tableName = tableInfo.TableName;
-            _keycolumnname = tableInfo.keyColumnName;
-            _keyIsIdentity = tableInfo.KeyIsIdentity;
-            _tableType = tableInfo.TableType;
+            TableInfo = GetTableInfo();
+            _tableName = TableInfo.TableName;
+            _keycolumnname = TableInfo.keyColumnName;
+            _keyIsIdentity = TableInfo.KeyIsIdentity;
+            _tableType = TableInfo.TableType;
             var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (var item in properties)
             {
@@ -486,6 +487,36 @@ namespace Repository
             }
 
             return prop.GetValue(obj, null);
+        }
+        private TableInfoAttribute GetTableInfo()
+        {
+            TableInfoAttribute tableInfo = null;
+            Type type = typeof(T);
+            System.Attribute[] tableAttribute = System.Attribute.GetCustomAttributes(type);
+            foreach (System.Attribute attr in tableAttribute)
+            {
+                if (attr is TableInfoAttribute)
+                {
+                    tableInfo = (TableInfoAttribute)attr;
+                }
+            }
+            if (tableInfo == null)
+            {
+                tableInfo = new TableInfoAttribute("", "", true);
+            }
+            if (tableInfo.TableName == "")
+            {
+                tableInfo.TableName = type.Name.ToString();
+            }
+            if (tableInfo.keyColumnName == "")
+            {
+                tableInfo.keyColumnName = "ID";
+            }
+            if (tableInfo.TableName == "" || tableInfo.keyColumnName == "")
+            {
+                throw new Exception("You must be set ClassAttribue");
+            }
+            return tableInfo;
         }
     }
 

@@ -11,12 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Database\Migrations\TestWebAPI\TestWebAPI-140001150.sql" />
+    <None Remove="Database\Migrations\TestWebAPI\TestWebAPI-1400011501.sql" />
+    <None Remove="Database\Migrations\TestWebAPI\TestWebAPI-1400060308.sql" />
     <None Remove="Database\Migrations\TestWebAPI_Log\TestWebAPI_Log-140001150.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Database\Migrations\TestWebAPI\TestWebAPI-140001150.sql" />
+    <EmbeddedResource Include="Database\Migrations\TestWebAPI\TestWebAPI-1400060308.sql" />
+    <EmbeddedResource Include="Database\Migrations\TestWebAPI\TestWebAPI-1400011501.sql" />
     <EmbeddedResource Include="Database\Migrations\TestWebAPI_Log\TestWebAPI_Log-140001150.sql" />
   </ItemGroup>
 

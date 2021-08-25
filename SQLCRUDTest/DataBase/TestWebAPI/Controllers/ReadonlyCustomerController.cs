@@ -37,14 +37,28 @@ namespace TestWebAPI.Controllers
         [HttpPost("Update")]
         public string Update(int key, [FromBody] CustomerView body)
         {
-            Database.TestWebAPI.BeginTransaction();
-            ReadonlyCustomer o = new ReadonlyCustomer();
-            o.ID = key;
-            o.FirstName = body.FirstName;
-            o.LastName = body.LastName;
-            Database.TestWebAPI.Save(o);
-            Database.TestWebAPI.CommitTransaction();
-            return o.ID.ToString();
+            if (key == 0)
+            {
+                throw new Exception("you must be used key that not equal zero on update. this cause insert new row.");
+            }
+            try
+            {
+                Database.TestWebAPI.BeginTransaction();
+                ReadonlyCustomer o = new ReadonlyCustomer();
+                o.ID = key;
+                o.FirstName = body.FirstName;
+                o.LastName = body.LastName;
+                Database.TestWebAPI.Save(o);
+                Database.TestWebAPI.CommitTransaction();
+                return o.ID.ToString();
+
+            }
+            catch (Exception)
+            {
+                Database.TestWebAPI.RollbackTransaction();
+
+                throw;
+            }
         }
 
         [HttpPost("Delete")]
