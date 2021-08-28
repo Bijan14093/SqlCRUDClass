@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SQLCRUDTest"
   ],
-  "SelectedNode": "\\Repository",
+  "SelectedNode": "\\SqlCRUDClass.sln",
   "PreviewInSolutionExplorer": false
 }
