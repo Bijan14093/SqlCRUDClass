@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using TestWebAPI;
 using TestWebAPI.Domain.Model;
 using Repository;
+using Microsoft.AspNetCore.Components;
+
 namespace TestWebAPI.Log
 {
     public class LogAttribute : ActionFilterAttribute
@@ -19,7 +21,7 @@ namespace TestWebAPI.Log
         string ClientAddress;
         DateTime StartTime;
         DateTime EndTime;
-
+        IDatabase Database;
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             StartTime = DateTime.Now;
@@ -28,11 +30,13 @@ namespace TestWebAPI.Log
             API_Action = filterContext.RouteData.Values["action"].ToString();
             Input = filterContext.ActionArguments.ToJson();
             var ClientIpAddress = filterContext.HttpContext.Connection.RemoteIpAddress.ToString();
-            ClientAddress = ClientIpAddress + ";"+ GetHostName(ClientIpAddress);
+            ClientAddress = ClientIpAddress + ";" + GetHostName(ClientIpAddress);
             base.OnActionExecuting(filterContext);
         }
         public override void OnResultExecuted(ResultExecutedContext context)
         {
+
+            IDatabase Database = (IDatabase)context.HttpContext.RequestServices.GetService(typeof(IDatabase));
             if (context.Result is ObjectResult)
             {
                 output = ((ObjectResult)context.Result).Value.ToJson();
@@ -49,7 +53,7 @@ namespace TestWebAPI.Log
             apiLog.Output = output;
             apiLog.ClientAddress = ClientAddress;
             apiLog.Duration = EndTime.Subtract(StartTime).TotalMilliseconds.ToString();
-            Database.TestWebAPI_Log.Save( apiLog);
+            Database.TestWebAPI_Log.Save(apiLog);
             base.OnResultExecuted(context);
         }
         public string GetHostName(string ipAddress)

@@ -21,6 +21,11 @@ namespace TestWebAPI.Controllers
     /// </summary>
     public class CustomerController : ControllerBase
     {
+        IDatabase Database;
+       public CustomerController(IDatabase database)
+        {
+            Database = database;
+        }
         [HttpPost("Insert")]
         [Log]
         /// <summary>

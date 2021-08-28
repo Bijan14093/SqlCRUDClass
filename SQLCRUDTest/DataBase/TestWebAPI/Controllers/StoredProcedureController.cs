@@ -17,6 +17,11 @@ namespace TestWebAPI.Controllers
     [ApiController]
     public class StoredProcedureController : ControllerBase
     {
+        IDatabase Database;
+        public StoredProcedureController(IDatabase database)
+        {
+            Database = database;
+        }
         [HttpPost("Execute_SP_GetCustomerDetail")]
         [Log]
         /// <summary>

@@ -17,6 +17,11 @@ namespace TestWebAPI.Controllers
     [ApiController]
     public class ReadonlyCustomerController : ControllerBase
     {
+        IDatabase Database;
+        public ReadonlyCustomerController(IDatabase database)
+        {
+            Database = database;
+        }
         [HttpPost("Insert")]
         [Log]
         /// <summary>

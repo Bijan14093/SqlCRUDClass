@@ -17,6 +17,11 @@ namespace TestWebAPI.Controllers
     [ApiController]
     public class Customer2Controller : ControllerBase
     {
+        IDatabase Database;
+       public Customer2Controller(IDatabase database) 
+        {
+            Database = database;
+        }
         [HttpPost("Insert")]
         [Log]
         public string Insert([FromBody] Customer2 body)

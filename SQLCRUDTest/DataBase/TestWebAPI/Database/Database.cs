@@ -6,18 +6,31 @@ using Repository;
 
 namespace TestWebAPI
 {
-    public class Database
+    public class Database:IDatabase
     {
         internal static string ConnectionString;
-        internal static IRepository TestWebAPI;
-        internal static IRepository TestWebAPI_Log;
+        internal static string ConnectionStringLog; 
+        internal  IRepository _TestWebAPI;
+        internal IRepository _TestWebAPI_Log;
+        public Database() 
+        {
+            _TestWebAPI = RepositoryFactory.CreateRepository(ConnectionString);
+            _TestWebAPI_Log = RepositoryFactory.CreateRepository(ConnectionStringLog);
+        }
+
+        IRepository IDatabase.TestWebAPI 
+        {
+            get { return _TestWebAPI; }
+        }
+        IRepository IDatabase.TestWebAPI_Log {
+            get { return _TestWebAPI_Log; }
+        }
 
         internal static bool Initialize(string _ConnectionString, string _ConnectionStringLog)
         {
             ConnectionString = _ConnectionString;
-            TestWebAPI = RepositoryFactory.CreateRepository(_ConnectionString);
+            ConnectionStringLog = _ConnectionStringLog;
             RunMigration("TestWebAPI", _ConnectionString);
-            TestWebAPI_Log = RepositoryFactory.CreateRepository(_ConnectionStringLog);
             RunMigration("TestWebAPI_Log", _ConnectionStringLog);
             return true;
         }
@@ -39,5 +52,6 @@ namespace TestWebAPI
             {
             }
         }
+
     }
 }
