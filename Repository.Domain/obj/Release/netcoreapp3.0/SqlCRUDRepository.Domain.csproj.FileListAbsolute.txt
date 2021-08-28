@@ -24,3 +24,12 @@ e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDReposito
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.dll
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.pdb
 e:\Git\SqlCRUDClass2\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.csprojAssemblyReference.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Release\netcoreapp3.0\SqlCRUDRepository.Domain.deps.json
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Release\netcoreapp3.0\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Release\netcoreapp3.0\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.AssemblyInfo.cs
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.0\SqlCRUDRepository.Domain.pdb

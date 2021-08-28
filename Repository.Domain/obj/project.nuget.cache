@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LQggbX+NjA8mceYUB/2vw425Rf2mgE49QDm+kwl7mgn6W1NBcQsxFHHWdE2RMBMr775bSSaBD94pAXQE2neWnw==",
+  "dgSpecHash": "4Htsak1AQgvddGx2W2aCJaHajvsFihQ8FlQ1UT/m31Zk8YdWdG4vnxmfhommBA0Sac7YIuj1sQkAx1Tciz6LWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
   "expectedPackageFiles": [

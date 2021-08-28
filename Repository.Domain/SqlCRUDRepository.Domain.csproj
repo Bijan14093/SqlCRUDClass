@@ -4,8 +4,8 @@
 	  <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Bijan Ghasemi</Authors>
-    <AssemblyVersion>1400.03.16.09</AssemblyVersion>
-    <FileVersion>1400.03.16.09</FileVersion>
+    <AssemblyVersion>1400.06.06.10</AssemblyVersion>
+    <FileVersion>1400.06.06.10</FileVersion>
     <PackageId>SqlCRUDRepository.Domain</PackageId>
     <PackageIcon>images.jpg </PackageIcon>
     <Description>This project used with SqlCRUDRepository.
@@ -13,8 +13,10 @@ SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
+    <PackageReleaseNotes>Add Readonly,Writeonly property to TableInfo Attribute.
+</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

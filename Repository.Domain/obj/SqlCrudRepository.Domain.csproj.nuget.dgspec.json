@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-      "version": "1.0.3",
+      "version": "1.0.4",
       "restore": {
         "projectUniqueName": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "projectName": "SqlCRUDRepository.Domain",

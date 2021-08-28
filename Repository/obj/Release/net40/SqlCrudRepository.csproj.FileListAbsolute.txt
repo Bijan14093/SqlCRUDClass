@@ -37,3 +37,16 @@ e:\Git\SqlCRUDClass2\Repository\obj\Release\net40\SqlCRUDRepository.AssemblyInfo
 e:\Git\SqlCRUDClass2\Repository\obj\Release\net40\SqlCRUDRepository.csproj.CopyComplete
 e:\Git\SqlCRUDClass2\Repository\obj\Release\net40\SqlCRUDRepository.dll
 e:\Git\SqlCRUDClass2\Repository\obj\Release\net40\SqlCRUDRepository.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\net40\SqlCRUDRepository.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\net40\SqlCRUDRepository.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\net40\Dapper.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\net40\Newtonsoft.Json.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\net40\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\net40\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.csproj.AssemblyReference.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.AssemblyInfoInputs.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.AssemblyInfo.cs
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.csproj.CopyComplete
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.dll
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\net40\SqlCRUDRepository.pdb
