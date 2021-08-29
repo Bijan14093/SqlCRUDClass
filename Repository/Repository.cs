@@ -100,29 +100,43 @@ namespace Repository
 
         public bool RollbackTransaction()
         {
+            try
+            {
+                if (_TransactionCount == 0)
+                {
+                    throw new Exception("You must be run begintransaction first!");
+                }
+                if (Transaction is null)
+                {
+                    throw new Exception("Developer Must be checked!");
+                }
+                _TransactionCount--;
+                if (_TransactionCount == 0)
+                {
+                    Transaction.Rollback();
+                    Transaction = null;
+                    CloseConnection();
+                }
+                else
+                {
+                    throw new Exception("Inner Transaction Rollback.");
+                }
 
-            if (_TransactionCount == 0)
-            {
-                throw new Exception("You must be run begintransaction first!");
-            }
-            if (Transaction is null)
-            {
-                throw new Exception("Developer Must be checked!");
-            }
-            _TransactionCount--;
-            if (_TransactionCount == 0)
-            {
-                Transaction.Rollback();
-                Transaction = null;
-                CloseConnection();
-            }
-            else
-            {
-                throw new Exception("Inner Transaction Rollback.");
-            }
-            Monitor.Exit(this);
-            return true;
+                return true;
 
+            }
+            finally
+            {
+                try
+                {
+                    Monitor.Exit(this);
+                }
+                catch (Exception)
+                {
+
+                    //throw;
+                }
+            }
         }
 
         private GeneralFactory<T> GetGeneralFactory<T>()
