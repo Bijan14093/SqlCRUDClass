@@ -19,4 +19,3 @@ C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\Sq
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.dll
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.pdb
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache

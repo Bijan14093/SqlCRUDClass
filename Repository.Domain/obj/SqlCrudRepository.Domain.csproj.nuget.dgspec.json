@@ -34,6 +34,7 @@
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "c:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository\\bin\\Debug\\": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://package.behdasht.gov.ir/v3/index.json": {}
         },

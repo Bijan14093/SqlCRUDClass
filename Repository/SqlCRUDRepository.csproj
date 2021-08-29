@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
@@ -11,16 +11,16 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1400.06.06.10</AssemblyVersion>
-    <FileVersion>1400.06.06.10</FileVersion>
+    <AssemblyVersion>1400.06.07.10</AssemblyVersion>
+    <FileVersion>1400.06.07.10</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.9</Version>
+    <Version>1.0.10</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>Add Table Schema to TableInfo Attribute</PackageReleaseNotes>
+    <PackageReleaseNotes>Add lock and Monitor Object to control synchronization.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
