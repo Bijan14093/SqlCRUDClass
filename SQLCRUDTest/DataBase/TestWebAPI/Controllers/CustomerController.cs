@@ -58,6 +58,11 @@ namespace TestWebAPI.Controllers
                 o.FirstName = body.FirstName;
                 o.LastName = body.LastName;
                 Database.TestWebAPI.Save(o);
+
+                o = new Customer();
+                o.ID = key;
+                Database.TestWebAPI.Save(o); //Nothing happens
+
                 Database.TestWebAPI.CommitTransaction();
                 return o.ID.ToString();
 

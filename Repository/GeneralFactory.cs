@@ -106,11 +106,13 @@ namespace Repository
                 }
             }
 
-            Result = Result.Substring(0, (Result.Length - 1));
-            _UpdateStatment = "Update " + _tableName +  Environment.NewLine;
-            _UpdateStatment = _UpdateStatment +"SET " + Result + "" + Environment.NewLine;
-            _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname ;
-
+            if (Result!="")
+            {
+                Result = Result.Substring(0, (Result.Length - 1));
+                _UpdateStatment = "Update " + _tableName + Environment.NewLine;
+                _UpdateStatment = _UpdateStatment + "SET " + Result + "" + Environment.NewLine;
+                _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname;
+            }
 
             return _UpdateStatment;
         }
@@ -184,7 +186,12 @@ namespace Repository
             }
             else
             {
-                _Repository.Connection.Execute(UpdateStatment(o), o, transaction: _Repository.Transaction);
+                var updateStatment = UpdateStatment(o);
+                if (updateStatment!="" && updateStatment != null)
+                {
+                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction);
+                }
+
             }
 
             if (InTransaction == false)

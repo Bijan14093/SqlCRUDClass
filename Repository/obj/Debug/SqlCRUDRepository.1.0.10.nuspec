@@ -40,10 +40,10 @@ It takes more work but it gives you a lot of benefits in the future for system m
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\net40\SqlCRUDRepository.dll" target="lib\net40\SqlCRUDRepository.dll" />
-    <file src="C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.0\SqlCRUDRepository.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.dll" />
-    <file src="C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.dll" target="lib\netcoreapp3.1\SqlCRUDRepository.dll" />
-    <file src="C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\SqlCRUDRepository.dll" target="lib\netstandard2.0\SqlCRUDRepository.dll" />
+    <file src="C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net40\SqlCRUDRepository.dll" target="lib\net40\SqlCRUDRepository.dll" />
+    <file src="C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.0\SqlCRUDRepository.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.dll" />
+    <file src="C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.dll" target="lib\netcoreapp3.1\SqlCRUDRepository.dll" />
+    <file src="C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\SqlCRUDRepository.dll" target="lib\netstandard2.0\SqlCRUDRepository.dll" />
     <file src="e:\Git\SqlCRUDClass\images.jpg" target="images.jpg" />
   </files>
 </package>
