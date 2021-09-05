@@ -10,5 +10,10 @@ namespace Repository
             Repository _db = new Repository(ConnectionString);
             return _db;
         }
+        public static IRepository CreateRepository(System.Data.IDbConnection dbConnection)
+        {
+            Repository _db = new Repository(dbConnection);
+            return _db;
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1;net45</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright></Copyright>
     <Authors>Bijan Ghasemi</Authors>
@@ -18,9 +18,9 @@ It takes more work but it gives you a lot of benefits in the future for system m
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>Add lock and Monitor Object to control synchronization.</PackageReleaseNotes>
+    <PackageReleaseNotes>Add new constructor with IDbConnection parameter.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

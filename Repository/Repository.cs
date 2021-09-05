@@ -17,17 +17,27 @@ namespace Repository
         internal IDbTransaction Transaction;
         private string _ConnectionString;
         private Int16 _TransactionCount;
+
         public Repository(string connectionString)
         {
+            if (connectionString == "" || connectionString == null)
+            {
+                throw new Exception("Connection string is empty.");
+            }
             _ConnectionString = connectionString;
+        }
+
+        public Repository(IDbConnection dbConnection)
+        {
+            if (dbConnection == null)
+            {
+                throw new Exception("Connection is null.");
+            }
+            this.Connection = dbConnection;
         }
 
         internal void OpenConnection()
         {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 if (Connection == null)
                 {
                     Connection = new SqlConnection(_ConnectionString);
@@ -43,13 +53,9 @@ namespace Repository
         }
         internal void CloseConnection()
         {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 if (Connection == null)
                 {
-                    throw new Exception("Connection string is empty.");
+                    throw new Exception("Connection is null.");
                 }
 
                 if (Connection.State == ConnectionState.Open)
@@ -57,7 +63,6 @@ namespace Repository
                     Connection.Close();
                 }
 
-                Connection = null;
 
         }
         public bool BeginTransaction()
@@ -155,13 +160,8 @@ namespace Repository
         {
             lock (this)
             {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.Save(ref o);
-
             }
 
 
@@ -170,10 +170,6 @@ namespace Repository
         {
             lock (this)
             {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.Delete(o);
 
@@ -184,10 +180,6 @@ namespace Repository
         {
             lock (this)
             {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.GetByID(ID, withLock);
 
@@ -198,10 +190,6 @@ namespace Repository
         {
             lock (this)
             {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.GetAll();
 
@@ -311,10 +299,6 @@ namespace Repository
                     throw new Exception("Class is Writeonly.You can not perform (Execute_StoredProcedure) in this Class. ClassName:" + typeof(TTenth).Name);
                 }
 
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var dbArgs = new DynamicParameters();
                 if (Parameters != null)
                 {
@@ -323,10 +307,8 @@ namespace Repository
 
                 List<object> Result = new List<object>();
                 GridReader grid;
-                using (SqlConnection connection = new SqlConnection(_ConnectionString))
-                {
-                    connection.Open();
-                    grid = connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure);
+                OpenConnection();
+                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure);
                     Result.Add(grid.Read<TFirst>().ToList<TFirst>());
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TSecond>().ToList()); } else { Result.Add(new List<TSecond>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TThird>().ToList()); } else { Result.Add(new List<TThird>()); }
@@ -337,9 +319,7 @@ namespace Repository
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TEighth>().ToList()); } else { Result.Add(new List<TEighth>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TNinth>().ToList()); } else { Result.Add(new List<TNinth>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TTenth>().ToList()); } else { Result.Add(new List<TTenth>()); }
-                    connection.Close();
-
-                }
+                CloseConnection();
                 return Result;
 
             }
@@ -350,10 +330,6 @@ namespace Repository
         {
             lock (this)
             {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.Find(Filter, orderBy, withLock, Parameters, FieldNames);
 
@@ -364,10 +340,6 @@ namespace Repository
         {
             lock (this)
             {
-                if (_ConnectionString == "" || _ConnectionString == null)
-                {
-                    throw new Exception("Connection string is empty.");
-                }
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.FindFirst(Filter, orderBy, withLock, Parameters, FieldNames);
 

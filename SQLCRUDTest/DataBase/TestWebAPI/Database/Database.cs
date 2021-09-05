@@ -14,8 +14,13 @@ namespace TestWebAPI
         internal IRepository _TestWebAPI_Log;
         public Database() 
         {
-            _TestWebAPI = RepositoryFactory.CreateRepository(ConnectionString);
+            System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString);
+            System.Data.SqlClient.SqlConnection connection_Log = new System.Data.SqlClient.SqlConnection(ConnectionStringLog);
+            //_TestWebAPI = RepositoryFactory.CreateRepository(ConnectionString);
+            _TestWebAPI = RepositoryFactory.CreateRepository(connection);
+            //_TestWebAPI_Log = RepositoryFactory.CreateRepository(connection_Log);
             _TestWebAPI_Log = RepositoryFactory.CreateRepository(ConnectionStringLog);
+
         }
 
         IRepository IDatabase.TestWebAPI 

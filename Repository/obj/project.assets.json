@@ -2726,6 +2726,41 @@
         }
       }
     },
+    ".NETFramework,Version=v4.5": {
+      "Dapper/1.50.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Data",
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net45/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Dapper.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SqlCRUDRepository.Domain/1.0.4": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "compile": {
+          "bin/placeholder/SqlCRUDRepository.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SqlCRUDRepository.Domain.dll": {}
+        }
+      }
+    },
     ".NETStandard,Version=v2.0": {
       "Dapper/1.50.1": {
         "type": "package",
@@ -7734,6 +7769,11 @@
       "Newtonsoft.Json >= 13.0.1",
       "SqlCRUDRepository.Domain >= 1.0.4"
     ],
+    ".NETFramework,Version=v4.5": [
+      "Dapper >= 1.50.1",
+      "Newtonsoft.Json >= 13.0.1",
+      "SqlCRUDRepository.Domain >= 1.0.4"
+    ],
     ".NETStandard,Version=v2.0": [
       "Dapper >= 1.50.1",
       "NETStandard.Library >= 2.0.3",
@@ -7748,7 +7788,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.10",
+    "version": "1.0.11",
     "restore": {
       "projectUniqueName": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
       "projectName": "SqlCRUDRepository",
@@ -7771,6 +7811,7 @@
       ],
       "originalTargetFrameworks": [
         "net40",
+        "net45",
         "netcoreapp3.0",
         "netcoreapp3.1",
         "netstandard2.0"
@@ -7801,6 +7842,14 @@
         },
         "net40": {
           "targetAlias": "net40",
+          "projectReferences": {
+            "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+              "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+            }
+          }
+        },
+        "net45": {
+          "targetAlias": "net45",
           "projectReferences": {
             "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
               "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
@@ -7897,6 +7946,20 @@
       },
       "net40": {
         "targetAlias": "net40",
+        "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[1.50.1, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+      },
+      "net45": {
+        "targetAlias": "net45",
         "dependencies": {
           "Dapper": {
             "target": "Package",
