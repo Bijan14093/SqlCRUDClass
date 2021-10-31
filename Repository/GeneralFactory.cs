@@ -436,7 +436,7 @@ namespace Repository
 
                     case CommandType._Select:
                         {
-                            Result = Result + Columnname + " " + FieldName + ",";
+                            Result = Result + Columnname + " " + "["+ FieldName + "]" + ",";
                             break;
                         }
                 }

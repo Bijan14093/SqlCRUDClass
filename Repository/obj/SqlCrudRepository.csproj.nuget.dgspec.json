@@ -121,7 +121,7 @@
       }
     },
     "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {
-      "version": "1.0.11",
+      "version": "1.0.12",
       "restore": {
         "projectUniqueName": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
         "projectName": "SqlCRUDRepository",
