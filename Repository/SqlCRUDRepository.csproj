@@ -11,20 +11,22 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1400.08.09.15</AssemblyVersion>
-    <FileVersion>1400.08.09.15</FileVersion>
+    <AssemblyVersion>1400.09.24.09</AssemblyVersion>
+    <FileVersion>1400.09.24.09</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.12</Version>
+    <Version>1.0.13</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.11
-Add new constructor with IDbConnection parameter.
+    <PackageReleaseNotes>1.0.13
+Added Transaction Count property to IRepository interface.
 1.0.12
 When you use special characters in the name of properties in objects such as Chinese characters!
 Add brackets for the name of the properties of each object to prevent errors when query(SELECT ...  FROM TABLE) the database.
+1.0.11
+Add new constructor with IDbConnection parameter.
 </PackageReleaseNotes>
   </PropertyGroup>
 

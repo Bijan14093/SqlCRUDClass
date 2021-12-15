@@ -9,6 +9,7 @@ namespace Repository
 {
     public interface IRepository
     {
+        int  TransactionCount { get; }
         bool BeginTransaction();
         bool CommitTransaction();
         List<T> Execute_StoredProcedure<T>(string ProcedureName, Dictionary<string, string> Parameters);

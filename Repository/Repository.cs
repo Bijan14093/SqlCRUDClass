@@ -16,7 +16,13 @@ namespace Repository
         internal IDbConnection Connection;
         internal IDbTransaction Transaction;
         private string _ConnectionString;
-        private Int16 _TransactionCount;
+        private int _TransactionCount;
+
+
+        public int TransactionCount 
+        {
+            get { return _TransactionCount; }
+        }
 
         public Repository(string connectionString)
         {
