@@ -25,7 +25,7 @@ namespace Repository
             _Procedure_KeyGenerator_Check = "";
         }
 
-        public Int64 GetNextID()
+        public string GetNextID()
         {
             Int64 Result;
             if (_FirstID > _LastID)
@@ -35,7 +35,7 @@ namespace Repository
 
             Result = _FirstID;
             _FirstID = _FirstID + 1;
-            return Result;
+            return Result.ToString();
         }
 
         private void ResetIDs()

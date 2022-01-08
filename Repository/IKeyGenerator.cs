@@ -6,6 +6,6 @@ namespace Repository
 {
     internal interface IKeyGenerator
     {
-         Int64 GetNextID();
+         string GetNextID();
     }
 }

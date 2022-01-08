@@ -171,15 +171,23 @@ namespace Repository
             }
             if (objectID.ToString() == "0")
             {
-                Int64 ID;
+                string ID;
                 if (_keyIsIdentity)
                 {
-                    ID = _Repository.Connection.Query<Int64>(InsertStatment + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction).FirstOrDefault();
+                    ID = _Repository.Connection.Query<string>(InsertStatment + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction).FirstOrDefault();
                     SetPropertyValueByName(o, _keycolumnname, ID);
                 }
                 else
                 {
-                    ID = _KeyGeneratory.GetNextID();
+                    if (_Repository.__KeyGenerator is null)
+                    {
+                        ID = _KeyGeneratory.GetNextID();
+                    }
+                    else
+                    {
+                        ID = _Repository.__KeyGenerator(o.GetType().Name);
+                    }
+
                     SetPropertyValueByName(o, _keycolumnname, ID);
                     _Repository.Connection.Query<Int64>(InsertStatment + Environment.NewLine, o, transaction: _Repository.Transaction).FirstOrDefault();
                 }
@@ -454,7 +462,7 @@ namespace Repository
             _Delete
         }
 
-        public static bool SetPropertyValueByName(object obj, string name, Int64 value)
+        public static bool SetPropertyValueByName(object obj, string name, string value)
         {
             var prop = obj.GetType().GetProperty(name, BindingFlags.Public | BindingFlags.Instance);
             if (prop is null || !prop.CanWrite)

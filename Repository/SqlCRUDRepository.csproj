@@ -20,7 +20,9 @@ It takes more work but it gives you a lot of benefits in the future for system m
     <PackageLicenseFile></PackageLicenseFile>
     <Version>1.0.13</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.13
+    <PackageReleaseNotes>1.0.14
+Added ID Generation mechanism in Code.
+1.0.13
 Added Transaction Count property to IRepository interface.
 1.0.12
 When you use special characters in the name of properties in objects such as Chinese characters!

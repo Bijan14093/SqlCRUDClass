@@ -88,14 +88,7 @@ namespace TestWebAPI.Controllers
         public Customer2 GetFromCustomer2Table(string ID)
         {
             var Customer2 = Database.TestWebAPI.GetByID<Customer2>(ID, false);
-            Customer2 result = new Customer2();
-            if (Customer2 == null)
-            {
-                return null;
-            }
-            result.FirstName = Customer2.FirstName;
-            result.LastName = Customer2.LastName;
-            return result;
+            return Customer2;
         }
 
 

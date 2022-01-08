@@ -18,9 +18,17 @@ namespace TestWebAPI
             System.Data.SqlClient.SqlConnection connection_Log = new System.Data.SqlClient.SqlConnection(ConnectionStringLog);
             //_TestWebAPI = RepositoryFactory.CreateRepository(ConnectionString);
             _TestWebAPI = RepositoryFactory.CreateRepository(connection);
+
+            _TestWebAPI.__KeyGenerator = keygenerator; // here you define mechanism of generation : There are two mechanisms for creating an ID
+
             //_TestWebAPI_Log = RepositoryFactory.CreateRepository(connection_Log);
             _TestWebAPI_Log = RepositoryFactory.CreateRepository(ConnectionStringLog);
 
+        }
+
+        private string keygenerator(string ClassName)
+        {
+            return Guid.NewGuid().ToString();
         }
 
         IRepository IDatabase.TestWebAPI 

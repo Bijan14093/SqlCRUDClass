@@ -24,6 +24,8 @@ namespace Repository
             get { return _TransactionCount; }
         }
 
+        public Func<string, string> __KeyGenerator { get ; set ; }
+
         public Repository(string connectionString)
         {
             if (connectionString == "" || connectionString == null)

@@ -28,5 +28,6 @@ namespace Repository
         T GetByID<T>(string ID,bool withLock);
         List<T> Find<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "");
         T FindFirst<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters,string FieldNames="");
+        Func<string, string> __KeyGenerator { get; set; }
     }
 }
