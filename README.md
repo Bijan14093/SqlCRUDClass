@@ -76,8 +76,11 @@ var result = Sampledb.Execute_StoredProcedure <Customer> (spName, null);
             parameters.Add ("FirstName", "FirstNameCustomer");
             var result = Sampledb.Find <Customer> (Filter, "ID", false, parameters, "");
             Console.WriteLine (result.Count);
+
 * In this section you can both sort and name the fields you just want so that only those fields are provided for you.
-*** In the Find and GetByID methods, a parameter called withLock is considered, which can also be used to lock table records when reading. In cases where there is a transaction, this can be useful to make the synchronization controllable.
+    
+* In the Find and GetByID methods, a parameter called withLock is considered, which can also be used to lock table records when reading. In cases where there is a transaction, this can be useful to make the synchronization controllable.
+    
 # 10. Can we give the ID generation mechanism ourselves, for example not the Identity table?
 Yes.
 To do this, you must first change the model(Both database and code).
