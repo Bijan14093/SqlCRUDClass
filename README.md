@@ -75,15 +75,21 @@ var result = Sampledb.Execute_StoredProcedure <Customer> (spName, null);
 *** In the Find and GetByID methods, a parameter called withLock is considered, which can also be used to lock table records when reading. In cases where there is a transaction, this can be useful to make the synchronization controllable.
 # 10. Can we give the ID generation mechanism ourselves, for example not the Identity table?
 Yes.
-To do this, you must first change the model.
-  
-[Repository.Domain.TableInfo ("tblCustomer", "ID", false)]
+To do this, you must first change the model(Both database and code).
+    
+    Alter Table tblcustomer Alter Column ID varchar(500)
+    
+    [Repository.Domain.TableInfo("tblCustomer","ID",false)]
     public class Customer
     {
-        public Int32 ID {get; set; }
-        [Repository.Domain.FieldInfo ("FirstName", false)]
-        public string FirstName {get; set; }
-        public string LastName {get; set; }
+        public string ID { get; set; }
+        [Repository.Domain.FieldInfo("FirstName",false)]
+        public string FirstName { get; set; }
+        [Repository.Domain.FieldInfo("LastName", false)]
+        public string LastName { get; set; }
+
+        [Repository.Domain.FieldInfo("CustomProperty", true)]
+        public int CustomProperty { get; set; }
     }
 
 There are two mechanisms for creating an ID
