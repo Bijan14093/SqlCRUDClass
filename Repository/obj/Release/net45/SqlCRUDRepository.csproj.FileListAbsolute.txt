@@ -1,0 +1,13 @@
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Release\net45\SqlCRUDRepository.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Release\net45\SqlCRUDRepository.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Release\net45\Dapper.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Release\net45\Newtonsoft.Json.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Release\net45\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Release\net45\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.csproj.AssemblyReference.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.AssemblyInfoInputs.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.AssemblyInfo.cs
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.csproj.CopyComplete
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.pdb
