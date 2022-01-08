@@ -1,11 +1,11 @@
-# I tried to complete the guide with examples.
+# complete the guide with examples.
+-----
 # 1. How to create a new record in a table?
 Suppose you have a table called tblCustomer in a database.
 
 Create Table tblCustomer (ID int Identity (1,1), FirstName nvarchar (max), LastName nvarchar (max))
 
-First we create a model from this table.
-(In later sections we will change the class name so that it is not the same as the table name)
+we create a model from this table.(In later sections we will change the class name so that it is not the same as the table name)
 
     public class tblCustomer
     {
@@ -13,12 +13,17 @@ First we create a model from this table.
         public string FirstName {get; set; }
         public string LastName {get; set; }
     }
-            var Sampledb = Repository.RepositoryFactory.CreateRepository (ConnectionString);
-            tblCustomer customer = new tblCustomer ();
-            customer.FirstName = "FirstNameCustomer";
-            customer.LastName = "LastNameCustomer";
-            Sampledb.Save (customer);
-            Console.WriteLine (customer.ID);
+    
+then save it!
+
+
+    var Sampledb = Repository.RepositoryFactory.CreateRepository (ConnectionString);
+    tblCustomer customer = new tblCustomer ();
+    customer.FirstName = "FirstNameCustomer";
+    customer.LastName = "LastNameCustomer";
+    Sampledb.Save (customer);
+    Console.WriteLine (customer.ID);
+
 * You can use IDbConnection instead of ConnectionString for added security.
 * After saving in the table, an ID will be given to the customer.
 # 2. How to find a customer with an ID and change its fields.
