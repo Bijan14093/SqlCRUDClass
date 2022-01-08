@@ -88,15 +88,21 @@ To do this, you must first change the model.
 
 There are two mechanisms for creating an ID
 1. In the program code (this model is available in version 1.0.14 and above)
-2. In the database (default)
-For method 1
-You must have a function to create an ID.
-For example
-      private string keygenerator (string ClassName)
+    
+    You must have a function to create an ID.
+    
+    For example
+    
+        private string keygenerator(string ClassName)
         {
-            return Guid.NewGuid (). ToString ();
+            return Guid.NewGuid().ToString();
         }
-And at the end
-Sampledb .__ KeyGenerator = keygenerator;
-In the second method, which is the default method.
-There is a stored procedure in the database called __KeyGenerator that must be overwritten.
+    
+    And at the end
+    
+    Sampledb .__ KeyGenerator = keygenerator;
+    
+    
+2. In the database (default)
+    
+    There is a stored procedure in the database called __KeyGenerator that must be overwritten.
