@@ -34,15 +34,3 @@ e:\Git\SqlCRUDClass2\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.Ass
 e:\Git\SqlCRUDClass2\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.csproj.CopyComplete
 e:\Git\SqlCRUDClass2\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.dll
 e:\Git\SqlCRUDClass2\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.pdb
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\netstandard2.0\SqlCRUDRepository.deps.json
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\netstandard2.0\SqlCRUDRepository.dll
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\netstandard2.0\SqlCRUDRepository.pdb
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\netstandard2.0\SqlCRUDRepository.Domain.dll
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Release\netstandard2.0\SqlCRUDRepository.Domain.pdb
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.csproj.AssemblyReference.cache
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.AssemblyInfoInputs.cache
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.AssemblyInfo.cs
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.csproj.CoreCompileInputs.cache
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.csproj.CopyComplete
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.dll
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Release\netstandard2.0\SqlCRUDRepository.pdb
