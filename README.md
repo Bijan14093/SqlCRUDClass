@@ -1,4 +1,4 @@
-# complete the guide with examples.
+# Complete the guide with examples.
 -----
 # 1. How to create a new record in a table?
 Suppose you have a table called tblCustomer in a database.
