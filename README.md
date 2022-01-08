@@ -77,15 +77,15 @@ var result = Sampledb.Execute_StoredProcedure <Customer> (spName, null);
 Yes.
 To do this, you must first change the model(Both database and code).
     
-    Alter Table tblcustomer Alter Column ID varchar(500)
+    Create Table tblCustomer2(ID nvarchar(500), FirstName nvarchar(max), CustomerLastName nvarchar(max),Description nvarchar(max))
     
-    [Repository.Domain.TableInfo("tblCustomer","ID",false)]
+    [Repository.Domain.TableInfo("tblCustomer2","ID",false)]
     public class Customer
     {
         public string ID { get; set; }
         [Repository.Domain.FieldInfo("FirstName",false)]
         public string FirstName { get; set; }
-        [Repository.Domain.FieldInfo("LastName", false)]
+        [Repository.Domain.FieldInfo("CustomerLastName", false)]
         public string LastName { get; set; }
 
         [Repository.Domain.FieldInfo("CustomProperty", true)]
@@ -106,7 +106,7 @@ There are two mechanisms for creating an ID
     
     And at the end
     
-    Sampledb .__ KeyGenerator = keygenerator;
+    Sampledb.__ KeyGenerator = keygenerator;
     
     
 2. In the database (default)
