@@ -1,6 +1,11 @@
-# Complete the guide with examples.
+# SqlCRUDRepository
+
+SqlCRUDRepository is a .net library To perform read, insert, edit and delete operations on database tables.
+
 -----
-# 1. How to create a new record in a table?
+# Samples
+
+## 1. How to create a new record in a table?
 Suppose you have a table called tblCustomer in a database.
 
 Create Table tblCustomer (ID int Identity (1,1), FirstName nvarchar (max), LastName nvarchar (max))
@@ -26,13 +31,13 @@ then save it!
 
 * You can use IDbConnection instead of ConnectionString for added security.
 * After saving in the table, an ID will be given to the customer.
-# 2. How to find a customer with an ID and change its fields.
+## 2. How to find a customer with an ID and change its fields.
             var customerdb = Sampledb.GetByID <tblCustomer> (customer.ID.ToString (), false);
             customerdb.FirstName = "ChangedFirstNameCustomer";
             Sampledb.Save (customerdb);
-# 3. How to remove customer from database?
+## 3. How to remove customer from database?
 Sampledb.Delete (customerdb);
-# 4. How do I use transactions?
+## 4. How do I use transactions?
             Sampledb.BeginTransaction ();
             tblCustomer customer = new tblCustomer ();
             customer.FirstName = "FirstNameCustomer";
@@ -43,7 +48,7 @@ Sampledb.Delete (customerdb);
             Sampledb.Save (customerdb);
             Sampledb.Delete (customerdb);
             Sampledb.CommitTransaction ();
-# 5. How do I change the model name?
+## 5. How do I change the model name?
     [Repository.Domain.TableInfo ("tblCustomer", "ID", true)]
     public class Customer
     {
@@ -52,7 +57,7 @@ Sampledb.Delete (customerdb);
         public string LastName {get; set; }
     }
 * In this section you can create a read-only or write-only table.
-# 6. Can the name of the class property be different from the name of the fields in my table?
+## 6. Can the name of the class property be different from the name of the fields in my table?
 Yes. Using [Repository.Domain.FieldInfo ("FirstName", false)]
 
     [Repository.Domain.TableInfo ("tblCustomer", "ID", true)]
@@ -64,13 +69,13 @@ Yes. Using [Repository.Domain.FieldInfo ("FirstName", false)]
         public string LastName {get; set; }
     }
 
-# 7. What can be done for properties that exist in the class but do not exist in the database?
+## 7. What can be done for properties that exist in the class but do not exist in the database?
         [Repository.Domain.FieldInfo ("CustomProperty", true)]
         public int CustomProperty {get; set; }
-# 8. How do I call a StoredProcedure?
+## 8. How do I call a StoredProcedure?
 var result = Sampledb.Execute_StoredProcedure <Customer> (spName, null);
 * Up to 10 ResultSet can be obtained with one call.
-# 9. How can I find specific values ​​in a table? For example, all customers whose name is equal to a certain value?
+## 9. How can I find specific values ​​in a table? For example, all customers whose name is equal to a certain value?
             string Filter = "FirstName = @ FirstName";
             Dictionary <string, string> parameters = new Dictionary <string, string> ();
             parameters.Add ("FirstName", "FirstNameCustomer");
@@ -81,7 +86,7 @@ var result = Sampledb.Execute_StoredProcedure <Customer> (spName, null);
     
 * In the Find and GetByID methods, a parameter called withLock is considered, which can also be used to lock table records when reading. In cases where there is a transaction, this can be useful to make the synchronization controllable.
     
-# 10. Can we give the ID generation mechanism ourselves, for example not the Identity table?
+## 10. Can we give the ID generation mechanism ourselves, for example not the Identity table?
 Yes.
 To do this, you must first change the model(Both database and code).
     
@@ -120,3 +125,6 @@ There are two mechanisms for creating an ID
 2. In the database (default)
     
     There is a stored procedure in the database called __KeyGenerator that must be overwritten.
+    
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
