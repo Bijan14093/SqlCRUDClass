@@ -127,4 +127,4 @@ There are two mechanisms for creating an ID
     There is a stored procedure in the database called __KeyGenerator that must be overwritten.
     
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://licenses.nuget.org/MIT)
