@@ -31,7 +31,7 @@ then save it!
 
 * You can use IDbConnection instead of ConnectionString for added security.
 * After saving in the table, an ID will be given to the customer.
-## 2. How to find a customer with an ID and change its fields.
+## 2. How to find a customer with an ID and change its fields?
             var customerdb = Sampledb.GetByID <tblCustomer> (customer.ID.ToString (), false);
             customerdb.FirstName = "ChangedFirstNameCustomer";
             Sampledb.Save (customerdb);
