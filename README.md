@@ -35,6 +35,17 @@ then save it!
             var customerdb = Sampledb.GetByID <tblCustomer> (customer.ID.ToString (), false);
             customerdb.FirstName = "ChangedFirstNameCustomer";
             Sampledb.Save (customerdb);
+* Note: properties with null value ignored in SQl update statment .
+
+    for example.
+
+            tblCustomer customer = new tblCustomer ();
+            customer.ID=3;
+            customer.FirstName = "ChangedFirstNameCustomer";
+            Sampledb.Save (customer);
+            
+    Update tblCustomer without change LastName field in database. (LastName is nullable and has value null in sample code)           
+    
 ## 3. How to remove customer from database?
 Sampledb.Delete (customerdb);
 ## 4. How do I use transactions?
