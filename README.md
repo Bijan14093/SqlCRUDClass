@@ -1,6 +1,6 @@
 # SqlCRUDRepository
 
-SqlCRUDRepository is a .net library To perform read, insert, edit and delete operations on database tables.
+SqlCRUDRepository is a .net library To perform read, insert, edit and delete operations on SQL Server database tables.
 
 -----
 # Samples
