@@ -24,3 +24,4 @@ C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcorea
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.dll
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
