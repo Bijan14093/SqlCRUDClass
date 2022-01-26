@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 using Dapper;
@@ -452,6 +453,54 @@ namespace Repository
 
             Result = Result.Substring(0, (Result.Length - 1));
             return Result;
+        }
+
+        internal bool DeleteList(string filter, Dictionary<string, string> Parameters)
+        {
+            if (_tableType == enmTableType.Readonly)
+            {
+                throw new Exception("Object is Readonly.You can not perform (Delete) in this Object.");
+            }
+            if (filter=="")
+            {
+                throw new Exception("filter is Empty.You can not perform (Delete) in this Object.");
+            }
+            bool InTransaction;
+            InTransaction = false;
+            if (_Repository.Transaction != null)
+            {
+                InTransaction = true;
+            }
+            else
+            {
+                _Repository.OpenConnection();
+                InTransaction = false;
+            }
+            string sqlcmd = "";
+            sqlcmd = "DELETE FROM " + _tableName + " Where " + filter + ";";
+            _Repository.Connection.Execute(sqlcmd, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction);
+            if (InTransaction == false)
+            {
+                _Repository.CloseConnection();
+            }
+            return true;
+        }
+
+        private object Convert_to_anonymouse_object(Dictionary<string, string> parameters)
+        {
+            if (parameters==null)
+            {
+                return null;
+            }
+            var eo = new ExpandoObject();
+            var eoColl = (ICollection<KeyValuePair<string, object>>)eo;
+
+            foreach (var kvp in parameters.ConvertTo<Dictionary<string, object>>())
+            {
+                eoColl.Add(kvp);
+            }
+            dynamic eoDynamic = eo;
+            return eoDynamic;
         }
 
         private enum CommandType

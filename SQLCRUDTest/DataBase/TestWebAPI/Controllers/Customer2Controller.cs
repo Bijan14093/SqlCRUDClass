@@ -67,14 +67,14 @@ namespace TestWebAPI.Controllers
             //this code generate exception.
             try
             {
+                var param = new Dictionary<string, string>();
+                param.Add("key", key);
                 Database.TestWebAPI.BeginTransaction();
-                Customer2 o = new Customer2();
-                o.ID = key;
-                Database.TestWebAPI.Delete(o);
+                Database.TestWebAPI.DeleteList<Customer2>("ID = @key", param);
                 Database.TestWebAPI.CommitTransaction();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 Database.TestWebAPI.RollbackTransaction();

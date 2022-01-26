@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {}
+    "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+    "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
       "version": "1.0.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "projectName": "SqlCRUDRepository.Domain",
-        "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
+        "projectPath": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "packagesPath": "C:\\Users\\bghasemi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\obj\\",
+        "outputPath": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

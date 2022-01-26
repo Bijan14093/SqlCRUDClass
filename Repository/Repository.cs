@@ -353,5 +353,16 @@ namespace Repository
 
             }
         }
+
+        public bool DeleteList<T>(string Filter, Dictionary<string, string> Parameters)
+        {
+            lock (this)
+            {
+                var oGeneralFactory = GetGeneralFactory<T>();
+                return oGeneralFactory.DeleteList(Filter, Parameters);
+
+            }
+
+        }
     }
 }
