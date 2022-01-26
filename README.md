@@ -49,7 +49,7 @@ then save it!
     Update tblCustomer without change LastName field in database. (LastName is nullable and has value null in sample code)           
     
 ## 3. How to remove customer from database?
-Sampledb.Delete (customerdb);
+Sampledb.Delete (customerdb); // you can also use DeleteList(batch delete) In latest version.
 ## 4. How do I use transactions?
             Sampledb.BeginTransaction ();
             tblCustomer customer = new tblCustomer ();

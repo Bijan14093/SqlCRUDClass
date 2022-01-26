@@ -15,7 +15,7 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</description>
     <releaseNotes>1.0.15
-Added DeleteList function to IRepository with FilterString(Delete all recorde in database match with specific filter).
+Added DeleteList function to IRepository with Filter(Delete all recorde in database match with specific filter).
 1.0.14
 Added ID Generation mechanism in Code.
 1.0.13
