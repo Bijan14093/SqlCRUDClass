@@ -18,9 +18,11 @@ It takes more work but it gives you a lot of benefits in the future for system m
     <PackageIcon>images.jpg </PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.15</Version>
+    <Version>1.0.16</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.15
+    <PackageReleaseNotes>1.0.16
+Added Connection TimeOut.
+1.0.15
 Added DeleteList function to IRepository with Filter(Delete all recorde in database match with specific filter).
 1.0.14
 Added ID Generation mechanism in Code.

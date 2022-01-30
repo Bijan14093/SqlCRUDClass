@@ -175,7 +175,7 @@ namespace Repository
                 string ID;
                 if (_keyIsIdentity)
                 {
-                    ID = _Repository.Connection.Query<string>(InsertStatment + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction).FirstOrDefault();
+                    ID = _Repository.Connection.Query<string>(InsertStatment + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
                     SetPropertyValueByName(o, _keycolumnname, ID);
                 }
                 else
@@ -190,7 +190,7 @@ namespace Repository
                     }
 
                     SetPropertyValueByName(o, _keycolumnname, ID);
-                    _Repository.Connection.Query<Int64>(InsertStatment + Environment.NewLine, o, transaction: _Repository.Transaction).FirstOrDefault();
+                    _Repository.Connection.Query<Int64>(InsertStatment + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
                 }
             }
             else
@@ -198,7 +198,7 @@ namespace Repository
                 var updateStatment = UpdateStatment(o);
                 if (updateStatment!="" && updateStatment != null)
                 {
-                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction);
+                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
                 }
 
             }
@@ -228,7 +228,7 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            var result= _Repository.Connection.Query<T>(get_SelectStatment("",withLock) + " Where " + _keycolumnname + "= @" + _keycolumnname + "", Parameters, transaction: _Repository.Transaction).FirstOrDefault();
+            var result= _Repository.Connection.Query<T>(get_SelectStatment("",withLock) + " Where " + _keycolumnname + "= @" + _keycolumnname + "", Parameters, transaction: _Repository.Transaction,commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -254,7 +254,7 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            _Repository.Connection.Execute(DeleteStatment, o, transaction: _Repository.Transaction);
+            _Repository.Connection.Execute(DeleteStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -279,7 +279,7 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            var result = _Repository.Connection.Query<T>(get_SelectStatment("", false), null, transaction: _Repository.Transaction).ToList();
+            var result = _Repository.Connection.Query<T>(get_SelectStatment("", false), null, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).ToList();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -322,7 +322,7 @@ namespace Repository
             {
                 sql = sql + "Order by " + orderBy;
             }
-            var result = _Repository.Connection.Query<T>(sql, param: dbArgs, transaction: _Repository.Transaction).ToList();
+            var result = _Repository.Connection.Query<T>(sql, param: dbArgs, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).ToList();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -365,7 +365,7 @@ namespace Repository
                 sql = sql + "Order by " + orderBy;
             }
 
-            var result=_Repository.Connection.Query<T>(sql,param: dbArgs, transaction: _Repository.Transaction).FirstOrDefault();
+            var result=_Repository.Connection.Query<T>(sql,param: dbArgs, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -478,7 +478,7 @@ namespace Repository
             }
             string sqlcmd = "";
             sqlcmd = "DELETE FROM " + _tableName + " Where " + filter + ";";
-            _Repository.Connection.Execute(sqlcmd, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction);
+            _Repository.Connection.Execute(sqlcmd, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
