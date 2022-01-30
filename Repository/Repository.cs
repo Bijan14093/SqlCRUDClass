@@ -316,7 +316,7 @@ namespace Repository
                 List<object> Result = new List<object>();
                 GridReader grid;
                 OpenConnection();
-                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure);
+                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure, commandTimeout: this.Connection.ConnectionTimeout);
                     Result.Add(grid.Read<TFirst>().ToList<TFirst>());
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TSecond>().ToList()); } else { Result.Add(new List<TSecond>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TThird>().ToList()); } else { Result.Add(new List<TThird>()); }
