@@ -62,19 +62,19 @@ namespace Repository
 
         }
 
-        private string InsertStatment
+        private string InsertStatment (bool isguid)
         {
-            get
+            if (string.IsNullOrEmpty(_InsertStatment))
             {
-                if (string.IsNullOrEmpty(_InsertStatment))
+                _InsertStatment = "INSERT INTO " + _tableName + Environment.NewLine;
+                _InsertStatment = _InsertStatment + "(" + Get_ColumnName(CommandType._Insert, "") + ")" + Environment.NewLine;
+                if (isguid)
                 {
-                    _InsertStatment = "INSERT INTO " + _tableName + Environment.NewLine;
-                    _InsertStatment = _InsertStatment + "(" + Get_ColumnName(CommandType._Insert, "") + ")" + Environment.NewLine;
-                    _InsertStatment = _InsertStatment + "VALUES(" + Get_ColumnName(CommandType._Insert, "@") + ")" + Environment.NewLine;
+                    _InsertStatment = _InsertStatment + "OUTPUT INSERTED." + _keycolumnname + Environment.NewLine;
                 }
-
-                return _InsertStatment;
+                _InsertStatment = _InsertStatment + "VALUES(" + Get_ColumnName(CommandType._Insert, "@") + ")" + Environment.NewLine;
             }
+            return _InsertStatment;
         }
 
         private string UpdateStatment(T o)
@@ -162,20 +162,47 @@ namespace Repository
                 InTransaction = false;
             }
             var objectID = GetPropertyValueByName(o, _keycolumnname);
+            bool _keyisGuid = false;
+            bool _keyIsEmpty = false;
+            if (objectID is Guid)
+            {
+                _keyisGuid = true;
+                if ((Guid)objectID == Guid.Empty)
+                {
+                    _keyIsEmpty = true;
+                }
+            }
             if (objectID==null)
             {
-                objectID = "0";
-            }
-            if (objectID.ToString()=="")
+                _keyIsEmpty = true;
+            }else if (objectID.ToString()=="")
             {
-                objectID = "0";
+                _keyIsEmpty = true;
+            }else if (objectID.ToString() == "0") 
+            {
+                _keyIsEmpty = true;
             }
-            if (objectID.ToString() == "0")
+            if (_keyIsEmpty == true)
             {
                 string ID;
-                if (_keyIsIdentity)
+                if (_keyisGuid)
                 {
-                    ID = _Repository.Connection.Query<string>(InsertStatment + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
+                    if (_Repository.__KeyGenerator is null)
+                    {
+                        ID = Guid.NewGuid().ToString();
+                    }
+                    else
+                    {
+                        ID = _Repository.__KeyGenerator(o.GetType().Name);
+                    }
+                    SetPropertyValueByName(o, _keycolumnname, ID);
+                    ID = _Repository.Connection.Query<Guid>(InsertStatment(true) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault().ToString();
+                    SetPropertyValueByName(o, _keycolumnname, ID);
+
+                }
+                else if (_keyIsIdentity)
+                {
+                    ID = _Repository.Connection.Query<string>(InsertStatment(false) + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
                     SetPropertyValueByName(o, _keycolumnname, ID);
                 }
                 else
@@ -190,7 +217,7 @@ namespace Repository
                     }
 
                     SetPropertyValueByName(o, _keycolumnname, ID);
-                    _Repository.Connection.Query<Int64>(InsertStatment + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
+                    _Repository.Connection.Query<Int64>(InsertStatment(false) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
                 }
             }
             else
@@ -518,7 +545,11 @@ namespace Repository
             {
                 return false;
             }
-            if (prop.PropertyType.Name.ToUpper()=="STRING")
+            if (prop.PropertyType.Name.ToUpper() == "GUID")
+            {
+                prop.SetValue(obj, Guid.Parse(value), null);
+            }
+            else if(prop.PropertyType.Name.ToUpper()=="STRING")
             {
                 prop.SetValue(obj, value.ToString(), null);
             }

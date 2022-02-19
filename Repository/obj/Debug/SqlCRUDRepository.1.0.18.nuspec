@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SqlCRUDRepository</id>
-    <version>1.0.17</version>
+    <version>1.0.18</version>
     <authors>Bijan Ghasemi</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">MIT</license>
@@ -14,7 +14,9 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git
 This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</description>
-    <releaseNotes>1.0.17
+    <releaseNotes>1.0.18
+GUID Column support For primary key.
+1.0.17
 Added Connection TimeOut For StoredProcedure.
 1.0.16
 Added Connection TimeOut.
