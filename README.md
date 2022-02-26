@@ -139,8 +139,20 @@ There are two mechanisms for creating an ID
     
     There is a stored procedure in the database called __KeyGenerator that must be overwritten.
     
-## Support
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bijanghasemi)
+## Support Me.
+
+Buy Me A Coffee!(With digital currency)
+    
+Wallet address:
+
+Tron(trx)
+    
+    TRwMczeB2NiQv2ymJh5pA7butgmiRPQGbA
+
+Dogecoin
+    
+    DPE2L9BGkJ3gyzmiNoqUiEk6X2epmipjSE
+
     
 ## License
 [MIT](https://licenses.nuget.org/MIT)
