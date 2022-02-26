@@ -139,5 +139,11 @@ There are two mechanisms for creating an ID
     
     There is a stored procedure in the database called __KeyGenerator that must be overwritten.
     
+## Support
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bijanghasemi)
+    
 ## License
 [MIT](https://licenses.nuget.org/MIT)
+    
+
+   
