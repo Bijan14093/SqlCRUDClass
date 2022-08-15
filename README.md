@@ -139,23 +139,16 @@ There are two mechanisms for creating an ID
     
     There is a stored procedure in the database called __KeyGenerator that must be overwritten.
     
-## Support Me.
+## 11. Is it possible to update in batches?
+Yes.
 
-Buy Me A Coffee!(With digital currency)
-    
-Wallet address:
+For example
+This command updates the first name column of all records whose ID is not 2.
 
-Tron(trx)
-    
-    TRwMczeB2NiQv2ymJh5pA7butgmiRPQGbA
-
-Dogecoin
-    
-    DPE2L9BGkJ3gyzmiNoqUiEk6X2epmipjSE
-
+       Customer o = new Customer();
+       o.FirstName = "a";
+       Database.TestWebAPI.Save(o,"ID <> 2");
+	
     
 ## License
 [MIT](https://licenses.nuget.org/MIT)
-    
-
-   

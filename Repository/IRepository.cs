@@ -24,6 +24,7 @@ namespace Repository
         List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, TTenth>(string ProcedureName, Dictionary<string, string> Parameters);
         bool RollbackTransaction();
         bool Save<T>(T o);
+        bool Save<T>(T o, string Filter);
         bool Delete<T>(T o);
         bool DeleteList<T>(string Filter, Dictionary<string, string> Parameters);
         T GetByID<T>(string ID,bool withLock);

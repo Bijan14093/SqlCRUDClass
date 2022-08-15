@@ -73,6 +73,29 @@ namespace TestWebAPI.Controllers
                 throw;
             }
         }
+        [HttpPost("BatchUpdate")]
+        public string BatchUpdate(int keyNotIs, [FromBody] CustomerView body)
+        {
+            if (keyNotIs == 0)
+            {
+                throw new Exception("you must be used key that not equal zero on update. this cause insert new row.");
+            }
+            try
+            {
+                Database.TestWebAPI.BeginTransaction();
+                Customer o = new Customer();
+                o.FirstName = body.FirstName;
+                Database.TestWebAPI.Save(o,"ID <> " + keyNotIs);
+                Database.TestWebAPI.CommitTransaction();
+                return o.ID.ToString();
+
+            }
+            catch (Exception)
+            {
+                Database.TestWebAPI.RollbackTransaction();
+                throw;
+            }
+        }
 
         [HttpPost("Delete")]
         public bool Delete(int key)

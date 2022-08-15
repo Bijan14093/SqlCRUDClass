@@ -169,7 +169,7 @@ namespace Repository
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.Save(ref o);
+                return oGeneralFactory.Save(ref o,"");
             }
 
 
@@ -361,6 +361,16 @@ namespace Repository
                 var oGeneralFactory = GetGeneralFactory<T>();
                 return oGeneralFactory.DeleteList(Filter, Parameters);
 
+            }
+
+        }
+
+        public bool Save<T>(T o, string Filter)
+        {
+            lock (this)
+            {
+                var oGeneralFactory = GetGeneralFactory<T>();
+                return oGeneralFactory.Save(ref o, Filter);
             }
 
         }

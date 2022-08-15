@@ -77,7 +77,7 @@ namespace Repository
             return _InsertStatment;
         }
 
-        private string UpdateStatment(T o)
+        private string UpdateStatment(T o, string filter)
         {
             string _UpdateStatment = null;
             string Columnname;
@@ -112,7 +112,15 @@ namespace Repository
                 Result = Result.Substring(0, (Result.Length - 1));
                 _UpdateStatment = "Update " + _tableName + Environment.NewLine;
                 _UpdateStatment = _UpdateStatment + "SET " + Result + "" + Environment.NewLine;
-                _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname;
+                if (filter!=null && filter != "")
+                {
+                    _UpdateStatment = _UpdateStatment + "Where " + filter;
+                }
+                else
+                {
+                    _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname;
+                }
+                
             }
 
             return _UpdateStatment;
@@ -144,7 +152,7 @@ namespace Repository
             }
             return _SelectStatment;
         }
-        public bool Save(ref T o)
+        public bool Save(ref T o, string filter)
         {
             if (_tableType==enmTableType.Readonly)
             {
@@ -182,8 +190,19 @@ namespace Repository
             {
                 _keyIsEmpty = true;
             }
-            if (_keyIsEmpty == true)
+            if (filter != null && filter != "")
             {
+                //batch Update
+                var updateStatment = UpdateStatment(o, filter);
+                if (updateStatment != "" && updateStatment != null)
+                {
+                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
+                }
+
+            }
+            else if (_keyIsEmpty == true)
+            {
+                //Insert 
                 string ID;
                 if (_keyisGuid)
                 {
@@ -220,9 +239,10 @@ namespace Repository
                     _Repository.Connection.Query<Int64>(InsertStatment(false) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
                 }
             }
-            else
+            else 
             {
-                var updateStatment = UpdateStatment(o);
+                //Update
+                var updateStatment = UpdateStatment(o, "");
                 if (updateStatment!="" && updateStatment != null)
                 {
                     _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
@@ -481,6 +501,7 @@ namespace Repository
             Result = Result.Substring(0, (Result.Length - 1));
             return Result;
         }
+
 
         internal bool DeleteList(string filter, Dictionary<string, string> Parameters)
         {
