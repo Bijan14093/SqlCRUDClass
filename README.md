@@ -147,7 +147,7 @@ This command updates the first name column of all records whose ID is not 2.
 
        Customer o = new Customer();
        o.FirstName = "a";
-       Database.TestWebAPI.Save(o,"ID <> 2");
+       Sampledb.Save(o,"ID <> 2");
 	
     
 ## License
