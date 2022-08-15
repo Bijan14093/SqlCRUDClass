@@ -28,6 +28,7 @@ C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\S
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.Domain.dll
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.Domain.pdb
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.AssemblyReference.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfoInputs.cache
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfo.cs
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CoreCompileInputs.cache

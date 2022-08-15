@@ -5,6 +5,7 @@ C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\net45\Newtonsof
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.Domain.dll
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.Domain.pdb
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.AssemblyReference.cache
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.AssemblyInfoInputs.cache
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.AssemblyInfo.cs
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CoreCompileInputs.cache

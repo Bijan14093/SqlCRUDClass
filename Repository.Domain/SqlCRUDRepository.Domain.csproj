@@ -7,7 +7,7 @@
     <AssemblyVersion>1400.06.06.10</AssemblyVersion>
     <FileVersion>1400.06.06.10</FileVersion>
     <PackageId>SqlCRUDRepository.Domain</PackageId>
-    <PackageIcon>images.jpg </PackageIcon>
+    <PackageIcon>images.jpg</PackageIcon>
     <Description>This project used with SqlCRUDRepository.
 SqlCRUDRepository:Utility for CRUD operation based on Dapper ORM.
 Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</Description>
@@ -17,15 +17,13 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git</D
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository</PackageTags>
     <PackageReleaseNotes>Add Readonly,Writeonly property to TableInfo Attribute.
 </PackageReleaseNotes>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="License.txt" />
     <None Remove="License.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="e:\Git\SqlCRUDClass\images.jpg ">
+    <None Include="..\images.jpg">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -19,6 +19,7 @@ e:\Git\SQLCRUD2\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Doma
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.deps.json
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.dll
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\bin\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.AssemblyInfo.cs
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
