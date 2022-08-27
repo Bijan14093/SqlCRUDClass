@@ -148,7 +148,12 @@ This command updates the first name column of all records whose ID is not 2.
        Customer o = new Customer();
        o.FirstName = "a";
        Sampledb.Save(o,"ID <> 2");
-	
+
+## 12. How can I find the first record matching the filter?
+            string Filter = "FirstName = @FirstName";
+            Dictionary <string, string> parameters = new Dictionary <string, string> ();
+            parameters.Add ("FirstName", "FirstNameCustomer");
+            var result = Sampledb.FindFirst <Customer> (Filter, "ID", false, parameters, "");
     
 ## License
 [MIT](https://licenses.nuget.org/MIT)
