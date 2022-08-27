@@ -35,6 +35,6 @@ C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRe
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.AssemblyInfoInputs.cache
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.AssemblyInfo.cs
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CoreCompileInputs.cache
-C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CopyComplete
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.dll
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.pdb
+C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CopyComplete

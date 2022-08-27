@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2DXewts5xEApKals1l10l17bdBRBdIFIgvQzjBkkAKcw9gMUfVJQnWHIR5xjBaVnioW2aRyMzMu9xtHbuC6G6Q==",
+  "dgSpecHash": "vD2UM+a/HsfOlfiiwDTNrH4UGbEkVdl+GrThMApzcX86UULys5TeLskFQyCm7DXuvIWfWKL7mt2ThqE/ey0LLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
+  "projectFilePath": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

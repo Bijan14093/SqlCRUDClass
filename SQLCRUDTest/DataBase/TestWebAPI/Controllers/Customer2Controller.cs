@@ -91,7 +91,14 @@ namespace TestWebAPI.Controllers
             return Customer2;
         }
 
-
+        [HttpGet("FindFirst")]
+        public Customer2 FindFirst(string FirstName)
+        {
+            var param = new Dictionary<string, string>();
+            param.Add("FirstName", FirstName);
+            var Customer2 = Database.TestWebAPI.FindFirst<Customer2>("FirstName=@FirstName", "", false, param);
+            return Customer2;
+        }
 
         [HttpGet("ParametericFind")]
         public List<Customer2> ParametericFind(string FirstName) 
