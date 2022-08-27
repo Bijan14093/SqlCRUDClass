@@ -11,16 +11,18 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1401.06.05.08</AssemblyVersion>
-    <FileVersion>1401.06.05.08</FileVersion>
+    <AssemblyVersion>1401.06.05.11</AssemblyVersion>
+    <FileVersion>1401.06.05.11</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.20</Version>
+    <Version>1.0.21</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.20
+    <PackageReleaseNotes>1.0.21
+Fix Bug FindFirst.
+1.0.20
 Improved performance of FindFirst function by adding Top 1.
 1.0.19
 Batch Update.

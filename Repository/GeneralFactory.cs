@@ -141,7 +141,15 @@ namespace Repository
 
         private string get_SelectStatment(string NumberofRecords, bool withLock, string FieldNames = "")
         {
-            _SelectStatment = "Select Top " + NumberofRecords + " " + Get_ColumnName(CommandType._Select, "", FieldNames) + Environment.NewLine;
+            if (NumberofRecords=="")
+            {
+                _SelectStatment = "Select " + Get_ColumnName(CommandType._Select, "", FieldNames) + Environment.NewLine;
+            }
+            else
+            {
+                _SelectStatment = "Select Top " + NumberofRecords + " " + Get_ColumnName(CommandType._Select, "", FieldNames) + Environment.NewLine;
+            }
+
             if (withLock)
             {
                 _SelectStatment = _SelectStatment + "From " + _tableName + " WITH(XLOCK) " + Environment.NewLine;
