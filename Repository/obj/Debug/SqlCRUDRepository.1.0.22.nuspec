@@ -15,39 +15,29 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</description>
     <releaseNotes>1.0.22: add non static version of RepositoryFactory(RepositoryFactory2).
-1.0.21
-: Fix Bug FindFirst.
 
-1.0.20: 
-Improved performance of FindFirst function by adding Top 
-1.
-1.0.19
-: Batch Update.
-Added parameter to Save function to IRepository with Filter(Update all recorde in database match with specific filter).
+1.0.21: Fix Bug FindFirst.
 
-1.0.18: 
-GUID Column support For primary key.
+1.0.20: Improved performance of FindFirst function by adding Top 
 
-1.0.17: 
-Added Connection TimeOut For StoredProcedure.
+1.0.19: Batch Update.Added parameter to Save function to IRepository with Filter(Update all recorde in database match with specific filter).
 
-1.0.16: 
-Added Connection TimeOut.
+1.0.18: GUID Column support For primary key.
 
-1.0.15: 
-Added DeleteList function to IRepository with Filter(Delete all recorde in database match with specific filter).
-1.0.14
-: Added ID Generation mechanism in Code.
+1.0.17: Added Connection TimeOut For StoredProcedure.
 
-1.0.13: 
-Added Transaction Count property to IRepository interface.
+1.0.16: Added Connection TimeOut.
 
-1.0.12: 
-When you use special characters in the name of properties in objects such as Chinese characters!
+1.0.15: Added DeleteList function to IRepository with Filter(Delete all recorde in database match with specific filter).
+
+1.0.14: Added ID Generation mechanism in Code.
+
+1.0.13: Added Transaction Count property to IRepository interface.
+
+1.0.12: When you use special characters in the name of properties in objects such as Chinese characters!
 Add brackets for the name of the properties of each object to prevent errors when query(SELECT ...  FROM TABLE) the database.
 
-1.0.11: 
-Add new constructor with IDbConnection parameter.</releaseNotes>
+1.0.11: Add new constructor with IDbConnection parameter.</releaseNotes>
     <tags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.0">
