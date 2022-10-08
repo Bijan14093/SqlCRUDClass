@@ -10,5 +10,6 @@ namespace TestWebAPI
     {
         public IRepository TestWebAPI { get;  }
         public IRepository TestWebAPI_Log { get;  }
+        internal bool Initialize(string _ConnectionString, string _ConnectionStringLog);
     }
 }

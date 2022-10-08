@@ -8,6 +8,7 @@ using TestWebAPI;
 using TestWebAPI.Domain.Model;
 using Repository;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Configuration;
 
 namespace TestWebAPI.Log
 {
@@ -37,6 +38,12 @@ namespace TestWebAPI.Log
         {
 
             IDatabase Database = (IDatabase)context.HttpContext.RequestServices.GetService(typeof(IDatabase));
+            IConfiguration Config = (IConfiguration)context.HttpContext.RequestServices.GetService(typeof(IConfiguration));
+            string ConnectionString;
+            string ConnectionStringLog;
+            ConnectionString = Config.GetValue<String>("ConnectionString");
+            ConnectionStringLog = Config.GetValue<String>("ConnectionStringLog");
+            Database.Initialize(ConnectionString, ConnectionStringLog);
             if (context.Result is ObjectResult)
             {
                 output = ((ObjectResult)context.Result).Value.ToJson();

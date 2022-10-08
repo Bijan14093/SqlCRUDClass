@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zA/wwubFOfvJsRsrfZqx01pb5i6C3dPfz7Y19IjNZnJ2OTXHe93HT8kb5akvtax2ke+VWBZicXSs5vfybwrxFw==",
+  "dgSpecHash": "bhK3cyDZ3sHvqWqeAPQo+oMrgBfOvZeinNcWhasWwV09PhlpO9am7d14Bzst44C0ovOdfOQr7zmoMDRZGItGog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bghasemi\\Source\\Repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
+  "projectFilePath": "g:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bghasemi\\.nuget\\packages\\dapper\\1.50.1\\dapper.1.50.1.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",

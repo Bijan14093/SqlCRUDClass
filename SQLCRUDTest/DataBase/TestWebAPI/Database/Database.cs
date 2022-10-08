@@ -8,23 +8,10 @@ namespace TestWebAPI
 {
     public class Database:IDatabase
     {
-        internal static string ConnectionString;
-        internal static string ConnectionStringLog; 
+        internal string ConnectionString;
+        internal string ConnectionStringLog; 
         internal  IRepository _TestWebAPI;
         internal IRepository _TestWebAPI_Log;
-        public Database() 
-        {
-            System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString);
-            System.Data.SqlClient.SqlConnection connection_Log = new System.Data.SqlClient.SqlConnection(ConnectionStringLog);
-            //_TestWebAPI = RepositoryFactory.CreateRepository(ConnectionString);
-            _TestWebAPI = RepositoryFactory.CreateRepository(connection);
-
-            _TestWebAPI.__KeyGenerator = keygenerator; // here you define mechanism of generation : There are two mechanisms for creating an ID
-
-            //_TestWebAPI_Log = RepositoryFactory.CreateRepository(connection_Log);
-            _TestWebAPI_Log = RepositoryFactory.CreateRepository(ConnectionStringLog);
-
-        }
 
         private string keygenerator(string ClassName)
         {
@@ -39,15 +26,21 @@ namespace TestWebAPI
             get { return _TestWebAPI_Log; }
         }
 
-        internal static bool Initialize(string _ConnectionString, string _ConnectionStringLog)
+         bool IDatabase.Initialize(string _ConnectionString, string _ConnectionStringLog)
         {
             ConnectionString = _ConnectionString;
             ConnectionStringLog = _ConnectionStringLog;
+            System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(ConnectionString);
+            System.Data.SqlClient.SqlConnection connection_Log = new System.Data.SqlClient.SqlConnection(ConnectionStringLog);
+            RepositoryFactory2 repositoryFactory2 = new RepositoryFactory2();
+            _TestWebAPI = repositoryFactory2.CreateRepository(connection);
+            _TestWebAPI.__KeyGenerator = keygenerator; // here you define mechanism of generation : There are two mechanisms for creating an ID
+            _TestWebAPI_Log = repositoryFactory2.CreateRepository(ConnectionStringLog);
             RunMigration("TestWebAPI", _ConnectionString);
             RunMigration("TestWebAPI_Log", _ConnectionStringLog);
             return true;
         }
-        private static void RunMigration(string ProjectName, string _ConnectionString)
+        private  void RunMigration(string ProjectName, string _ConnectionString)
         {
             if (_ConnectionString == "" || _ConnectionString == null)
             {

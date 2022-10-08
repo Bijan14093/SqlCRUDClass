@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using TestWebAPI.Domain.Enum;
 using TestWebAPI.Domain.Model;
 using TestWebAPI.Domain.ViewModel;
@@ -18,9 +19,15 @@ namespace TestWebAPI.Controllers
     public class StoredProcedureController : ControllerBase
     {
         IDatabase Database;
-        public StoredProcedureController(IDatabase database)
+        public StoredProcedureController(IDatabase database, IConfiguration Config)
         {
             Database = database;
+            string ConnectionString;
+            string ConnectionStringLog;
+            ConnectionString = Config.GetValue<String>("ConnectionString");
+            ConnectionStringLog = Config.GetValue<String>("ConnectionStringLog");
+            Database.Initialize(ConnectionString, ConnectionStringLog);
+
         }
         [HttpPost("Execute_SP_GetCustomerDetail")]
         [Log]

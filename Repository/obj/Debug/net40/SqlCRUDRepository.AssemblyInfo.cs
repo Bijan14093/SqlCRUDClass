@@ -19,7 +19,7 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1401.06.05.11")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.21")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.22")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlCRUDRepository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlCRUDRepository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1401.06.05.11")]

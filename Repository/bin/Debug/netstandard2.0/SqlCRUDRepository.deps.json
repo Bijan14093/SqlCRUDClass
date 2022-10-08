@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "SqlCRUDRepository/1.0.21": {
+      "SqlCRUDRepository/1.0.22": {
         "dependencies": {
           "Dapper": "1.50.1",
           "NETStandard.Library": "2.0.3",
@@ -981,7 +981,7 @@
     }
   },
   "libraries": {
-    "SqlCRUDRepository/1.0.21": {
+    "SqlCRUDRepository/1.0.22": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\SQLCRUDTest",
-    "\\SQLCRUDTest\\DataBase",
-    "\\SQLCRUDTest\\DataBase\\TestWebAPI",
-    "\\SQLCRUDTest\\DataBase\\TestWebAPI\\Controllers"
+    ""
   ],
-  "SelectedNode": "\\SQLCRUDTest\\DataBase\\TestWebAPI\\Controllers\\Customer2Controller.cs",
+  "SelectedNode": "\\SqlCRUDClass.sln",
   "PreviewInSolutionExplorer": false
 }

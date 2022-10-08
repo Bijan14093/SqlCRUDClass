@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading;
 using Dapper;
 using Repository.Domain;
-using static Dapper.SqlMapper;
 
 namespace Repository
 {
@@ -314,7 +313,7 @@ namespace Repository
                 }
 
                 List<object> Result = new List<object>();
-                GridReader grid;
+                SqlMapper.GridReader grid;
                 OpenConnection();
                     grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure, commandTimeout: this.Connection.ConnectionTimeout);
                     Result.Add(grid.Read<TFirst>().ToList<TFirst>());

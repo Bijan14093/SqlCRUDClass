@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using TestWebAPI.Domain.Enum;
 using TestWebAPI.Domain.Model;
 using TestWebAPI.Domain.ViewModel;
@@ -18,9 +19,15 @@ namespace TestWebAPI.Controllers
     public class WriteonlyCustomerController : ControllerBase
     {
         IDatabase Database;
-        public WriteonlyCustomerController(IDatabase database)
+        public WriteonlyCustomerController(IDatabase database, IConfiguration Config)
         {
             Database = database;
+            string ConnectionString;
+            string ConnectionStringLog;
+            ConnectionString = Config.GetValue<String>("ConnectionString");
+            ConnectionStringLog = Config.GetValue<String>("ConnectionStringLog");
+            Database.Initialize(ConnectionString, ConnectionStringLog);
+
         }
         [HttpPost("Insert")]
         [Log]

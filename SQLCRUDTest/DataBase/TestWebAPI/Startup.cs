@@ -118,15 +118,7 @@ namespace TestWebAPI
                  .SetBasePath(env.ContentRootPath)
                  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            var Configuration = builder.Build();
 
-            // Initialize Datase
-            string ConnectionString;
-            string ConnectionStringLog;
-            ConnectionString = Configuration.GetValue<String>("ConnectionString");
-            ConnectionStringLog = Configuration.GetValue<String>("ConnectionStringLog");
-
-            Database.Initialize(ConnectionString, ConnectionStringLog);
 
         }
     }
