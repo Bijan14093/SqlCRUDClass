@@ -32,11 +32,27 @@ namespace TestWebAPI.Controllers
         [Log]
         public string Insert([FromBody] Customer2 body)
         {
-            //this code generate exception.
             Customer2 o = new Customer2();
-            o.FirstName = body.FirstName;
-            o.LastName = body.LastName;
-            Database.TestWebAPI.Save(o);
+            try
+            {
+                Database.TestWebAPI.BeginTransaction();
+                //this code generate exception.
+                o.FirstName = body.FirstName;
+                o.LastName = body.LastName;
+                Database.TestWebAPI.Save(o);
+                Dictionary<string, string> parameters = new Dictionary<string, string>();
+                parameters.Add("FirstName", body.FirstName);
+                //you can not use writeonly object in execute procedure
+                var result = Database.TestWebAPI.Execute_StoredProcedure<Customer, Customer, Customer2, ReadonlyCustomer>("SP_GetCustomerDetail", parameters);
+                Database.TestWebAPI.CommitTransaction();
+
+            }
+            catch (Exception ex)
+            {
+
+                Database.TestWebAPI.RollbackTransaction();
+            }
+
             return o.ID.ToString();
         }
 

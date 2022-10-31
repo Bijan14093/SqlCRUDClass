@@ -314,8 +314,18 @@ namespace Repository
 
                 List<object> Result = new List<object>();
                 SqlMapper.GridReader grid;
-                OpenConnection();
-                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure, commandTimeout: this.Connection.ConnectionTimeout);
+                    bool InTransaction;
+                    InTransaction = false;
+                    if (Transaction != null)
+                    {
+                        InTransaction = true;
+                    }
+                    else
+                    {
+                        OpenConnection();
+                        InTransaction = false;
+                    }
+                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure, commandTimeout: this.Connection.ConnectionTimeout,transaction: this.Transaction);
                     Result.Add(grid.Read<TFirst>().ToList<TFirst>());
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TSecond>().ToList()); } else { Result.Add(new List<TSecond>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TThird>().ToList()); } else { Result.Add(new List<TThird>()); }
@@ -326,7 +336,10 @@ namespace Repository
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TEighth>().ToList()); } else { Result.Add(new List<TEighth>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TNinth>().ToList()); } else { Result.Add(new List<TNinth>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TTenth>().ToList()); } else { Result.Add(new List<TTenth>()); }
-                CloseConnection();
+                if (InTransaction == false)
+                {
+                    CloseConnection();
+                }
                 return Result;
 
             }

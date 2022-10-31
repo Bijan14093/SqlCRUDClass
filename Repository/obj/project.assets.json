@@ -7787,7 +7787,7 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.0.22",
+    "version": "1.0.23",
     "restore": {
       "projectUniqueName": "g:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
       "projectName": "SqlCRUDRepository",
