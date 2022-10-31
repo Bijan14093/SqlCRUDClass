@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "SqlCRUDRepository/1.0.22": {
+      "SqlCRUDRepository/1.0.23": {
         "dependencies": {
           "Dapper": "1.50.1",
           "Newtonsoft.Json": "13.0.1",
@@ -848,7 +848,7 @@
     }
   },
   "libraries": {
-    "SqlCRUDRepository/1.0.22": {
+    "SqlCRUDRepository/1.0.23": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
