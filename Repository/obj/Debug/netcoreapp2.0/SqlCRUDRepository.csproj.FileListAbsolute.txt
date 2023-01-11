@@ -1,0 +1,13 @@
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp2.0\SqlCRUDRepository.deps.json
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp2.0\SqlCRUDRepository.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp2.0\SqlCRUDRepository.pdb
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp2.0\SqlCRUDRepository.Domain.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp2.0\SqlCRUDRepository.Domain.pdb
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.csproj.AssemblyReference.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.AssemblyInfoInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.AssemblyInfo.cs
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.csproj.CopyComplete
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.dll
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp2.0\SqlCRUDRepository.pdb

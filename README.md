@@ -156,8 +156,11 @@ This command updates the first name column of all records whose ID is not 2.
             var result = Sampledb.FindFirst <Customer> (Filter, "ID", false, parameters, "");
 
 ## 13. Is it possible to insert in a batch?
+
 Yes.
+
 For example
+
             List<Customer> lst = new List<Customer>();
             for (int i = 0; i < 10000; i++)
             {
@@ -168,5 +171,6 @@ For example
             }
             Sampledb.SaveList(lst, "ID");
             return "1";    
+Note: If the record exists, it will update it, if it does not exist, it will insert it.
 ## License
 [MIT](https://licenses.nuget.org/MIT)

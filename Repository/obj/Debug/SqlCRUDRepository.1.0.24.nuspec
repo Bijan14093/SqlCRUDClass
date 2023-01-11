@@ -54,6 +54,11 @@ Add brackets for the name of the properties of each object to prevent errors whe
         <dependency id="Dapper" version="1.50.1" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
       </group>
+      <group targetFramework=".NETCoreApp2.0">
+        <dependency id="SqlCRUDRepository.Domain" version="1.0.4" exclude="Build,Analyzers" />
+        <dependency id="Dapper" version="1.50.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+      </group>
       <group targetFramework=".NETCoreApp3.0">
         <dependency id="SqlCRUDRepository.Domain" version="1.0.4" exclude="Build,Analyzers" />
         <dependency id="Dapper" version="1.50.1" exclude="Build,Analyzers" />
