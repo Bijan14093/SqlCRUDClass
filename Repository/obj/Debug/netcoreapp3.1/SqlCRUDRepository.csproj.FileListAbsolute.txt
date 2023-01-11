@@ -70,6 +70,5 @@ D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.Generat
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfoInputs.cache
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfo.cs
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CoreCompileInputs.cache
-D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CopyComplete
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.dll
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.pdb

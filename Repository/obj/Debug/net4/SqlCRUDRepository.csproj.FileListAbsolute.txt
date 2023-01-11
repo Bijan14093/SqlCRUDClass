@@ -9,6 +9,5 @@ D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.GeneratedMSBuild
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.AssemblyInfoInputs.cache
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.AssemblyInfo.cs
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.CoreCompileInputs.cache
-D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.CopyComplete
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.dll
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.pdb

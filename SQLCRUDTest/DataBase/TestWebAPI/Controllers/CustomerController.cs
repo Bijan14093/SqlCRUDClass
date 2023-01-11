@@ -52,13 +52,30 @@ namespace TestWebAPI.Controllers
             Customer o2 = new Customer();
             o2.FirstName = body.FirstName;
             o2.LastName = body.LastName;
-            lst.Add(o2);
-            lst.Add(o2);
-            lst.Add(o2);
-            Database.TestWebAPI.SaveList(lst, "ID");
+            Database.TestWebAPI.Save(o2);
             return o.ID.ToString();
         }
+        [HttpPost("InsertBatch_100000")]
+        [Log]
+        /// <summary>
+        /// This Table is identity 
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
 
+        public string InsertBatch_100000([FromBody] CustomerView body)
+        {
+            List<Customer> lst = new List<Customer>();
+            for (int i = 0; i < 10000; i++)
+            {
+                Customer o2 = new Customer();
+                o2.FirstName = body.FirstName;
+                o2.LastName = body.LastName;
+                lst.Add(o2);
+            }
+            Database.TestWebAPI.SaveList(lst, "ID");
+            return "1";
+        }
         [HttpPost("Update")]
         public string UpdateCustomer2Table(int key, [FromBody] CustomerView body)
         {
@@ -101,15 +118,16 @@ namespace TestWebAPI.Controllers
                 Database.TestWebAPI.BeginTransaction();
                 Customer o = new Customer();
                 o.FirstName = body.FirstName;
-                Database.TestWebAPI.Save(o,"ID <> " + keyNotIs);
+                Dictionary<string, string> Parameters = new Dictionary<string, string>();
+                Database.TestWebAPI.Save(o, "ID <>" + keyNotIs);
                 Database.TestWebAPI.CommitTransaction();
                 return o.ID.ToString();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Database.TestWebAPI.RollbackTransaction();
-                throw;
+                throw ex;
             }
         }
 
