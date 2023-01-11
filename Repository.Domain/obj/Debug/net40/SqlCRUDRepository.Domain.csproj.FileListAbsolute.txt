@@ -40,7 +40,6 @@ g:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.p
 g:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
 D:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.dll
 D:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\net40\SqlCRUDRepository.Domain.pdb
-D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
 D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
 D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\net40\SqlCRUDRepository.Domain.AssemblyInfo.cs

@@ -28,8 +28,7 @@ namespace Repository
         /// <summary>
         /// list of objects is received and based on the second parameter(basePropertyName)
         /// , if it exists in the database, it is updated
-        /// , otherwise it is inserted
-        /// , and the ID is assigned to the object.
+        /// , otherwise it is inserted.
         /// </summary>
         /// <typeparam name="T">domain model</typeparam>
         /// <param name="list"> list of objects for update or insert.</param>

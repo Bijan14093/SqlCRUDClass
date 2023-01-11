@@ -154,6 +154,19 @@ This command updates the first name column of all records whose ID is not 2.
             Dictionary <string, string> parameters = new Dictionary <string, string> ();
             parameters.Add ("FirstName", "FirstNameCustomer");
             var result = Sampledb.FindFirst <Customer> (Filter, "ID", false, parameters, "");
-    
+
+## 13. Is it possible to insert in a batch?
+Yes.
+For example
+            List<Customer> lst = new List<Customer>();
+            for (int i = 0; i < 10000; i++)
+            {
+                Customer o2 = new Customer();
+                o2.FirstName = body.FirstName;
+                o2.LastName = body.LastName;
+                lst.Add(o2);
+            }
+            Sampledb.SaveList(lst, "ID");
+            return "1";    
 ## License
 [MIT](https://licenses.nuget.org/MIT)

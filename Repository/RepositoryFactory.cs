@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Repository
+﻿namespace Repository
 {
     public static class RepositoryFactory
     {

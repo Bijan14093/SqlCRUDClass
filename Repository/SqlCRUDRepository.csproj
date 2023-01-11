@@ -20,7 +20,7 @@ It takes more work but it gives you a lot of benefits in the future for system m
     <PackageLicenseFile></PackageLicenseFile>
     <Version>1.0.24</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.24: Add SaveList function.
+    <PackageReleaseNotes>1.0.24: Added SaveList function for batch insert or update.
 
 1.0.23: Running StoredProcedure inside a Transaction close the connection.
 

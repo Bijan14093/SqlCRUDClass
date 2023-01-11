@@ -118,6 +118,7 @@ namespace TestWebAPI.Controllers
                 Database.TestWebAPI.BeginTransaction();
                 Customer o = new Customer();
                 o.FirstName = body.FirstName;
+                o.LastName = body.LastName;
                 Dictionary<string, string> Parameters = new Dictionary<string, string>();
                 Database.TestWebAPI.Save(o, "ID <>" + keyNotIs);
                 Database.TestWebAPI.CommitTransaction();
