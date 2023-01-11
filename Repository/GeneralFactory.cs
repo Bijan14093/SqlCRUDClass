@@ -483,83 +483,83 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            if (_keyIsIdentity)
+            var dt = list.ConvertTo<DataTable>();
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy((SqlConnection)(_Repository.Connection)))
             {
-                var dt = list.ConvertTo<DataTable>();
-                using (SqlBulkCopy bulkCopy = new SqlBulkCopy((SqlConnection)(_Repository.Connection)))
+
+                var updatecolumnName = "";
+                var insertcolumnName = "";
+                foreach (var currentColumnname in _columnNames)
                 {
-                    var _tmptableName = "#" + typeof(T).Name;
-                    var updatecolumnName = "";
-                    var insertcolumnName = "";
-
-                    // checking whether the table selected from the dataset exists in the database or not
-                    var checkTableIfExistsCommand = new SqlCommand();
-                    var exists =_Repository.Connection.ExecuteScalar("if (Not OBJECT_ID('tempdb.." + _tmptableName + "') is Null) SELECT 1 ELSE SELECT 0")
-                                          .ToString().Equals("1");
-                    // if does not exist
-                    if (!exists)
+                    var Columnname = currentColumnname.Value;
+                    var FieldName = currentColumnname.Key;
+                    bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping(Columnname, FieldName));
+                    if (FieldName == basePropertyName)
                     {
-                        var createTableBuilder = new StringBuilder("CREATE TABLE [" + _tmptableName + "]");
-                        createTableBuilder.AppendLine("(");
-
-                        // selecting each column of the datatable to create a table in the database
-                        foreach (var currentColumnname in _columnNames)
-                        {
-                            var Columnname = currentColumnname.Value;
-                            createTableBuilder.AppendLine("  [" + Columnname + "] VARCHAR(MAX),");
-                        }
-
-                        createTableBuilder.Remove(createTableBuilder.Length - 1, 1);
-                        createTableBuilder.AppendLine(")");
-
-                        _Repository.Connection.Execute(createTableBuilder.ToString());
+                        basePropertyName = Columnname;
                     }
-                    bulkCopy.DestinationTableName = _tmptableName;
-                    bulkCopy.BatchSize = 10000;
+                    if (_keyIsIdentity && ((Columnname ?? "") == (_keycolumnname ?? "")))
+                    {
+                    }
+                    else
+                    {
+                        
+                        updatecolumnName = updatecolumnName + "t1."+ Columnname +" = (Case When t2." + Columnname+" is null then t1." + Columnname + " else T2."+ Columnname + " End) ,";
+                        insertcolumnName = insertcolumnName + Columnname + " ,";
+                    }
+
+                }
+
+                updatecolumnName = updatecolumnName.Remove(updatecolumnName.Length - 1, 1);
+                insertcolumnName = insertcolumnName.Remove(insertcolumnName.Length - 1, 1);
+
+                var _tmptableName = "#" + typeof(T).Name;
+                // checking whether the table selected from the dataset exists in the database or not
+                var checkTableIfExistsCommand = new SqlCommand();
+                var exists = _Repository.Connection.ExecuteScalar("if (Not OBJECT_ID('tempdb.." + _tmptableName + "') is Null) SELECT 1 ELSE SELECT 0")
+                                      .ToString().Equals("1");
+                // if does not exist
+                if (!exists)
+                {
+                    var createTableBuilder = new StringBuilder("CREATE TABLE [" + _tmptableName + "]");
+                    createTableBuilder.AppendLine("(");
+
+                    // selecting each column of the datatable to create a table in the database
                     foreach (var currentColumnname in _columnNames)
                     {
                         var Columnname = currentColumnname.Value;
-                        var FieldName = currentColumnname.Key;
-                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping(Columnname, FieldName));
-                        if (FieldName== basePropertyName)
-                        {
-                            basePropertyName = Columnname;
-                        }
-                        else
-                        {
-                            updatecolumnName = updatecolumnName + "t1." + Columnname + " = " + "t2." + Columnname + ",";
-                            insertcolumnName = insertcolumnName + Columnname + " ,";
-                        }
-
+                        createTableBuilder.AppendLine("  [" + Columnname + "] VARCHAR(MAX),");
                     }
-                    updatecolumnName = updatecolumnName.Remove(updatecolumnName.Length - 1, 1);
-                    insertcolumnName = insertcolumnName.Remove(insertcolumnName.Length - 1, 1);
-                    bulkCopy.WriteToServer(dt.CreateDataReader());
-                    var SqlCmd = "";
-                    SqlCmd =SqlCmd + "     UPDATE t1" + Environment.NewLine;
-                    SqlCmd =SqlCmd + "           SET {2}"  + Environment.NewLine;
-                    SqlCmd =SqlCmd + "           FROM {0} t1" + Environment.NewLine;
-                    SqlCmd =SqlCmd + "             INNER JOIN {1} t2 ON t1.{4} = t2.{4}" + Environment.NewLine;
-                    SqlCmd =SqlCmd + "     " + Environment.NewLine;
-                    SqlCmd =SqlCmd + "           INSERT INTO {0} ({3})" + Environment.NewLine;
-                    SqlCmd =SqlCmd + "           SELECT {3}" + Environment.NewLine;
-                    SqlCmd =SqlCmd + "           FROM {1} t2" + Environment.NewLine;
-                    SqlCmd = SqlCmd + "           WHERE t2.{4} NOT IN(SELECT t1.{4} FROM {0} t1)" + Environment.NewLine;
-                    SqlCmd = string.Format(SqlCmd, _tableName, _tmptableName, updatecolumnName, insertcolumnName, basePropertyName);
-                    _Repository.Connection.Execute(SqlCmd);
-                    _Repository.Connection.Execute("Drop Table " + _tmptableName);
-                }
-            }
-            else
-            {
-                throw new Exception("You can not perform (SaveList) in this Object.The table key is not identity.please use save function in loop.");
-            }
 
+                    createTableBuilder.Remove(createTableBuilder.Length - 1, 1);
+                    createTableBuilder.AppendLine(")");
+
+                    _Repository.Connection.Execute(createTableBuilder.ToString());
+                }
+                bulkCopy.DestinationTableName = _tmptableName;
+                bulkCopy.BatchSize = 10000;
+                bulkCopy.WriteToServer(dt.CreateDataReader());
+
+                var SqlCmd = "";
+                SqlCmd = SqlCmd + "     UPDATE t1" + Environment.NewLine;
+                SqlCmd = SqlCmd + "     SET {2}" + Environment.NewLine;
+                SqlCmd = SqlCmd + "     FROM {0} t1" + Environment.NewLine;
+                SqlCmd = SqlCmd + "         INNER JOIN {1} t2 ON t1.{4} = t2.{4}" + Environment.NewLine;
+                SqlCmd = SqlCmd + "     " + Environment.NewLine;
+                SqlCmd = SqlCmd + "     INSERT INTO {0} ({3})" + Environment.NewLine;
+                SqlCmd = SqlCmd + "         SELECT {3}" + Environment.NewLine;
+                SqlCmd = SqlCmd + "         FROM {1} t2" + Environment.NewLine;
+                SqlCmd = SqlCmd + "         WHERE t2.{4} NOT IN(SELECT t1.{4} FROM {0} t1)" + Environment.NewLine;
+                SqlCmd = string.Format(SqlCmd, _tableName, _tmptableName, updatecolumnName, insertcolumnName, basePropertyName);
+                _Repository.Connection.Execute(SqlCmd);
+
+                _Repository.Connection.Execute("Drop Table " + _tmptableName);
+            }
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
             }
-            return true ;
+            return true;
         }
         private string Get_ColumnName(CommandType oCommandType, string Prefix, string FieldNames = "")
         {
