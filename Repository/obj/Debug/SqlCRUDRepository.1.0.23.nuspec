@@ -70,11 +70,11 @@ Add brackets for the name of the properties of each object to prevent errors whe
     </dependencies>
   </metadata>
   <files>
-    <file src="g:\Git\SqlCRUDClass\Repository\bin\Debug\net40\SqlCRUDRepository.dll" target="lib\net40\SqlCRUDRepository.dll" />
-    <file src="g:\Git\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.dll" target="lib\net45\SqlCRUDRepository.dll" />
-    <file src="g:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.0\SqlCRUDRepository.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.dll" />
-    <file src="g:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.dll" target="lib\netcoreapp3.1\SqlCRUDRepository.dll" />
-    <file src="g:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\SqlCRUDRepository.dll" target="lib\netstandard2.0\SqlCRUDRepository.dll" />
-    <file src="g:\Git\SqlCRUDClass\images.jpg" target="images.jpg" />
+    <file src="D:\Git\SqlCRUDClass\Repository\bin\Debug\net4\SqlCRUDRepository.dll" target="lib\net40\SqlCRUDRepository.dll" />
+    <file src="D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.dll" target="lib\net45\SqlCRUDRepository.dll" />
+    <file src="D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.0\SqlCRUDRepository.dll" target="lib\netcoreapp3.0\SqlCRUDRepository.dll" />
+    <file src="D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.dll" target="lib\netcoreapp3.1\SqlCRUDRepository.dll" />
+    <file src="D:\Git\SqlCRUDClass\Repository\bin\Debug\netstandard2.0\SqlCRUDRepository.dll" target="lib\netstandard2.0\SqlCRUDRepository.dll" />
+    <file src="D:\Git\SqlCRUDClass\images.jpg" target="images.jpg" />
   </files>
 </package>

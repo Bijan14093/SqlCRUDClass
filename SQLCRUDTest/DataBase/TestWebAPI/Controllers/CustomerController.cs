@@ -43,10 +43,19 @@ namespace TestWebAPI.Controllers
 
         public string InsertInToCustomerTable([FromBody] CustomerView body)
         {
+            List<Customer> lst = new List<Customer>();
+
             Customer o = new Customer();
             o.FirstName = body.FirstName;
             o.LastName = body.LastName;
-            Database.TestWebAPI.Save(o);
+            lst.Add(o);
+            Customer o2 = new Customer();
+            o2.FirstName = body.FirstName;
+            o2.LastName = body.LastName;
+            lst.Add(o2);
+            lst.Add(o2);
+            lst.Add(o2);
+            Database.TestWebAPI.SaveList(lst, "ID");
             return o.ID.ToString();
         }
 

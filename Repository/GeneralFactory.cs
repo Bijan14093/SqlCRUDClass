@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Dynamic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using Dapper;
 using Repository.Domain;
 
@@ -62,7 +64,7 @@ namespace Repository
 
         }
 
-        private string InsertStatment (bool isguid)
+        private string InsertStatment(bool isguid)
         {
             if (string.IsNullOrEmpty(_InsertStatment))
             {
@@ -88,7 +90,7 @@ namespace Repository
             {
                 Columnname = currentColumnname.Value;
                 FieldName = currentColumnname.Key;
-                if (_keyIsIdentity & (Columnname ?? "") == (_keycolumnname ?? ""))
+                if (_keyIsIdentity & ((Columnname ?? "") == (_keycolumnname ?? "")))
                 {
                 }
                 // Do nothing
@@ -99,7 +101,7 @@ namespace Repository
                 else
                 {
                     var FieldValue = GetPropertyValueByName(o, FieldName);
-                    if (FieldValue!=null)
+                    if (FieldValue != null)
                     {
                         Result = Result + Columnname + " = @" + FieldName + ",";
                     }
@@ -125,7 +127,39 @@ namespace Repository
 
             return _UpdateStatment;
         }
-
+        private string UpdateStatmentforbatch()
+        {
+            string _UpdateStatment = null;
+            string Columnname;
+            string FieldName;
+            string Result;
+            Result = "";
+            foreach (var currentColumnname in _columnNames)
+            {
+                Columnname = currentColumnname.Value;
+                FieldName = currentColumnname.Key;
+                if (_keyIsIdentity & ((Columnname ?? "") == (_keycolumnname ?? "")))
+                {
+                }
+                // Do nothing
+                else if (_StaticValues is object && _StaticValues.ContainsKey(Columnname) && !string.IsNullOrEmpty(_StaticValues[Columnname]))
+                {
+                    Result = Result + Columnname + " = " + _StaticValues[Columnname] + ",";
+                }
+                else
+                {
+                   Result = Result + Columnname + " = @" + FieldName + ",";
+                }
+            }
+            if (Result != "")
+            {
+                Result = Result.Substring(0, (Result.Length - 1));
+                _UpdateStatment = "Update " + _tableName + Environment.NewLine;
+                _UpdateStatment = _UpdateStatment + "SET " + Result + "" + Environment.NewLine;
+                _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname;
+            }
+            return _UpdateStatment;
+        }
         private string DeleteStatment
         {
             get
@@ -188,13 +222,15 @@ namespace Repository
                     _keyIsEmpty = true;
                 }
             }
-            if (objectID==null)
+            if (objectID == null)
             {
                 _keyIsEmpty = true;
-            }else if (objectID.ToString()=="")
+            }
+            else if (objectID.ToString() == "")
             {
                 _keyIsEmpty = true;
-            }else if (objectID.ToString() == "0") 
+            }
+            else if (objectID.ToString() == "0")
             {
                 _keyIsEmpty = true;
             }
@@ -247,11 +283,11 @@ namespace Repository
                     _Repository.Connection.Query<Int64>(InsertStatment(false) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
                 }
             }
-            else 
+            else
             {
                 //Update
                 var updateStatment = UpdateStatment(o, "");
-                if (updateStatment!="" && updateStatment != null)
+                if (updateStatment != "" && updateStatment != null)
                 {
                     _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
                 }
@@ -428,6 +464,49 @@ namespace Repository
             return result;
         }
 
+        internal bool SaveList(List<T> list, string basePropertyName)
+        {
+            if (_tableType == enmTableType.Readonly)
+            {
+                throw new Exception("Object is Readonly.You can not perform (SaveList) in this Object.");
+            }
+            bool InTransaction;
+            InTransaction = false;
+            if (_Repository.Transaction != null)
+            {
+                InTransaction = true;
+            }
+            else
+            {
+                _Repository.OpenConnection();
+                InTransaction = false;
+            }
+            var columnName = _columnNames[basePropertyName];
+            if (_keyIsIdentity)
+            {
+                string sqlBatchCommand = "";
+                sqlBatchCommand = sqlBatchCommand + string.Format("IF EXISTS( SELECT {0} FROM {1} WHERE {2} = @" +  basePropertyName + " )",_keycolumnname,_tableName, columnName) + Environment.NewLine;
+                sqlBatchCommand = sqlBatchCommand + UpdateStatmentforbatch()+Environment.NewLine;
+                sqlBatchCommand = sqlBatchCommand + "ELSE" + Environment.NewLine;
+                sqlBatchCommand = sqlBatchCommand + InsertStatment(false);
+                _Repository.Connection.Execute(
+                    sqlBatchCommand,
+                    list,
+                    transaction: _Repository.Transaction,
+                    commandTimeout: _Repository.Connection.ConnectionTimeout
+                    );
+            }
+            else
+            {
+                throw new Exception("You can not perform (SaveList) in this Object.The table key is not identity.please use save function in loop.");
+            }
+
+            if (InTransaction == false)
+            {
+                _Repository.CloseConnection();
+            }
+            return true ;
+        }
         private string Get_ColumnName(CommandType oCommandType, string Prefix, string FieldNames = "")
         {
             string Columnname;
@@ -602,7 +681,7 @@ namespace Repository
             return true;
         }
 
-        public static object GetPropertyValueByName(object obj, string name)
+        private static object GetPropertyValueByName(object obj, string name)
         {
             var prop = obj.GetType().GetProperty(name, BindingFlags.Public | BindingFlags.Instance);
             if (prop is null || !prop.CanRead)

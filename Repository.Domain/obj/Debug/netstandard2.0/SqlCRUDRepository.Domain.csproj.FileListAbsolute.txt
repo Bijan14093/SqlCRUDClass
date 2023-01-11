@@ -45,3 +45,13 @@ g:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository
 g:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
 g:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll
 g:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.pdb
+D:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.deps.json
+D:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll
+D:\Git\SqlCRUDClass\Repository.Domain\bin\Debug\netstandard2.0\SqlCRUDRepository.Domain.pdb
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.AssemblyInfo.cs
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.dll
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netstandard2.0\SqlCRUDRepository.Domain.pdb

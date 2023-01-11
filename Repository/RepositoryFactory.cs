@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Repository
 {
-    [Obsolete("RepositoryFactory is static class, you can Use RepositoryFactory2(non static version).")]
     public static class RepositoryFactory
     {
 

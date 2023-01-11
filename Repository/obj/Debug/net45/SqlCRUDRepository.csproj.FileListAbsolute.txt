@@ -39,3 +39,17 @@ g:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CoreComp
 g:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.dll
 g:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.pdb
 g:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CopyComplete
+D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.pdb
+D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\Dapper.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\Newtonsoft.Json.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.Domain.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\net45\SqlCRUDRepository.Domain.pdb
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.AssemblyReference.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.AssemblyInfoInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.AssemblyInfo.cs
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CopyComplete
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.dll
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.pdb

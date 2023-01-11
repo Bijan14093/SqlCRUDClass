@@ -60,3 +60,16 @@ g:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.
 g:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.dll
 g:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.pdb
 g:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CopyComplete
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.deps.json
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.pdb
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.Domain.dll
+D:\Git\SqlCRUDClass\Repository\bin\Debug\netcoreapp3.1\SqlCRUDRepository.Domain.pdb
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.AssemblyReference.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfoInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.AssemblyInfo.cs
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.csproj.CopyComplete
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.dll
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netcoreapp3.1\SqlCRUDRepository.pdb

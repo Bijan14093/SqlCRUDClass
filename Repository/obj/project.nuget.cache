@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uBtv1GD2Q2vCZ6e1C02iRJwbT05jQZVQ1eHzKDSIu8Z7SqNufZy3PlBa0KQxzmKEbERSRWATmwsE/fHsNCHxKg==",
+  "dgSpecHash": "hqU9x8YLzASVPzJRX/2aoHF4S5CRY6yCnYvBh+RiB1+AlMHR/XqKjhudvGVSKvdZxvIS7s46ZS1erh6DMq83lw==",
   "success": true,
-  "projectFilePath": "g:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
+  "projectFilePath": "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bghasemi\\.nuget\\packages\\dapper\\1.50.1\\dapper.1.50.1.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
@@ -80,7 +80,10 @@
     "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\bghasemi\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
-    "C:\\Users\\bghasemi\\.nuget\\packages\\sqlcrudrepository.domain\\1.0.4\\sqlcrudrepository.domain.1.0.4.nupkg.sha512"
+    "C:\\Users\\bghasemi\\.nuget\\packages\\sqlcrudrepository.domain\\1.0.4\\sqlcrudrepository.domain.1.0.4.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\bghasemi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

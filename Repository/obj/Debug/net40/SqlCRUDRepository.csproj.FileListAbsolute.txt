@@ -65,3 +65,8 @@ g:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CoreComp
 g:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.dll
 g:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.pdb
 g:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CopyComplete
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.AssemblyReference.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.AssemblyInfoInputs.cache
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.AssemblyInfo.cs
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net40\SqlCRUDRepository.csproj.CoreCompileInputs.cache

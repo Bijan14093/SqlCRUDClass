@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40;netcoreapp3.0;netcoreapp3.1;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0;netcoreapp3.1;net45;net4</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright></Copyright>
     <Authors>Bijan Ghasemi</Authors>
@@ -18,9 +18,11 @@ It takes more work but it gives you a lot of benefits in the future for system m
     <PackageIcon>images.jpg</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.23</Version>
+    <Version>1.0.24</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.23: Running StoredProcedure inside a Transaction close the connection.
+    <PackageReleaseNotes>1.0.24: Add SaveList function.
+
+1.0.23: Running StoredProcedure inside a Transaction close the connection.
 
 1.0.22: add non static version of RepositoryFactory(RepositoryFactory2).
 

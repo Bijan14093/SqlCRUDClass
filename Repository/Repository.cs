@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using Dapper;
 using Repository.Domain;
 
@@ -386,5 +387,17 @@ namespace Repository
             }
 
         }
+
+        public bool SaveList<T>(List<T> list, string basePropertyName)
+        {
+            lock (this)
+            {
+                var oGeneralFactory = GetGeneralFactory<T>();
+                oGeneralFactory.SaveList(list, basePropertyName);
+                return true;
+
+            }
+        }
     }
+
 }

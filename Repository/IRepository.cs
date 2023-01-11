@@ -25,6 +25,17 @@ namespace Repository
         bool RollbackTransaction();
         bool Save<T>(T o);
         bool Save<T>(T o, string Filter);
+        /// <summary>
+        /// list of objects is received and based on the second parameter(basePropertyName)
+        /// , if it exists in the database, it is updated
+        /// , otherwise it is inserted
+        /// , and the ID is assigned to the object.
+        /// </summary>
+        /// <typeparam name="T">domain model</typeparam>
+        /// <param name="list"> list of objects for update or insert.</param>
+        /// <param name="basePropertyName">propertyName of domain model, based on that, a decision is made to create or update the desired record in the database</param>
+        /// <returns></returns>
+        bool SaveList<T>(List<T> list,string basePropertyName);
         bool Delete<T>(T o);
         bool DeleteList<T>(string Filter, Dictionary<string, string> Parameters);
         T GetByID<T>(string ID,bool withLock);
