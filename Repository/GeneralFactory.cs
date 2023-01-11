@@ -489,13 +489,15 @@ namespace Repository
 
                 var updatecolumnName = "";
                 var insertcolumnName = "";
+                var basePropertyNameexists = false;
                 foreach (var currentColumnname in _columnNames)
                 {
                     var Columnname = currentColumnname.Value;
                     var FieldName = currentColumnname.Key;
-                    bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping(Columnname, FieldName));
+                    bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping( FieldName, Columnname));
                     if (FieldName == basePropertyName)
                     {
+                        basePropertyNameexists = true;
                         basePropertyName = Columnname;
                     }
                     if (_keyIsIdentity && ((Columnname ?? "") == (_keycolumnname ?? "")))
@@ -509,7 +511,10 @@ namespace Repository
                     }
 
                 }
-
+                if (!basePropertyNameexists)
+                {
+                    throw new Exception("Please enter the valid basePropertyName.");
+                }
                 updatecolumnName = updatecolumnName.Remove(updatecolumnName.Length - 1, 1);
                 insertcolumnName = insertcolumnName.Remove(insertcolumnName.Length - 1, 1);
 
