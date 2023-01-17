@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SqlCRUDRepository</id>
-    <version>1.0.24</version>
+    <version>1.0.25</version>
     <authors>Bijan Ghasemi</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">MIT</license>
@@ -14,7 +14,9 @@ Soruce Code is free on github: https://github.com/Bijan14093/SqlCRUDClass.git
 This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</description>
-    <releaseNotes>1.0.24: Added SaveList function for batch insert or update.
+    <releaseNotes>1.0.25: Fix Bug SaveList function for batch insert or update in transaction.
+
+1.0.24: Added SaveList function for batch insert or update.
 
 1.0.23: Running StoredProcedure inside a Transaction close the connection.
 

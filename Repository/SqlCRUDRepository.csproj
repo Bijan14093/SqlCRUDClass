@@ -11,16 +11,18 @@ This tool does not allow direct queries, only allows View And StoredProcedure.
 My suggestion is to run queries via StoredProcedure.
 It takes more work but it gives you a lot of benefits in the future for system maintenance because all the queries are in the database and DBA can easily improve it.</Description>
     <PackageProjectUrl>https://github.com/Bijan14093/SqlCRUDClass.git</PackageProjectUrl>
-    <AssemblyVersion>1401.08.09.13</AssemblyVersion>
-    <FileVersion>1401.08.09.13</FileVersion>
+    <AssemblyVersion>1401.10.27.09</AssemblyVersion>
+    <FileVersion>1401.10.27.09</FileVersion>
     <PackageId>SqlCRUDRepository</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageIcon>images.jpg</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.24</Version>
+    <Version>1.0.25</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.24: Added SaveList function for batch insert or update.
+    <PackageReleaseNotes>1.0.25: Fix Bug SaveList function for batch insert or update in transaction.
+
+1.0.24: Added SaveList function for batch insert or update.
 
 1.0.23: Running StoredProcedure inside a Transaction close the connection.
 

@@ -78,6 +78,38 @@ namespace TestWebAPI.Controllers
             return "1";
         }
 
+        [HttpPost("InsertBatch_100000_In_transaction")]
+        [Log]
+        /// <summary>
+        /// This Table is identity 
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
+
+        public string InsertBatch_100000_In_transaction([FromBody] CustomerView body)
+        {
+            List<Customer2> lst = new List<Customer2>();
+            for (int i = 0; i < 10000; i++)
+            {
+                Customer2 o2 = new Customer2();
+                o2.ID = Guid.NewGuid().ToString();
+                o2.FirstName = body.FirstName;
+                o2.LastName = body.LastName;
+                lst.Add(o2);
+            }
+            try
+            {
+                Database.TestWebAPI.BeginTransaction();
+                Database.TestWebAPI.SaveList(lst, "ID");
+                Database.TestWebAPI.CommitTransaction();
+            }
+            catch (Exception)
+            {
+
+                Database.TestWebAPI.RollbackTransaction();
+            }
+            return "1";
+        }
         [HttpPost("Update")]
         public string Update(string key, [FromBody] Customer2 body)
         {

@@ -110,7 +110,7 @@
       }
     },
     "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {
-      "version": "1.0.24",
+      "version": "1.0.25",
       "restore": {
         "projectUniqueName": "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
         "projectName": "SqlCRUDRepository",
@@ -126,7 +126,6 @@
         "originalTargetFrameworks": [
           "net4",
           "net45",
-          "netcoreapp2.0",
           "netcoreapp3.0",
           "netcoreapp3.1",
           "netstandard2.0"
@@ -136,14 +135,6 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.0": {
-            "targetAlias": "netcoreapp2.0",
-            "projectReferences": {
-              "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-                "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
-              }
-            }
-          },
           "netcoreapp3.0": {
             "targetAlias": "netcoreapp3.0",
             "projectReferences": {
@@ -192,36 +183,6 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.0": {
-          "targetAlias": "netcoreapp2.0",
-          "dependencies": {
-            "Dapper": {
-              "target": "Package",
-              "version": "[1.50.1, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.0, )",
-              "autoReferenced": true
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
-        },
         "netcoreapp3.0": {
           "targetAlias": "netcoreapp3.0",
           "dependencies": {

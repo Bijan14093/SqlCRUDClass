@@ -484,7 +484,9 @@ namespace Repository
                 InTransaction = false;
             }
             var dt = list.ConvertTo<DataTable>();
-            using (SqlBulkCopy bulkCopy = new SqlBulkCopy((SqlConnection)(_Repository.Connection)))
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy((SqlConnection)(_Repository.Connection)
+                            , SqlBulkCopyOptions.Default
+                            , externalTransaction: (SqlTransaction)_Repository.Transaction))
             {
 
                 var updatecolumnName = "";
@@ -521,7 +523,9 @@ namespace Repository
                 var _tmptableName = "#" + typeof(T).Name;
                 // checking whether the table selected from the dataset exists in the database or not
                 var checkTableIfExistsCommand = new SqlCommand();
-                var exists = _Repository.Connection.ExecuteScalar("if (Not OBJECT_ID('tempdb.." + _tmptableName + "') is Null) SELECT 1 ELSE SELECT 0")
+                var exists = _Repository.Connection.ExecuteScalar(
+                                        "if (Not OBJECT_ID('tempdb.." + _tmptableName + "') is Null) SELECT 1 ELSE SELECT 0"
+                                        ,transaction:_Repository.Transaction)
                                       .ToString().Equals("1");
                 // if does not exist
                 if (!exists)
@@ -539,7 +543,7 @@ namespace Repository
                     createTableBuilder.Remove(createTableBuilder.Length - 1, 1);
                     createTableBuilder.AppendLine(")");
 
-                    _Repository.Connection.Execute(createTableBuilder.ToString());
+                    _Repository.Connection.Execute(createTableBuilder.ToString(), transaction: _Repository.Transaction);
                 }
                 bulkCopy.DestinationTableName = _tmptableName;
                 bulkCopy.BatchSize = 10000;
@@ -556,9 +560,9 @@ namespace Repository
                 SqlCmd = SqlCmd + "         FROM {1} t2" + Environment.NewLine;
                 SqlCmd = SqlCmd + "         WHERE t2.{4} NOT IN(SELECT t1.{4} FROM {0} t1)" + Environment.NewLine;
                 SqlCmd = string.Format(SqlCmd, _tableName, _tmptableName, updatecolumnName, insertcolumnName, basePropertyName);
-                _Repository.Connection.Execute(SqlCmd);
+                _Repository.Connection.Execute(SqlCmd, transaction: _Repository.Transaction);
 
-                _Repository.Connection.Execute("Drop Table " + _tmptableName);
+                _Repository.Connection.Execute("Drop Table " + _tmptableName, transaction: _Repository.Transaction);
             }
             if (InTransaction == false)
             {
