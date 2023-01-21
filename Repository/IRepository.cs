@@ -42,7 +42,7 @@ namespace Repository
         /// <param name="list"> list of objects for update or insert.</param>
         /// <param name="basePropertyName">propertyName of domain model, based on that, a decision is made to create or update the desired record in the database</param>
         /// <returns></returns>
-        bool SaveList<T>(List<T> list,string basePropertyName);
+        bool SaveList<T>(List<T> list,string basePropertyNames);
         bool Delete<T>(T o);
         bool DeleteList<T>(string Filter, Dictionary<string, string> Parameters);
         T GetByID<T>(string ID,bool withLock);

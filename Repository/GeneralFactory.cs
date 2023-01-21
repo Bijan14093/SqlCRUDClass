@@ -497,6 +497,30 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
+            var basePropertyNamecollection = basePropertyName.Split(',');
+            var baseColumns = new List<string>();
+            foreach (var item in basePropertyNamecollection)
+            {
+                var Columnname="";
+                if (_columnNames.TryGetValue(item.Trim(), out Columnname)) 
+                {
+                    if (Columnname=="")
+                    {
+                        throw new Exception(string.Format("TryGetValue!: Please enter the valid basePropertyName.PropertyName {0} is invalid.", item));
+                    }
+                    baseColumns.Add(Columnname);
+                }
+                else
+                {
+                    throw new Exception(string.Format("Please enter the valid basePropertyName.PropertyName {0} is invalid.", item));
+                }
+
+            }
+            if (baseColumns.Count == 0)
+            {
+                throw new Exception(string.Format("Please enter the valid basePropertyName."));
+            }
+
             var dt = list.ConvertTo<DataTable>();
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy((SqlConnection)(_Repository.Connection)
                             , SqlBulkCopyOptions.Default
@@ -505,17 +529,11 @@ namespace Repository
 
                 var updatecolumnName = "";
                 var insertcolumnName = "";
-                var basePropertyNameexists = false;
                 foreach (var currentColumnname in _columnNames)
                 {
                     var Columnname = currentColumnname.Value;
                     var FieldName = currentColumnname.Key;
                     bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping( FieldName, Columnname));
-                    if (FieldName == basePropertyName)
-                    {
-                        basePropertyNameexists = true;
-                        basePropertyName = Columnname;
-                    }
                     if (_keyIsIdentity && ((Columnname ?? "") == (_keycolumnname ?? "")))
                     {
                     }
@@ -526,10 +544,6 @@ namespace Repository
                         insertcolumnName = insertcolumnName + Columnname + " ,";
                     }
 
-                }
-                if (!basePropertyNameexists)
-                {
-                    throw new Exception("Please enter the valid basePropertyName.");
                 }
                 updatecolumnName = updatecolumnName.Remove(updatecolumnName.Length - 1, 1);
                 insertcolumnName = insertcolumnName.Remove(insertcolumnName.Length - 1, 1);
@@ -562,18 +576,33 @@ namespace Repository
                 bulkCopy.DestinationTableName = _tmptableName;
                 bulkCopy.BatchSize = 10000;
                 bulkCopy.WriteToServer(dt.CreateDataReader());
+                var baseColumnscheck = "";
+                foreach (var item in baseColumns)
+                {
 
+                    baseColumnscheck = baseColumnscheck + "t1." + item + " = t2." + item;
+                    baseColumnscheck = baseColumnscheck + " And ";
+                }
+                if (baseColumnscheck=="")
+                {
+                    throw new Exception("Please enter the valid basePropertyName");
+                }
+                else
+                {
+                    baseColumnscheck=baseColumnscheck.Remove(baseColumnscheck.Length - 5, 5);
+                }
+                baseColumnscheck ="(" +  baseColumnscheck  + ")";
                 var SqlCmd = "";
                 SqlCmd = SqlCmd + "     UPDATE t1" + Environment.NewLine;
                 SqlCmd = SqlCmd + "     SET {2}" + Environment.NewLine;
                 SqlCmd = SqlCmd + "     FROM {0} t1" + Environment.NewLine;
-                SqlCmd = SqlCmd + "         INNER JOIN {1} t2 ON t1.{4} = t2.{4}" + Environment.NewLine;
+                SqlCmd = SqlCmd + "         INNER JOIN {1} t2 ON " + baseColumnscheck + Environment.NewLine;
                 SqlCmd = SqlCmd + "     " + Environment.NewLine;
                 SqlCmd = SqlCmd + "     INSERT INTO {0} ({3})" + Environment.NewLine;
                 SqlCmd = SqlCmd + "         SELECT {3}" + Environment.NewLine;
                 SqlCmd = SqlCmd + "         FROM {1} t2" + Environment.NewLine;
-                SqlCmd = SqlCmd + "         WHERE t2.{4} NOT IN(SELECT t1.{4} FROM {0} t1)" + Environment.NewLine;
-                SqlCmd = string.Format(SqlCmd, _tableName, _tmptableName, updatecolumnName, insertcolumnName, basePropertyName);
+                SqlCmd = SqlCmd + "         WHERE NOT Exists (SELECT t1.* FROM {0} t1 Where " + baseColumnscheck + ")" + Environment.NewLine;
+                SqlCmd = string.Format(SqlCmd, _tableName, _tmptableName, updatecolumnName, insertcolumnName);
                 _Repository.Connection.Execute(SqlCmd, transaction: _Repository.Transaction);
 
                 _Repository.Connection.Execute("Drop Table " + _tmptableName, transaction: _Repository.Transaction);
