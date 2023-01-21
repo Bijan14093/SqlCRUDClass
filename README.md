@@ -170,8 +170,10 @@ For example
                 lst.Add(o2);
             }
             Sampledb.SaveList(lst, "ID");
-            return "1";    
+            return "1";
+
 Note: If the record exists, it will update it, if it does not exist, it will insert it.
+
 Note: You can specify multiple fields to check, for example: "ID, FirstName".
 
 ## License

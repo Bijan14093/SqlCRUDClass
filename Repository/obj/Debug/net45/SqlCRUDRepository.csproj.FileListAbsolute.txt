@@ -52,3 +52,4 @@ D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.AssemblyInfo.cs
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CoreCompileInputs.cache
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.dll
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.pdb
+D:\Git\SqlCRUDClass\Repository\obj\Debug\net45\SqlCRUDRepository.csproj.CopyComplete

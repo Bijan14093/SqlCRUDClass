@@ -73,7 +73,7 @@ namespace TestWebAPI.Controllers
                 o2.LastName = body.LastName;
                 lst.Add(o2);
             }
-            Database.TestWebAPI.SaveList(lst, "LastName , FirstName");
+            Database.TestWebAPI.SaveList(lst, "LastName,FirstName");
             return "1";
         }
         [HttpPost("InsertBatch_100000_In_Transaction")]

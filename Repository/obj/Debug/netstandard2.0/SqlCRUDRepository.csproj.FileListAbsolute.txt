@@ -72,3 +72,4 @@ D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.Assemb
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.CoreCompileInputs.cache
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.dll
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.pdb
+D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.CopyComplete
