@@ -138,12 +138,8 @@ namespace TestWebAPI.Controllers
             }
         }
         [HttpPost("BatchUpdate")]
-        public string BatchUpdate(int keyNotIs, [FromBody] CustomerView body)
+        public string BatchUpdate(string FirstNameNotIs, [FromBody] CustomerView body)
         {
-            if (keyNotIs == 0)
-            {
-                throw new Exception("you must be used key that not equal zero on update. this cause insert new row.");
-            }
             try
             {
                 Database.TestWebAPI.BeginTransaction();
@@ -151,7 +147,8 @@ namespace TestWebAPI.Controllers
                 o.FirstName = body.FirstName;
                 o.LastName = body.LastName;
                 Dictionary<string, string> Parameters = new Dictionary<string, string>();
-                Database.TestWebAPI.Save(o, "ID <>" + keyNotIs);
+                Parameters.Add("FirstName", FirstNameNotIs);
+                Database.TestWebAPI.Save(o, "FirstName <> @FirstName", Parameters);
                 Database.TestWebAPI.CommitTransaction();
                 return o.ID.ToString();
 

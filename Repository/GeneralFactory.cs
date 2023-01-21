@@ -12,7 +12,7 @@ using Repository.Domain;
 
 namespace Repository
 {
-    internal class GeneralFactory<T>
+     class GeneralFactory<T>
     {
         private IKeyGenerator _KeyGeneratory;
         private string _tableName;
@@ -26,8 +26,8 @@ namespace Repository
         private string _InsertStatment;
         private string _DeleteStatment;
         private Repository _Repository;
-        public TableInfoAttribute TableInfo{ get; set; }
-        public GeneralFactory(Repository repository)
+        internal TableInfoAttribute TableInfo{ get; set; }
+        internal GeneralFactory(Repository repository)
         {
             Dictionary<string,string> temp = new Dictionary<string, string>();
             TableInfo = GetTableInfo();
@@ -129,8 +129,13 @@ namespace Repository
 
             return _UpdateStatment;
         }
-        private string UpdateStatmentforbatch()
+        private string UpdateStatmentforbatch( T o, string filter,ref Dictionary<string, string> Parameters)
         {
+            if (Parameters == null)
+            {
+                Parameters = new Dictionary<string, string>();
+            }
+
             string _UpdateStatment = null;
             string Columnname;
             string FieldName;
@@ -150,16 +155,25 @@ namespace Repository
                 }
                 else
                 {
-                   Result = Result + Columnname + " = @" + FieldName + ",";
+                    var FieldValue = GetPropertyValueByName(o, FieldName);
+                    if (FieldValue != null)
+                    {
+                        var parameter = "o_" + FieldName;
+                        Parameters.Add(parameter, (string)FieldValue);
+                        Result = Result + Columnname + " = @" + parameter + ",";
+                    }
+
                 }
             }
+
             if (Result != "")
             {
                 Result = Result.Substring(0, (Result.Length - 1));
                 _UpdateStatment = "Update " + _tableName + Environment.NewLine;
                 _UpdateStatment = _UpdateStatment + "SET " + Result + "" + Environment.NewLine;
-                _UpdateStatment = _UpdateStatment + "Where " + _keycolumnname + "=@" + _keycolumnname;
+                _UpdateStatment = _UpdateStatment + "Where " + filter;
             }
+
             return _UpdateStatment;
         }
         private string DeleteStatment
@@ -196,7 +210,7 @@ namespace Repository
             }
             return _SelectStatment;
         }
-        public bool Save(ref T o, string filter)
+        internal bool Save(ref T o, string filter, Dictionary<string, string> Parameters = null)
         {
             if (_tableType==enmTableType.Readonly)
             {
@@ -239,10 +253,10 @@ namespace Repository
             if (filter != null && filter != "")
             {
                 //batch Update
-                var updateStatment = UpdateStatment(o, filter);
+                var updateStatment = UpdateStatmentforbatch(o, filter,ref Parameters);
                 if (updateStatment != "" && updateStatment != null)
                 {
-                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
+                    _Repository.Connection.Execute(updateStatment, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
                 }
 
             }
@@ -302,7 +316,7 @@ namespace Repository
             }
             return true;
         }
-        public T GetByID(string ID, bool withLock)
+        internal T GetByID(string ID, bool withLock)
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -330,7 +344,7 @@ namespace Repository
 
         }
 
-        public bool Delete(T o)
+        internal bool Delete(T o)
         {
             if (_tableType == enmTableType.Readonly)
             {
@@ -380,7 +394,7 @@ namespace Repository
             return result;
         }
 
-        public List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
+        internal List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -423,7 +437,7 @@ namespace Repository
             return result;
         }
 
-        public T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
+        internal T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -709,7 +723,7 @@ namespace Repository
             _Delete
         }
 
-        public static bool SetPropertyValueByName(object obj, string name, string value)
+        private static bool SetPropertyValueByName(object obj, string name, string value)
         {
             var prop = obj.GetType().GetProperty(name, BindingFlags.Public | BindingFlags.Instance);
             if (prop is null || !prop.CanWrite)

@@ -55,3 +55,4 @@ D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.
 D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
 D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.dll
 D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.pdb
+D:\Git\SqlCRUDClass\Repository.Domain\obj\Debug\netcoreapp3.0\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache

@@ -18,9 +18,11 @@ It takes more work but it gives you a lot of benefits in the future for system m
     <PackageIcon>images.jpg</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
-    <Version>1.0.25</Version>
+    <Version>1.0.26</Version>
     <PackageTags>SQL ORM Simple CRUD DataBase Save Repository StoredProcedure Insert Update Delete Select Dapper</PackageTags>
-    <PackageReleaseNotes>1.0.25: Fix Bug SaveList function for batch insert or update in transaction.
+    <PackageReleaseNotes>1.0.26: Improvment : Adding a optional parameter to the Save method when we want to do a batch update using parameterization.
+
+1.0.25: Fix Bug SaveList function for batch insert or update in transaction.
 
 1.0.24: Added SaveList function for batch insert or update.
 

@@ -24,7 +24,15 @@ namespace Repository
         List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, TTenth>(string ProcedureName, Dictionary<string, string> Parameters);
         bool RollbackTransaction();
         bool Save<T>(T o);
-        bool Save<T>(T o, string Filter);
+        /// <summary>
+        /// Saving the object on the selected records.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="o">object</param>
+        /// <param name="Filter">Used to specify the selected records.</param>
+        /// <param name="Parameters">Collection of parameters used in Filter.</param>
+        /// <returns></returns>
+        bool Save<T>(T o, string Filter, Dictionary<string, string> Parameters = null);
         /// <summary>
         /// list of objects is received and based on the second parameter(basePropertyName)
         /// , if it exists in the database, it is updated

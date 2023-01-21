@@ -378,12 +378,12 @@ namespace Repository
 
         }
 
-        public bool Save<T>(T o, string Filter)
+        public bool Save<T>(T o, string Filter, Dictionary<string, string> Parameters=null)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.Save(ref o, Filter);
+                return oGeneralFactory.Save(ref o, Filter, Parameters);
             }
 
         }
