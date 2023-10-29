@@ -46,3 +46,4 @@ C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\netcoreapp3.1
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\netcoreapp3.1\SqlCRUDRepository.csproj.CopyComplete
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\netcoreapp3.1\SqlCRUDRepository.dll
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\netcoreapp3.1\SqlCRUDRepository.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\netcoreapp3.1\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig

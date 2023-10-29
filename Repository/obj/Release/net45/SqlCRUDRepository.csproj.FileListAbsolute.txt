@@ -11,3 +11,4 @@ C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUD
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.csproj.CopyComplete
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.dll
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Release\net45\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig

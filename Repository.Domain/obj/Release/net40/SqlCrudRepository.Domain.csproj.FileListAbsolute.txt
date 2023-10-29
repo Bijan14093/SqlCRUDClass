@@ -27,3 +27,5 @@ C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\net40\
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.dll
 C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.csproj.AssemblyReference.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository.Domain\obj\Release\net40\SqlCRUDRepository.Domain.GeneratedMSBuildEditorConfig.editorconfig
