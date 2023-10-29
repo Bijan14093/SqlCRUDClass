@@ -210,7 +210,7 @@ namespace Repository
             }
             return _SelectStatment;
         }
-        internal bool Save(ref T o, string filter, Dictionary<string, string> Parameters = null)
+        internal bool Save(ref T o, string filter, Dictionary<string, string> Parameters = null, int commandTimeout = 30)
         {
             if (_tableType==enmTableType.Readonly)
             {
@@ -256,7 +256,7 @@ namespace Repository
                 var updateStatment = UpdateStatmentforbatch(o, filter,ref Parameters);
                 if (updateStatment != "" && updateStatment != null)
                 {
-                    _Repository.Connection.Execute(updateStatment, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
+                    _Repository.Connection.Execute(updateStatment, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction, commandTimeout: commandTimeout);
                 }
 
             }
@@ -275,13 +275,13 @@ namespace Repository
                         ID = _Repository.__KeyGenerator(o.GetType().Name);
                     }
                     SetPropertyValueByName(o, _keycolumnname, ID);
-                    ID = _Repository.Connection.Query<Guid>(InsertStatment(true) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault().ToString();
+                    ID = _Repository.Connection.Query<Guid>(InsertStatment(true) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: commandTimeout).FirstOrDefault().ToString();
                     SetPropertyValueByName(o, _keycolumnname, ID);
 
                 }
                 else if (_keyIsIdentity)
                 {
-                    ID = _Repository.Connection.Query<string>(InsertStatment(false) + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
+                    ID = _Repository.Connection.Query<string>(InsertStatment(false) + Environment.NewLine + "SELECT SCOPE_IDENTITY() IdentityValue", o, transaction: _Repository.Transaction, commandTimeout: commandTimeout).FirstOrDefault();
                     SetPropertyValueByName(o, _keycolumnname, ID);
                 }
                 else
@@ -296,7 +296,7 @@ namespace Repository
                     }
 
                     SetPropertyValueByName(o, _keycolumnname, ID);
-                    _Repository.Connection.Query<Int64>(InsertStatment(false) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
+                    _Repository.Connection.Query<Int64>(InsertStatment(false) + Environment.NewLine, o, transaction: _Repository.Transaction, commandTimeout: commandTimeout).FirstOrDefault();
                 }
             }
             else
@@ -305,7 +305,7 @@ namespace Repository
                 var updateStatment = UpdateStatment(o, "");
                 if (updateStatment != "" && updateStatment != null)
                 {
-                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
+                    _Repository.Connection.Execute(updateStatment, o, transaction: _Repository.Transaction, commandTimeout: commandTimeout);
                 }
 
             }
@@ -316,7 +316,7 @@ namespace Repository
             }
             return true;
         }
-        internal T GetByID(string ID, bool withLock)
+        internal T GetByID(string ID, bool withLock, int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -335,7 +335,7 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            var result= _Repository.Connection.Query<T>(get_SelectStatment("",withLock) + " Where " + _keycolumnname + "= @" + _keycolumnname + "", Parameters, transaction: _Repository.Transaction,commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
+            var result= _Repository.Connection.Query<T>(get_SelectStatment("",withLock) + " Where " + _keycolumnname + "= @" + _keycolumnname + "", Parameters, transaction: _Repository.Transaction,commandTimeout: commandTimeout).FirstOrDefault();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -344,7 +344,7 @@ namespace Repository
 
         }
 
-        internal bool Delete(T o)
+        internal bool Delete(T o, int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Readonly)
             {
@@ -361,7 +361,7 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            _Repository.Connection.Execute(DeleteStatment, o, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
+            _Repository.Connection.Execute(DeleteStatment, o, transaction: _Repository.Transaction, commandTimeout: commandTimeout);
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -369,7 +369,7 @@ namespace Repository
             return true;
         }
 
-        internal List<T> GetAll()
+        internal List<T> GetAll(int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -386,7 +386,7 @@ namespace Repository
                 _Repository.OpenConnection();
                 InTransaction = false;
             }
-            var result = _Repository.Connection.Query<T>(get_SelectStatment("", false), null, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).ToList();
+            var result = _Repository.Connection.Query<T>(get_SelectStatment("", false), null, transaction: _Repository.Transaction, commandTimeout: commandTimeout).ToList();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -394,7 +394,7 @@ namespace Repository
             return result;
         }
 
-        internal List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
+        internal List<T> Find(string Filter, string orderBy,bool withLock, Dictionary<string, string> Parameters, string FieldNames = "", int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -429,7 +429,7 @@ namespace Repository
             {
                 sql = sql + "Order by " + orderBy;
             }
-            var result = _Repository.Connection.Query<T>(sql, param: dbArgs, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).ToList();
+            var result = _Repository.Connection.Query<T>(sql, param: dbArgs, transaction: _Repository.Transaction, commandTimeout: commandTimeout).ToList();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -437,7 +437,7 @@ namespace Repository
             return result;
         }
 
-        internal T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
+        internal T FindFirst(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "", int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Writeonly)
             {
@@ -472,7 +472,7 @@ namespace Repository
                 sql = sql + "Order by " + orderBy;
             }
 
-            var result=_Repository.Connection.Query<T>(sql,param: dbArgs, transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout).FirstOrDefault();
+            var result=_Repository.Connection.Query<T>(sql,param: dbArgs, transaction: _Repository.Transaction, commandTimeout: commandTimeout).FirstOrDefault();
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();
@@ -480,7 +480,7 @@ namespace Repository
             return result;
         }
 
-        internal bool SaveList(List<T> list, string basePropertyName)
+        internal bool SaveList(List<T> list, string basePropertyName, int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Readonly)
             {
@@ -573,6 +573,7 @@ namespace Repository
 
                     _Repository.Connection.Execute(createTableBuilder.ToString(), transaction: _Repository.Transaction);
                 }
+                bulkCopy.BulkCopyTimeout = commandTimeout;
                 bulkCopy.DestinationTableName = _tmptableName;
                 bulkCopy.BatchSize = 10000;
                 bulkCopy.WriteToServer(dt.CreateDataReader());
@@ -696,7 +697,7 @@ namespace Repository
         }
 
 
-        internal bool DeleteList(string filter, Dictionary<string, string> Parameters)
+        internal bool DeleteList(string filter, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
             if (_tableType == enmTableType.Readonly)
             {
@@ -719,7 +720,7 @@ namespace Repository
             }
             string sqlcmd = "";
             sqlcmd = "DELETE FROM " + _tableName + " Where " + filter + ";";
-            _Repository.Connection.Execute(sqlcmd, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction, commandTimeout: _Repository.Connection.ConnectionTimeout);
+            _Repository.Connection.Execute(sqlcmd, Convert_to_anonymouse_object(Parameters), transaction: _Repository.Transaction, commandTimeout: commandTimeout);
             if (InTransaction == false)
             {
                 _Repository.CloseConnection();

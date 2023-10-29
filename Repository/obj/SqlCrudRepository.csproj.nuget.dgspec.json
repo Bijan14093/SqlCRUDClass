@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {}
+    "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {}
   },
   "projects": {
-    "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+    "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
       "version": "1.0.4",
       "restore": {
-        "projectUniqueName": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "projectName": "SqlCRUDRepository.Domain",
-        "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
+        "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj",
         "packagesPath": "C:\\Users\\bghasemi\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\obj\\",
+        "outputPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\bghasemi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -24,7 +28,7 @@
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Progress\\Telerik UI for Blazor 4.0.0\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -109,18 +113,22 @@
         }
       }
     },
-    "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {
-      "version": "1.0.26",
+    "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj": {
+      "version": "1.0.27",
       "restore": {
-        "projectUniqueName": "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
+        "projectUniqueName": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
         "projectName": "SqlCRUDRepository",
-        "projectPath": "D:\\Git\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
+        "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\SqlCRUDRepository.csproj",
         "packagesPath": "C:\\Users\\bghasemi\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\SqlCRUDClass\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\bghasemi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -131,47 +139,47 @@
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Progress\\Telerik UI for Blazor 4.0.0\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "targetAlias": "netcoreapp3.0",
             "projectReferences": {
-              "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-                "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
               }
             }
           },
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-                "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
               }
             }
           },
           "net40": {
             "targetAlias": "net4",
             "projectReferences": {
-              "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-                "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
               }
             }
           },
           "net45": {
             "targetAlias": "net45",
             "projectReferences": {
-              "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-                "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
               }
             }
           },
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
-                "projectPath": "D:\\Git\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
+              "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj": {
+                "projectPath": "C:\\Users\\bghasemi\\source\\repos\\SqlCRUDClass\\Repository.Domain\\SqlCRUDRepository.Domain.csproj"
               }
             }
           }

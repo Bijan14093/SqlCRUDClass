@@ -12,3 +12,17 @@ D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.CoreCompi
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.dll
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.pdb
 D:\Git\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.CopyComplete
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net4\SqlCRUDRepository.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net4\SqlCRUDRepository.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net4\Dapper.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net4\Newtonsoft.Json.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net4\SqlCRUDRepository.Domain.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\bin\Debug\net4\SqlCRUDRepository.Domain.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.AssemblyReference.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.AssemblyInfoInputs.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.AssemblyInfo.cs
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.CoreCompileInputs.cache
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.dll
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.pdb
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\net4\SqlCRUDRepository.csproj.CopyComplete

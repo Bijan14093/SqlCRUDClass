@@ -176,5 +176,21 @@ Note: If the record exists, it will update it, if it does not exist, it will ins
 
 Note: You can specify multiple fields to check, for example: "ID, FirstName".
 
+## 14. Is it possible to set command timeout?
+
+Yes.
+
+For example
+
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("FirstName", body.FirstName);
+            //you can not use writeonly object in execute procedure
+            var result= Sampledb.Execute_StoredProcedure<Customer,Customer,Customer2,ReadonlyCustomer>("SP_GetCustomerDetail", parameters,100);
+            return (List<Customer>)result.First();
+
+
+Note: You can not use writeonly object in execute procedure.
+
+
 ## License
 [MIT](https://licenses.nuget.org/MIT)

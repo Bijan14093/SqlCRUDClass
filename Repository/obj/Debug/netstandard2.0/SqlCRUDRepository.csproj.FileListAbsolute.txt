@@ -34,7 +34,6 @@ C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.CoreCompileInputs.cache
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.dll
 C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.pdb
-C:\Users\bghasemi\Source\Repos\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.CopyComplete
 g:\Git\SqlCRUDClass-master\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.AssemblyReference.cache
 g:\Git\SqlCRUDClass-master\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.GeneratedMSBuildEditorConfig.editorconfig
 g:\Git\SqlCRUDClass-master\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.AssemblyInfoInputs.cache
@@ -73,3 +72,4 @@ D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.dll
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.pdb
 D:\Git\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.CopyComplete
+C:\Users\bghasemi\source\repos\SqlCRUDClass\Repository\obj\Debug\netstandard2.0\SqlCRUDRepository.csproj.CopyComplete

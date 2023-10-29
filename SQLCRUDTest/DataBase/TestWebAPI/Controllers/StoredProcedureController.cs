@@ -42,7 +42,7 @@ namespace TestWebAPI.Controllers
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("FirstName", body.FirstName);
             //you can not use writeonly object in execute procedure
-            var result= Database.TestWebAPI.Execute_StoredProcedure<Customer,Customer,Customer2,ReadonlyCustomer>("SP_GetCustomerDetail", parameters);
+            var result= Database.TestWebAPI.Execute_StoredProcedure<Customer,Customer,Customer2,ReadonlyCustomer>("SP_GetCustomerDetail", parameters,100);
             return (List<Customer>)result.First();
         }
     }

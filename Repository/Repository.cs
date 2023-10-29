@@ -164,92 +164,92 @@ namespace Repository
             return (GeneralFactory<T>)oGeneralFactory;
         }
 
-        public bool Save<T>(T o)
+        public bool Save<T>(T o, int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.Save(ref o,"");
+                return oGeneralFactory.Save(ref o,"",null, commandTimeout );
             }
 
 
         }
-        public bool Delete<T>(T o)
+        public bool Delete<T>(T o, int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.Delete(o);
+                return oGeneralFactory.Delete(o, commandTimeout);
 
             }
         }
 
-        public T GetByID<T>(string ID, bool withLock)
+        public T GetByID<T>(string ID, bool withLock, int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.GetByID(ID, withLock);
+                return oGeneralFactory.GetByID(ID, withLock, commandTimeout);
 
             }
         }
 
-        public List<T> GetAll<T>()
+        public List<T> GetAll<T>( int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.GetAll();
+                return oGeneralFactory.GetAll(commandTimeout);
 
             }
         }
 
-        public List<T> Execute_StoredProcedure<T>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<T> Execute_StoredProcedure<T>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return (List<T>)Execute_StoredProcedure<T, object, object, object, object, object, object>(ProcedureName, Parameters).FirstOrDefault();
+            return (List<T>)Execute_StoredProcedure<T, object, object, object, object, object, object>(ProcedureName, Parameters, commandTimeout).FirstOrDefault();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, object, object, object, object, object>(ProcedureName, Parameters).Take(2).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, object, object, object, object, object>(ProcedureName, Parameters, commandTimeout).Take(2).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, object, object, object, object>(ProcedureName, Parameters).Take(3).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, object, object, object, object>(ProcedureName, Parameters, commandTimeout).Take(3).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFour>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFour>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFour, object, object, object>(ProcedureName, Parameters).Take(4).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFour, object, object, object>(ProcedureName, Parameters, commandTimeout).Take(4).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFour, TFive>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFour, TFive>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFour, TFive, object, object>(ProcedureName, Parameters).Take(5).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFour, TFive, object, object>(ProcedureName, Parameters, commandTimeout).Take(5).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, object>(ProcedureName, Parameters).Take(6).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, object>(ProcedureName, Parameters, commandTimeout).Take(6).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, object>(ProcedureName, Parameters).Take(7).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, object>(ProcedureName, Parameters, commandTimeout).Take(7).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, object>(ProcedureName, Parameters).Take(8).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, object>(ProcedureName, Parameters, commandTimeout).Take(8).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
-            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, object>(ProcedureName, Parameters).Take(9).ToList();
+            return Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, object>(ProcedureName, Parameters, commandTimeout).Take(9).ToList();
         }
 
-        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, TTenth>(string ProcedureName, Dictionary<string, string> Parameters)
+        public List<object> Execute_StoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TEighth, TNinth, TTenth>(string ProcedureName, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
             lock (this)
             {
@@ -326,7 +326,7 @@ namespace Repository
                         OpenConnection();
                         InTransaction = false;
                     }
-                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure, commandTimeout: this.Connection.ConnectionTimeout,transaction: this.Transaction);
+                    grid = this.Connection.QueryMultiple(ProcedureName, dbArgs, commandType: CommandType.StoredProcedure, commandTimeout: commandTimeout, transaction: this.Transaction);
                     Result.Add(grid.Read<TFirst>().ToList<TFirst>());
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TSecond>().ToList()); } else { Result.Add(new List<TSecond>()); }
                     if (grid.IsConsumed == false) { Result.Add(grid.Read<TThird>().ToList()); } else { Result.Add(new List<TThird>()); }
@@ -347,53 +347,53 @@ namespace Repository
 
         }
 
-        public List<T> Find<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
+        public List<T> Find<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "", int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.Find(Filter, orderBy, withLock, Parameters, FieldNames);
+                return oGeneralFactory.Find(Filter, orderBy, withLock, Parameters, FieldNames, commandTimeout);
 
             }
         }
 
-        public T FindFirst<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "")
+        public T FindFirst<T>(string Filter, string orderBy, bool withLock, Dictionary<string, string> Parameters, string FieldNames = "", int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.FindFirst(Filter, orderBy, withLock, Parameters, FieldNames);
+                return oGeneralFactory.FindFirst(Filter, orderBy, withLock, Parameters, FieldNames, commandTimeout);
 
             }
         }
 
-        public bool DeleteList<T>(string Filter, Dictionary<string, string> Parameters)
+        public bool DeleteList<T>(string Filter, Dictionary<string, string> Parameters, int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.DeleteList(Filter, Parameters);
+                return oGeneralFactory.DeleteList(Filter, Parameters, commandTimeout);
 
             }
 
         }
 
-        public bool Save<T>(T o, string Filter, Dictionary<string, string> Parameters=null)
+        public bool Save<T>(T o, string Filter, Dictionary<string, string> Parameters=null, int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                return oGeneralFactory.Save(ref o, Filter, Parameters);
+                return oGeneralFactory.Save(ref o, Filter, Parameters, commandTimeout);
             }
 
         }
 
-        public bool SaveList<T>(List<T> list, string basePropertyName)
+        public bool SaveList<T>(List<T> list, string basePropertyName, int commandTimeout = 30)
         {
             lock (this)
             {
                 var oGeneralFactory = GetGeneralFactory<T>();
-                oGeneralFactory.SaveList(list, basePropertyName);
+                oGeneralFactory.SaveList(list, basePropertyName, commandTimeout);
                 return true;
 
             }
