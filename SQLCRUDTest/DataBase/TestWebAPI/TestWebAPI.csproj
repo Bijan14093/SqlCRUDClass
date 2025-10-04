@@ -31,12 +31,17 @@
 
   <ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.22" />
+	  <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="5.7.0" />
 	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	  <PackageReference Include="SQLMigrationByQuery" Version="1.0.0.13" />
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
-	  <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
-	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.9.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
+	  <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.7.0" />
+	  <PackageReference Include="System.Net.Http" Version="4.3.4" />
+	  <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+	  <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>
