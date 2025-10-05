@@ -15,11 +15,14 @@ jobs:
 
     env:
       DOTNET_VERSION: 8.0.x
-      RUN_TESTS: 'false'
+      RUN_TESTS: 'true'
       GIT_RELEASE_ENABLED: 'true'
+
       GIT_PACKAGE_ENABLED: 'true'
       GIT_PACKAGE_SOURCE: https://nuget.pkg.github.com/Bijan14093/index.json
+      
       NUGET_PACKAGE_ENABLED: 'true'
+      NUGET_PACKAGE_SOURCE: https://api.nuget.org/v3/index.json      
 
     steps:
       # --- 1. Checkout Code ---
@@ -80,7 +83,7 @@ jobs:
         run: |
           Write-Host "📦 Publishing to NuGet.org..."
           dotnet nuget push "*.nupkg" `
-            --source https://api.nuget.org/v3/index.json `
+            --source  "${{ env.NUGET_PACKAGE_SOURCE }}" `
             --api-key ${{ secrets.NUGET_TOKEN }} `
             --skip-duplicate
 
