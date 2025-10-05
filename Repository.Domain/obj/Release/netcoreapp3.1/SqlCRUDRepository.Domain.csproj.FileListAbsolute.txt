@@ -1,9 +1,0 @@
-e:\Git\SqlCRUDClass\Repository.Domain\bin\Release\netcoreapp3.1\SqlCRUDRepository.Domain.deps.json
-e:\Git\SqlCRUDClass\Repository.Domain\bin\Release\netcoreapp3.1\SqlCRUDRepository.Domain.dll
-e:\Git\SqlCRUDClass\Repository.Domain\bin\Release\netcoreapp3.1\SqlCRUDRepository.Domain.pdb
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.1\SqlCRUDRepository.Domain.csprojAssemblyReference.cache
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.1\SqlCRUDRepository.Domain.csproj.CoreCompileInputs.cache
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.1\SqlCRUDRepository.Domain.AssemblyInfoInputs.cache
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.1\SqlCRUDRepository.Domain.AssemblyInfo.cs
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.1\SqlCRUDRepository.Domain.dll
-e:\Git\SqlCRUDClass\Repository.Domain\obj\Release\netcoreapp3.1\SqlCRUDRepository.Domain.pdb

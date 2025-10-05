@@ -1,0 +1,113 @@
+# create file in repository => .github\workflows\main.yml # Create variables in repository
+
+# repository secret variable # GIT_TOKEN # LOCAL_PACKAGE_PATH # NUGET_TOKEN
+
+name: Build, Test & Publish (All Secrets)
+
+on:
+  push:
+    tags:
+      - 'v*'  # فقط وقتی تگ‌هایی مثل v1.0.0 push شوند
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      DOTNET_VERSION: 8.0.x
+      RUN_TESTS: 'true'
+      GIT_RELEASE_ENABLED: 'true'
+      GIT_PACKAGE_ENABLED: 'true'
+      GIT_PACKAGE_SOURCE: https://nuget.pkg.github.com/Bijan14093/index.json
+      NUGET_PACKAGE_ENABLED: 'false'
+      LOCAL_PACKAGE_ENABLED: 'false'
+
+    steps:
+      # --- 1. Checkout Code ---
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --- 2. Setup .NET SDK ---
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # --- 3. Restore Dependencies ---
+      - name: Restore dependencies
+        working-directory: src
+        run: dotnet restore
+
+      # --- 4. Build in Release mode ---
+      - name: Build project
+        working-directory: src
+        run: dotnet build --configuration Release --no-restore
+
+      # --- 5. Run Tests (Optional) ---
+      - name: Run tests
+        if: ${{ env.RUN_TESTS == 'true' }}
+        working-directory: test
+        run: dotnet test --configuration Release
+
+      # --- 6. Pack NuGet Package (PowerShell compatible) ---
+      - name: Pack NuGet package
+        working-directory: src
+        run: |
+          # استخراج نسخه از Git Tag (v1.0.0 -> 1.0.0)
+          $version = "${env:GITHUB_REF_NAME}".TrimStart("v")
+          Write-Host "📦 Package Version: $version"
+          
+          # Pack با نسخه و RepositoryUrl
+          dotnet pack --configuration Release `
+            -p:PackageVersion=$version `
+            -p:RepositoryUrl="https://github.com/${{ github.repository }}" `
+            -o ../nuget
+
+      # --- 7. Publish to GitHub Packages ---
+      - name: Publish to GitHub Packages
+        if: ${{ env.GIT_PACKAGE_ENABLED == 'true' }}
+        working-directory: nuget
+        run: |
+          Write-Host "📦 Publishing to GitHub Packages..."
+          dotnet nuget push "*.nupkg" `
+            --source "${{ env.GIT_PACKAGE_SOURCE }}" `
+            --api-key ${{ secrets.GIT_TOKEN }} `
+            --skip-duplicate
+
+      # --- 8. Publish to NuGet.org ---
+      - name: Publish to NuGet.org
+        if: ${{ env.NUGET_PACKAGE_ENABLED == 'true' }}
+        working-directory: nuget
+        run: |
+          Write-Host "📦 Publishing to NuGet.org..."
+          dotnet nuget push "*.nupkg" `
+            --source https://api.nuget.org/v3/index.json `
+            --api-key ${{ secrets.NUGET_TOKEN }} `
+            --skip-duplicate
+
+      # --- 9. Publish to Local Feed (Optional) ---
+      - name: Publish to Local Feed
+        if: ${{ env.LOCAL_PACKAGE_ENABLED == 'true' }}
+        working-directory: nuget
+        run: |
+          Write-Host "📦 Publishing to Local Feed..."
+          dotnet nuget push "*.nupkg" `
+            --source "${{ secrets.LOCAL_PACKAGE_PATH }}" `
+            --skip-duplicate
+
+      # --- 10. Create ZIP for GitHub Release ---
+      - name: Create ZIP of publish folder
+        run: |
+          mkdir publish
+          powershell Compress-Archive -Path "src\**\bin\Release\*" -DestinationPath publish/release.zip
+
+      # --- 11. Create GitHub Release ---
+      - name: Create GitHub Release
+        if: ${{ env.GIT_RELEASE_ENABLED == 'true' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            publish/release.zip
+            nuget/*.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}

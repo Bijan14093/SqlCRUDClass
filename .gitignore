@@ -397,5 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /.vs
-/Repository/bin/*
-/Repository/bin/Debug/net4/Dapper.dll
+/Repository/bin/
