@@ -19,8 +19,7 @@ jobs:
       GIT_RELEASE_ENABLED: 'true'
       GIT_PACKAGE_ENABLED: 'true'
       GIT_PACKAGE_SOURCE: https://nuget.pkg.github.com/Bijan14093/index.json
-      NUGET_PACKAGE_ENABLED: 'false'
-      LOCAL_PACKAGE_ENABLED: 'false'
+      NUGET_PACKAGE_ENABLED: 'true'
 
     steps:
       # --- 1. Checkout Code ---
@@ -85,23 +84,13 @@ jobs:
             --api-key ${{ secrets.NUGET_TOKEN }} `
             --skip-duplicate
 
-      # --- 9. Publish to Local Feed (Optional) ---
-      - name: Publish to Local Feed
-        if: ${{ env.LOCAL_PACKAGE_ENABLED == 'true' }}
-        working-directory: nuget
-        run: |
-          Write-Host "📦 Publishing to Local Feed..."
-          dotnet nuget push "*.nupkg" `
-            --source "${{ secrets.LOCAL_PACKAGE_PATH }}" `
-            --skip-duplicate
-
-      # --- 10. Create ZIP for GitHub Release ---
+      # --- 9. Create ZIP for GitHub Release ---
       - name: Create ZIP of publish folder
         run: |
           mkdir publish
           powershell Compress-Archive -Path "src\**\bin\Release\*" -DestinationPath publish/release.zip
 
-      # --- 11. Create GitHub Release ---
+      # --- 10. Create GitHub Release ---
       - name: Create GitHub Release
         if: ${{ env.GIT_RELEASE_ENABLED == 'true' }}
         uses: softprops/action-gh-release@v2
