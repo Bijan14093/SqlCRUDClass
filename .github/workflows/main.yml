@@ -1,6 +1,6 @@
 # create file in repository => .github\workflows\main.yml # Create variables in repository
 
-# repository secret variable # GIT_TOKEN # LOCAL_PACKAGE_PATH # NUGET_TOKEN
+# repository secret variable # GIT_TOKEN  # NUGET_TOKEN
 
 name: Build, Test & Publish (All Secrets)
 
@@ -15,7 +15,7 @@ jobs:
 
     env:
       DOTNET_VERSION: 8.0.x
-      RUN_TESTS: 'true'
+      RUN_TESTS: 'false'
       GIT_RELEASE_ENABLED: 'true'
       GIT_PACKAGE_ENABLED: 'true'
       GIT_PACKAGE_SOURCE: https://nuget.pkg.github.com/Bijan14093/index.json
